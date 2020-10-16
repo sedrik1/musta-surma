@@ -16,7 +16,20 @@ import DiseaseYears from '../../Data/DiseaseSpread/DiseaseSpreadInfo';
 import ColourLegends from './ColourLegends';
 import './Sidebar.css';
 
-const SidebarContainer = (props) => {
+const SidebarContainer = props => {
+	const createParagraphs = text => {
+		const infoList = document.getElementsByClassName('info');
+		Object.values(infoList).forEach(element => element.remove());
+
+		const splitText = text.split('\n');
+		splitText.forEach(sentence => {
+			const p = document.createElement('p');
+			p.classList.add('info');
+			p.appendChild(document.createTextNode(sentence));
+			document.getElementById('paragraph-parent').appendChild(p);
+		});
+	};
+
 	return (
 		<Sidebar
 			id="sidebar"
@@ -45,7 +58,7 @@ const SidebarContainer = (props) => {
 											control={
 												<Checkbox
 													color="primary"
-													onClick={(event) =>
+													onClick={event =>
 														props.handleLayer(
 															event.target.value
 														)
@@ -63,7 +76,7 @@ const SidebarContainer = (props) => {
 									control={
 										<Checkbox
 											color="primary"
-											onClick={(event) =>
+											onClick={event =>
 												props.handleLayer(
 													event.target.value
 												)
@@ -93,7 +106,7 @@ const SidebarContainer = (props) => {
 													? true
 													: false
 											}
-											onClick={(event) =>
+											onClick={event =>
 												props.handleLayer(
 													event.target.value
 												)
@@ -111,7 +124,7 @@ const SidebarContainer = (props) => {
 							control={
 								<Checkbox
 									color="primary"
-									onClick={(event) =>
+									onClick={event =>
 										props.handleLayer(event.target.value)
 									}
 									value="AllTerrains"
@@ -128,7 +141,7 @@ const SidebarContainer = (props) => {
 							control={
 								<Checkbox
 									color="primary"
-									onClick={(event) =>
+									onClick={event =>
 										props.handleLayer(event.target.value)
 									}
 									value="Routes"
@@ -142,7 +155,7 @@ const SidebarContainer = (props) => {
 							control={
 								<Checkbox
 									color="primary"
-									onClick={(event) =>
+									onClick={event =>
 										props.handleLayer(event.target.value)
 									}
 									value="GoldenHorde"
@@ -162,17 +175,20 @@ const SidebarContainer = (props) => {
 				}
 				icon={<BsQuestionCircleFill />}
 			>
-				<div>
+				<div id="paragraph-parent">
 					<h3>
 						{props.infoboxLocation.length !== 0
 							? props.infoboxLocation
 							: false}
 					</h3>
-					<p>
-						{props.infoboxLocationInfo.length !== 0
-							? props.infoboxLocationInfo
-							: 'Tämä osio päivittyy aluetiedoilla valitessasi jonkin kaupungin kartalta'}
-					</p>
+					{props.infoboxLocationInfo.length !== 0 ? (
+						createParagraphs(props.infoboxLocationInfo)
+					) : (
+						<p>
+							Tämä osio päivittyy aluetiedoilla valitessasi jonkin
+							kaupungin kartalta
+						</p>
+					)}
 				</div>
 			</Tab>
 			<Tab

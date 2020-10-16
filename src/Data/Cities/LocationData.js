@@ -8,27 +8,23 @@ const mediterranean = [
 const mediterraneanInfos = [
 	{
 		location: 'Konstantinopoli (nyk. Istanbul)',
-		deaths: 1501,
 		info:
 			'Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
 	},
 	{
 		location: 'Messina',
-		deaths: 2355,
 		info:
-			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ',
+			'Euroopan kaupungeista Messina, joka sijaitsee Italian saappaankärjessä eli Sisiliassa, joutui ensimmäisenä kokemaan Mustan surman julmuuden. \nLokakuussa vuonna 1347 Konstantinopolista saapuneet kauppalaivat saastuttivat kaupungin, ja todellisuus valitettavan tilanteen aiheuttamasta säälimättömästä ankaruudesta saattoi asukkaat kauhun valtaan. Kauppalaivat karkotettiin satamasta hetimmiten asian tultua tietoon, mutta liian myöhään. Kulkutauti oli jo saanut otteen kaupungista ja paniikissaan asukkaat pakenivat maalle, epätoivoisesti pyrkiessään kauas muusta yhteiskunnasta.',
 	},
 	{
 		location: 'Sardinia',
-		deaths: 3001,
 		info:
-			'Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod',
+			'Messinnasta ripeästi poisajetut kauppalaivat saapuivat Sisilian naapurisaarelle Sardiniaan vain kuukautta myöhemmin, siten tuomiten senkin asukkaat sanomattomaan kurjuuteen.',
 	},
 	{
 		location: 'Korsika',
-		deaths: 1501,
 		info:
-			'Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+			'Korsika koki ruton samoihin aikoihin, kuin Sardiniakin, eli marraskuun paikkeilla.',
 	},
 ];
 
@@ -41,19 +37,16 @@ const mainlandWest = [
 const mainlandWestInfos = [
 	{
 		location: 'Geneve',
-		deaths: 2355,
 		info:
 			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
 	},
 	{
 		location: 'Erfurt',
-		deaths: 2355,
 		info:
 			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
 	},
 	{
 		location: 'Moskova',
-		deaths: 2355,
 		info:
 			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
 	},
@@ -69,19 +62,16 @@ const mainlandEastInfos = [
 	{
 		location:
 			'Sarai (nyk. Колобовка eli Kolobovka/ Селитренное eli Selitrennoye)',
-		deaths: 2355,
 		info: `Volgan alajuoksulla sijaitseva Kultaisen ordan pääkaupunki Sarai, joista Uusi Sarai sijaitsi Kolobovkan ja Vanha Sarai Selitrennoyen kohdalla, oli mustan surman portti Konstantinopoliin ja sitä kautta muuhun Eurooppaan Välimeren kautta.
         Kauppareitit ja kaupunkien kehitys olivat keskeisiä tekijöitä sairauden tehokkaan leviämisen kannalta.`,
 	},
 	{
 		location: 'Kaffa (nyk. Феодо́сія / Феодосия eli Feodosija)',
-		deaths: 2355,
 		info:
 			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
 	},
 	{
 		location: 'Azov',
-		deaths: 2355,
 		info:
 			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
 	},
@@ -95,14 +85,12 @@ const britain = [
 const britainInfos = [
 	{
 		location: 'Bristol',
-		deaths: 1501,
 		info:
 			'Elokuussa tai sen paikkeilla v. 1348 tauti levisi satamakaupunki Bristoliin',
 	},
 
 	{
 		location: 'Lontoo',
-		deaths: 1501,
 		info: 'Lontoon kaupunki altistui taudille saman vuoden marraskuussa',
 	},
 ];
