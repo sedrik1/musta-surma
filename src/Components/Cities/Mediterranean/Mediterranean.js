@@ -2,7 +2,7 @@ import React from 'react';
 import { Popup, CircleMarker } from 'react-leaflet';
 import { Mediterranean as data } from '../../../Data/Cities/LocationData';
 
-const Mediterranean = (props) => {
+const Mediterranean = props => {
 	return data.coordinates.map((marker, index) => {
 		return (
 			<CircleMarker

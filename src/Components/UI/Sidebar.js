@@ -51,9 +51,9 @@ const SidebarContainer = props => {
 					</AccordionSummary>
 					<AccordionDetails>
 						<ul id="years-list">
-							{DiseaseYears.map((years, index) => {
+							{DiseaseYears.map(({ date }) => {
 								return (
-									<li key={index}>
+									<li key={date}>
 										<FormControlLabel
 											control={
 												<Checkbox
@@ -63,10 +63,10 @@ const SidebarContainer = props => {
 															event.target.value
 														)
 													}
-													value={`Disease_${years.date}`}
+													value={`Disease_${date}`}
 												/>
 											}
-											label={`${years.date}`}
+											label={date}
 										/>
 									</li>
 								);
@@ -93,9 +93,9 @@ const SidebarContainer = props => {
 				<hr />
 				<p id="cities-paragraph">Kaupungit maa-alueittain</p>
 				<ul id="cities-list">
-					{props.terrainLabelsValues.map((item, index) => {
+					{props.terrainLabelsValues.map(({ label, value }) => {
 						return (
-							<li key={index}>
+							<li key={label}>
 								<FormControlLabel
 									control={
 										<Checkbox
@@ -111,10 +111,10 @@ const SidebarContainer = props => {
 													event.target.value
 												)
 											}
-											value={item.value}
+											value={value}
 										/>
 									}
-									label={item.label}
+									label={label}
 								/>
 							</li>
 						);

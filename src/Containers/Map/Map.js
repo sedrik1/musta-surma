@@ -42,9 +42,6 @@ class MapContainer extends Component {
 		showMap: false,
 		infoboxLocation: '',
 		infoboxLocationInfo: '',
-		paths: document.getElementsByTagName('path'),
-		CircleMarkers: [],
-		Polylines: [],
 		textPathFontSize: 16,
 		collapsed: false,
 		selected: 'layers',
@@ -90,22 +87,6 @@ class MapContainer extends Component {
 		zoomLevelDef: 35,
 	};
 
-	componentDidMount() {
-		setTimeout(() => {
-			for (const element of this.state.paths) {
-				if (element.getAttribute('fill') === 'black') {
-					this.setState({
-						CircleMarkers: [...this.state.CircleMarkers, element],
-					});
-				} else if (element.getAttribute('fill') === 'none') {
-					this.setState({
-						Polylines: [...this.state.Polylines, element],
-					});
-				}
-			}
-		}, 1);
-	}
-
 	onClose() {
 		this.setState({ collapsed: true });
 	}
@@ -150,7 +131,6 @@ class MapContainer extends Component {
 	}
 
 	handleLayerControl(layerName) {
-		let goldenHordeIndex = this.state.Polylines.length - 1;
 		switch (layerName) {
 			case 'Disease_v. 1346':
 				console.log(
@@ -412,33 +392,22 @@ class MapContainer extends Component {
 				}
 				break;
 			case 'Routes':
-				this.state.Polylines.forEach((element) => {
-					if (!this.state.displayElements.displayRoutes) {
-						if (
-							this.state.Polylines.indexOf(element) !==
-							goldenHordeIndex
-						) {
-							this.setState({
-								displayElements: {
-									...this.state.displayElements,
-									displayRoutes: true,
-								},
-							});
-						}
-					} else {
-						if (
-							this.state.Polylines.indexOf(element) !==
-							goldenHordeIndex
-						) {
-							this.setState({
-								displayElements: {
-									...this.state.displayElements,
-									displayRoutes: false,
-								},
-							});
-						}
-					}
-				});
+				if (!this.state.displayElements.displayRoutes) {
+					this.setState({
+						displayElements: {
+							...this.state.displayElements,
+							displayRoutes: true,
+						},
+					});
+				} else {
+					this.setState({
+						displayElements: {
+							...this.state.displayElements,
+							displayRoutes: false,
+						},
+					});
+				}
+
 				break;
 			default:
 				break;
@@ -568,7 +537,7 @@ class MapContainer extends Component {
 					/>
 					<SidebarContainer
 						displayElements={this.state.displayElements}
-						handleLayer={(layerName) =>
+						handleLayer={layerName =>
 							this.handleLayerControl(layerName)
 						}
 						infoboxLocation={this.state.infoboxLocation}
@@ -576,7 +545,7 @@ class MapContainer extends Component {
 						collapsed={this.state.collapsed}
 						selected={this.state.selected}
 						onClose={() => this.onClose()}
-						onOpen={(child) => this.onOpen(child)}
+						onOpen={child => this.onOpen(child)}
 						terrainLabelsValues={this.terrainLabelsValues}
 					/>
 
@@ -615,6 +584,7 @@ class MapContainer extends Component {
 					) : (
 						<V1348 />
 					)}
+
 					{!this.state.displayElements.displayDiseaseSpread_1349 ? (
 						false
 					) : (
@@ -650,7 +620,7 @@ class MapContainer extends Component {
 					) : (
 						<FeatureGroup color="black">
 							<MainlandWest
-								handleOverlayClick={(location) =>
+								handleOverlayClick={location =>
 									this.infoBoxClickHandler(location)
 								}
 							/>
@@ -662,7 +632,7 @@ class MapContainer extends Component {
 					) : (
 						<FeatureGroup color="black">
 							<MainlandEast
-								handleOverlayClick={(location) =>
+								handleOverlayClick={location =>
 									this.infoBoxClickHandler(location)
 								}
 							/>
@@ -674,7 +644,7 @@ class MapContainer extends Component {
 					) : (
 						<FeatureGroup color="black">
 							<Britain
-								handleOverlayClick={(location) =>
+								handleOverlayClick={location =>
 									this.infoBoxClickHandler(location)
 								}
 							/>
@@ -686,7 +656,7 @@ class MapContainer extends Component {
 					) : (
 						<FeatureGroup color="black">
 							<Mediterranean
-								handleOverlayClick={(location) =>
+								handleOverlayClick={location =>
 									this.infoBoxClickHandler(location)
 								}
 							/>
@@ -701,13 +671,12 @@ class MapContainer extends Component {
 								return (
 									<FeatureGroup key={index} color="black">
 										<Item
-											handleOverlayClick={(location) =>
+											handleOverlayClick={location =>
 												this.infoBoxClickHandler(
 													location
 												)
 											}
 										/>
-										;
 									</FeatureGroup>
 								);
 							})}
@@ -717,7 +686,7 @@ class MapContainer extends Component {
 					<LayersControl position="bottomleft">
 						{!this.state.displayElements.displayRoutes
 							? false
-							: allRoutes.map((item) => item)}
+							: allRoutes.map(item => item)}
 						{!this.state.displayElements.displayGoldenHorde ? (
 							false
 						) : (
