@@ -176,14 +176,22 @@ ul li {
 
 #colours-list > .odd {
 	flex: 1;
+}
+
+#colours-list > li:last-of-type {
+	flex: 2;
 	text-align: center;
 }
 
 #colours-list > li > span {
 	display: block;
 	float: left;
-	text-align: right;
-	margin-bottom: 10px;
+}
+
+#colours-list > li > svg {
+	padding-left: 10px;
+	display: block;
+	float: left;
 }
 
 #cities-list > li {
