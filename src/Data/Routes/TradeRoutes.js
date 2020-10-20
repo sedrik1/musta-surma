@@ -632,7 +632,122 @@ const EastEuropeLandExclusiveRoutes = [
 	},
 ];
 
+const SpainLandExclusiveRoutes = [
+	{
+		route:
+			'Nola-Santiago de Compostela-Gijón-Santander-Castro-Urdiales-Pamplona',
+		coordinates: [
+			[42.784921, -8.887654],
+			[42.877778, -8.544444],
+			[43.533333, -5.666667],
+			[43.298198, -4.719565],
+			[43.462778, -3.805],
+			[43.384444, -3.215],
+			[42.818333, -1.644167],
+		],
+	},
+	{
+		route: 'Huesca-Zaragoza-Calatayud-Alarilla-Toledo',
+		coordinates: [
+			[42.133333, -0.416667],
+			[41.656389, -0.876667],
+			[41.35, -1.633333],
+			[40.848889, -3.105556],
+			[40.816408, -3.156327],
+			[40.720721, -3.304739],
+			[40.514321, -3.585074],
+			[40.419644, -3.68526],
+		],
+	},
+	{
+		route: 'Toledo-Consuegra-Córdoba-Sevilla',
+		coordinates: [
+			[39.856667, -4.024444],
+			[39.461944, -3.606389],
+			[37.883333, -4.766667],
+			[37.382778, -5.996389],
+		],
+	},
+	{
+		route: 'Jaén-Granada-Málaga-Ronda-Algericas',
+		coordinates: [
+			[38.103495, -4.607046],
+			[37.769722, -3.788889],
+			[37.573426, -3.584893],
+			[37.296452, -3.568402],
+			[37.178056, -3.600833],
+			[37.147729, -4.137316],
+			[36.719722, -4.42],
+			[36.737222, -5.164722],
+			[36.83402, -5.393324],
+			[36.461606, -5.61592],
+			[36.1275, -5.453889],
+		],
+	},
+];
+
 const WestEuropeLandExclusiveRoutes = [
+	{
+		route: 'Tarragona-Huesca-Pamplona-Bayonne-Bordeaux',
+		coordinates: [
+			[41.115556, 1.249444],
+			[42.133333, -0.416667],
+			[42.818333, -1.644167],
+			[43.49, -1.48],
+			[44.833333, -0.566667],
+		],
+	},
+	{
+		route: 'Bordeaux-Poitiers-Tours-Orléans-Pariisi-Arras-Ieper-Brugge',
+		coordinates: [
+			[44.833333, -0.566667],
+			[46.58, 0.34],
+			[47.3936, 0.6892],
+			[47.9025, 1.908889],
+			[48.856613, 2.352222],
+			[50.289722, 2.780833],
+			[50.85, 2.883333],
+			[51.216667, 3.233333],
+		],
+	},
+	{
+		route: 'Pavia-Torino-Aosta-Lausanne-Besançon-Dijon-Lyon',
+		coordinates: [
+			[45.185, 9.154167],
+			[45.066667, 7.683333],
+			[45.733333, 7.316667],
+			[45.868889, 7.170556],
+			[46.521944, 6.633611],
+			[47.24, 6.02],
+			[47.290556, 5.042778],
+			[45.767222, 4.834444],
+		],
+	},
+	{
+		route: 'Bologna-Parma-Pavia-Genova-Milano',
+		coordinates: [
+			[44.5075, 11.351389],
+			[44.8, 10.333333],
+			[45.185, 9.154167],
+			[45.466667, 9.183333],
+			[45.185, 9.154167],
+			[44.406944, 8.933889],
+		],
+	},
+	{
+		route:
+			'Bratislava-Bruck an den Mur-Friesach-Villach-Udine-Venetsia-Verona-Bologna',
+		coordinates: [
+			[48.144722, 17.112778],
+			[47.416667, 15.266667],
+			[46.95, 14.416667],
+			[46.616667, 13.85],
+			[46.066667, 13.233333],
+			[45.4375, 12.335833],
+			[45.433333, 10.983333],
+			[44.5075, 11.351389],
+		],
+	},
 	{
 		route: 'Brindisi-Taranto-Bari-Trani-Ortona-Ancona-Fano-Bologna',
 		coordinates: [
@@ -682,6 +797,7 @@ export {
 	SpainRoutes,
 	EastEuropeLandExclusiveRoutes,
 	WestEuropeLandExclusiveRoutes,
+	SpainLandExclusiveRoutes,
 	WestEuropeRoutes,
 	NorthEuropeRoutes,
 };

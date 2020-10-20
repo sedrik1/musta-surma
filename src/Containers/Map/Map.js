@@ -28,6 +28,7 @@ import {
 	EastEuropeLandExclusiveRoutes,
 	WestEuropeLandExclusiveRoutes,
 	WestEuropeRoutes,
+	SpainLandExclusiveRoutes,
 	NorthEuropeRoutes,
 	SpainRoutes,
 } from '../../Data/Routes/TradeRoutes';
@@ -37,7 +38,6 @@ class MapContainer extends Component {
 	constructor() {
 		super();
 		this.mapRef = React.createRef();
-		this.goldenHordeRef = React.createRef();
 	}
 
 	state = {
@@ -549,6 +549,20 @@ class MapContainer extends Component {
 			}
 		);
 
+		let spainLandExclusive = SpainLandExclusiveRoutes.map(
+			({ coordinates, route }, index) => {
+				return (
+					<Polyline
+						key={index}
+						positions={coordinates}
+						color={this.landRouteStyle.color}
+					>
+						<Popup>{route}</Popup>
+					</Polyline>
+				);
+			}
+		);
+
 		let eastEuropeLandExclusive = EastEuropeLandExclusiveRoutes.map(
 			({ coordinates, route }, index) => {
 				return (
@@ -662,6 +676,7 @@ class MapContainer extends Component {
 			eastEuropeLandExclusive,
 			spainRoutes,
 			westEuropeRoutes,
+			spainLandExclusive,
 			northEuropeRoutes,
 		];
 
@@ -828,7 +843,6 @@ class MapContainer extends Component {
 						) : (
 							<Curve
 								option={{ color: '#FFD700', fill: false }}
-								ref={this.goldenHordeRef}
 								positions={GoldenHordeBorder}
 							>
 								<Popup>Kultaisen ordan raja</Popup>
