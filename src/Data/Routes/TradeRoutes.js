@@ -503,9 +503,185 @@ const NorthEuropeRoutes = [
 	},
 ];
 
+const MediterraneanLandExclusiveRoutes = [
+	{
+		route:
+			'Konstantinopoli (nyk. Istanbul)-Selymbria (nyk. Silivri)-Hadrianopolis (nyk. Edirne)-Plovdiv-Sofia-Niš',
+		coordinates: [
+			[41.009167, 28.975833],
+			[41.080158, 28.26829],
+			[41.666667, 26.566667],
+			[42.15, 24.75],
+			[42.7, 23.333333],
+			[43.32102, 21.89567],
+		],
+	},
+	{
+		route:
+			'Hadrianopolis (nyk. Edirne)-Kızılağaç (nyk. Elhovo)-Burgas-Shumen',
+		coordinates: [
+			[41.666667, 26.566667],
+			[42.166667, 26.566667],
+			[42.5, 27.466667],
+			[42.166667, 26.566667],
+			[43.283333, 26.933333],
+		],
+	},
+];
+
+const EastEuropeLandExclusiveRoutes = [
+	{
+		route: 'Sofia-Vidin',
+		coordinates: [
+			[42.7, 23.333333],
+			[44.22798, 22.532733],
+		],
+	},
+	{
+		route: 'Tinnovo-Plovdiv',
+		coordinates: [
+			[43.15, 26.166667],
+			[42.15, 24.75],
+		],
+	},
+	{
+		route: 'Shumen-Tinnovo-Vidin-Požarevac',
+		coordinates: [
+			[43.283333, 26.933333],
+			[43.15, 26.166667],
+			[44, 22.866667],
+			[44.22798, 22.532733],
+			[44.616667, 21.183333],
+		],
+	},
+	{
+		route: 'Niš-Požarevac-Belgrad',
+		coordinates: [
+			[43.32102, 21.89567],
+			[43.866667, 21.416667],
+			[44.616667, 21.183333],
+			[44.816667, 20.466667],
+		],
+	},
+	{
+		route: 'Niš-Skopje-Dyrrachium (nyk. Durrës)',
+		coordinates: [
+			[43.32102, 21.89567],
+			[42.683333, 22.166667],
+			[42, 21.433333],
+			[42.148611, 20.539444],
+			[41.316667, 19.45],
+		],
+	},
+	{
+		route:
+			'Konstantinopoli (nyk. Istanbul)-Selymbria (nyk. Silivri)-Mosynopolis (Komotinin lähialue)-Kavala-Thessaloniki-Skopje',
+		coordinates: [
+			[41.009167, 28.975833],
+			[41.080158, 28.26829],
+			[41.128611, 25.325278],
+			[40.933333, 24.4],
+			[40.65, 22.9],
+			[42, 21.433333],
+		],
+	},
+	{
+		route: 'Dyrrachium (nyk. Durrës)-Dubrovnik',
+		coordinates: [
+			[41.316667, 19.45],
+			[41.783333, 19.633333],
+			[42.43, 18.77],
+			[42.633333, 18.1],
+		],
+	},
+	{
+		route: 'Dubrovnik-Split',
+		coordinates: [
+			[42.633333, 18.1],
+			[43.2375, 17.4839],
+			[43.440207, 16.833801],
+			[43.5, 16.433333],
+		],
+	},
+	{
+		route: 'Belgrad-Buda (nyk. Budapest)-Esztergom-Bratislava',
+		coordinates: [
+			[44.816667, 20.466667],
+			[45.6, 19.533333],
+			[47.4925, 19.051389],
+			[47.785556, 18.740278],
+			[48.144722, 17.112778],
+		],
+	},
+	{
+		route: 'Bratislava-Brno-Praha',
+		coordinates: [
+			[48.144722, 17.112778],
+			[49.2, 16.616667],
+			[50.083333, 14.416667],
+		],
+	},
+	{
+		route: 'Praha-Dresden-Leipzig',
+		coordinates: [
+			[50.083333, 14.416667],
+			[51.033333, 13.733333],
+			[50.833333, 12.916667],
+			[51.333333, 12.383333],
+		],
+	},
+];
+
+const WestEuropeLandExclusiveRoutes = [
+	{
+		route: 'Brindisi-Taranto-Bari-Trani-Ortona-Ancona-Fano-Bologna',
+		coordinates: [
+			[40.638333, 17.945833],
+			[40.466667, 17.233333],
+			[41.05, 16.7],
+			[41.125278, 16.866667],
+			[41.05, 16.7],
+			[41.266667, 16.416667],
+			[41.8, 14.916667],
+			[42.35, 14.4],
+			[42.665833, 13.718611],
+			[43.616944, 13.516667],
+			[43.579458, 13.437239],
+			[43.833333, 13.016667],
+			[44.5075, 11.351389],
+		],
+	},
+	{
+		route: 'Bologna-Firenze-Pisa',
+		coordinates: [
+			[44.5075, 11.351389],
+			[43.768611, 11.256944],
+			[43.716667, 10.4],
+		],
+	},
+	{
+		route: 'Firenze-Siena-Viterbo-Rooma-Gaeta-Amalfi',
+		coordinates: [
+			[43.768611, 11.256944],
+			[43.318333, 11.331389],
+			[42.416667, 12.1],
+			[41.895556, 12.482222],
+			[41.216667, 13.566667],
+			[41.241287, 13.550954],
+			[41.300121, 13.655392],
+			[41.264517, 13.789147],
+			[40.871209, 14.353663],
+			[40.633333, 14.6],
+		],
+	},
+];
+
 export {
 	MediterraneanRoutes,
+	MediterraneanLandExclusiveRoutes,
 	SpainRoutes,
+	EastEuropeLandExclusiveRoutes,
+	WestEuropeLandExclusiveRoutes,
 	WestEuropeRoutes,
 	NorthEuropeRoutes,
 };

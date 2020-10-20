@@ -58,6 +58,12 @@ const SidebarContainer = props => {
 											control={
 												<Checkbox
 													color="primary"
+													disabled={
+														!props.displayElements
+															.displayDiseaseSpread
+															? false
+															: true
+													}
 													onClick={event =>
 														props.handleLayer(
 															event.target.value

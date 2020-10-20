@@ -6,7 +6,7 @@ import {
 	Map,
 	Popup,
 	TileLayer,
-	Polygon,
+	Polyline,
 } from 'react-leaflet';
 import { Curve } from 'react-leaflet-curve';
 import Mediterranean from '../../Components/Cities/Mediterranean/Mediterranean';
@@ -24,11 +24,13 @@ import V1353 from '../../Components/DiseaseSpread/V1353';
 import GoldenHordeBorder from '../../Data/Misc/GoldenHorde';
 import {
 	MediterraneanRoutes,
+	MediterraneanLandExclusiveRoutes,
+	EastEuropeLandExclusiveRoutes,
+	WestEuropeLandExclusiveRoutes,
 	WestEuropeRoutes,
 	NorthEuropeRoutes,
 	SpainRoutes,
 } from '../../Data/Routes/TradeRoutes';
-import DiseaseYears from '../../Data/DiseaseSpread/DiseaseSpreadInfo';
 import SidebarContainer from '../../Components/UI/Sidebar';
 
 class MapContainer extends Component {
@@ -46,7 +48,7 @@ class MapContainer extends Component {
 		collapsed: false,
 		selected: 'layers',
 		displayElements: {
-			displayRoutes: false,
+			displayRoutes: true,
 			displayLandRoutes: false,
 			displaySeaRoutes: false,
 			displayMainlandEast: false,
@@ -56,14 +58,16 @@ class MapContainer extends Component {
 			displayMediterranean: false,
 			displayGoldenHorde: false,
 			displayDiseaseSpread: false,
-			displayDiseaseSpread_1346: false,
-			displayDiseaseSpread_1347: false,
-			displayDiseaseSpread_1348: false,
-			displayDiseaseSpread_1349: false,
-			displayDiseaseSpread_1350: false,
-			displayDiseaseSpread_1351: false,
-			displayDiseaseSpread_1352: false,
-			displayDiseaseSpread_1353: false,
+			disease: {
+				displayDiseaseSpread_1346: false,
+				displayDiseaseSpread_1347: false,
+				displayDiseaseSpread_1348: false,
+				displayDiseaseSpread_1349: false,
+				displayDiseaseSpread_1350: false,
+				displayDiseaseSpread_1351: false,
+				displayDiseaseSpread_1352: false,
+				displayDiseaseSpread_1353: false,
+			},
 		},
 	};
 
@@ -133,158 +137,248 @@ class MapContainer extends Component {
 	handleLayerControl(layerName) {
 		switch (layerName) {
 			case 'Disease_v. 1346':
-				console.log(
-					'kutsuttu',
-					this.state.displayElements.displayDiseaseSpread_1346
-				);
-				if (!this.state.displayElements.displayDiseaseSpread_1346) {
+				if (
+					!this.state.displayElements.disease
+						.displayDiseaseSpread_1346
+				) {
 					this.setState({
 						displayElements: {
 							...this.state.displayElements,
-							displayDiseaseSpread_1346: true,
+							disease: {
+								...this.state.displayElements.disease,
+								displayDiseaseSpread_1346: true,
+							},
 						},
 					});
 				} else {
 					this.setState({
 						displayElements: {
 							...this.state.displayElements,
-							displayDiseaseSpread_1346: false,
+							disease: {
+								...this.state.displayElements.disease,
+								displayDiseaseSpread_1346: false,
+							},
 						},
 					});
 				}
 				break;
 			case 'Disease_v. 1347':
-				if (!this.state.displayElements.displayDiseaseSpread_1347) {
+				if (
+					!this.state.displayElements.disease
+						.displayDiseaseSpread_1347
+				) {
 					this.setState({
 						displayElements: {
 							...this.state.displayElements,
-							displayDiseaseSpread_1347: true,
+							disease: {
+								...this.state.displayElements.disease,
+								displayDiseaseSpread_1347: true,
+							},
 						},
 					});
 				} else {
 					this.setState({
 						displayElements: {
 							...this.state.displayElements,
-							displayDiseaseSpread_1347: false,
+							disease: {
+								...this.state.displayElements.disease,
+								displayDiseaseSpread_1347: false,
+							},
 						},
 					});
 				}
 				break;
 			case 'Disease_v. 1348':
-				if (!this.state.displayElements.displayDiseaseSpread_1348) {
+				if (
+					!this.state.displayElements.disease
+						.displayDiseaseSpread_1348
+				) {
 					this.setState({
 						displayElements: {
 							...this.state.displayElements,
-							displayDiseaseSpread_1348: true,
+							disease: {
+								...this.state.displayElements.disease,
+								displayDiseaseSpread_1348: true,
+							},
 						},
 					});
 				} else {
 					this.setState({
 						displayElements: {
 							...this.state.displayElements,
-							displayDiseaseSpread_1348: false,
+							disease: {
+								...this.state.displayElements.disease,
+								displayDiseaseSpread_1348: false,
+							},
 						},
 					});
 				}
 				break;
 			case 'Disease_v. 1349':
-				if (!this.state.displayElements.displayDiseaseSpread_1349) {
+				if (
+					!this.state.displayElements.disease
+						.displayDiseaseSpread_1349
+				) {
 					this.setState({
 						displayElements: {
 							...this.state.displayElements,
-							displayDiseaseSpread_1349: true,
+							disease: {
+								...this.state.displayElements.disease,
+								displayDiseaseSpread_1349: true,
+							},
 						},
 					});
 				} else {
 					this.setState({
 						displayElements: {
 							...this.state.displayElements,
-							displayDiseaseSpread_1349: false,
+							disease: {
+								...this.state.displayElements.disease,
+								displayDiseaseSpread_1349: false,
+							},
 						},
 					});
 				}
 				break;
 			case 'Disease_v. 1350':
-				if (!this.state.displayElements.displayDiseaseSpread_1350) {
+				if (
+					!this.state.displayElements.disease
+						.displayDiseaseSpread_1350
+				) {
 					this.setState({
 						displayElements: {
 							...this.state.displayElements,
-							displayDiseaseSpread_1350: true,
+							disease: {
+								...this.state.displayElements.disease,
+								displayDiseaseSpread_1350: true,
+							},
 						},
 					});
 				} else {
 					this.setState({
 						displayElements: {
 							...this.state.displayElements,
-							displayDiseaseSpread_1350: false,
+							disease: {
+								...this.state.displayElements.disease,
+								displayDiseaseSpread_1350: false,
+							},
 						},
 					});
 				}
 				break;
 			case 'Disease_v. 1351':
-				if (!this.state.displayElements.displayDiseaseSpread_1351) {
+				if (
+					!this.state.displayElements.disease
+						.displayDiseaseSpread_1351
+				) {
 					this.setState({
 						displayElements: {
 							...this.state.displayElements,
-							displayDiseaseSpread_1351: true,
+							disease: {
+								...this.state.displayElements.disease,
+								displayDiseaseSpread_1351: true,
+							},
 						},
 					});
 				} else {
 					this.setState({
 						displayElements: {
 							...this.state.displayElements,
-							displayDiseaseSpread_1351: false,
+							disease: {
+								...this.state.displayElements.disease,
+								displayDiseaseSpread_1351: false,
+							},
 						},
 					});
 				}
 				break;
 			case 'Disease_v. 1352':
-				if (!this.state.displayElements.displayDiseaseSpread_1352) {
+				if (
+					!this.state.displayElements.disease
+						.displayDiseaseSpread_1352
+				) {
 					this.setState({
 						displayElements: {
 							...this.state.displayElements,
-							displayDiseaseSpread_1352: true,
+							disease: {
+								...this.state.displayElements.disease,
+								displayDiseaseSpread_1352: true,
+							},
 						},
 					});
 				} else {
 					this.setState({
 						displayElements: {
 							...this.state.displayElements,
-							displayDiseaseSpread_1352: false,
+							disease: {
+								...this.state.displayElements.disease,
+								displayDiseaseSpread_1352: false,
+							},
 						},
 					});
 				}
 				break;
 			case 'Disease_v. 1353':
-				if (!this.state.displayElements.displayDiseaseSpread_1353) {
+				if (
+					!this.state.displayElements.disease
+						.displayDiseaseSpread_1353
+				) {
 					this.setState({
 						displayElements: {
 							...this.state.displayElements,
-							displayDiseaseSpread_1353: true,
+							disease: {
+								...this.state.displayElements.disease,
+								displayDiseaseSpread_1353: true,
+							},
 						},
 					});
 				} else {
 					this.setState({
 						displayElements: {
 							...this.state.displayElements,
-							displayDiseaseSpread_1353: false,
+							disease: {
+								...this.state.displayElements.disease,
+								displayDiseaseSpread_1353: false,
+							},
 						},
 					});
 				}
 				break;
 			case 'Disease':
 				if (!this.state.displayElements.displayDiseaseSpread) {
+					let disease = {
+						displayDiseaseSpread_1346: true,
+						displayDiseaseSpread_1347: true,
+						displayDiseaseSpread_1348: true,
+						displayDiseaseSpread_1349: true,
+						displayDiseaseSpread_1350: true,
+						displayDiseaseSpread_1351: true,
+						displayDiseaseSpread_1352: true,
+						displayDiseaseSpread_1353: true,
+					};
 					this.setState({
 						displayElements: {
 							...this.state.displayElements,
 							displayDiseaseSpread: true,
+							disease: disease,
 						},
 					});
 				} else {
+					let disease = {
+						displayDiseaseSpread_1346: false,
+						displayDiseaseSpread_1347: false,
+						displayDiseaseSpread_1348: false,
+						displayDiseaseSpread_1349: false,
+						displayDiseaseSpread_1350: false,
+						displayDiseaseSpread_1351: false,
+						displayDiseaseSpread_1352: false,
+						displayDiseaseSpread_1353: false,
+					};
 					this.setState({
 						displayElements: {
 							...this.state.displayElements,
 							displayDiseaseSpread: false,
+							disease: disease,
 						},
 					});
 				}
@@ -415,104 +509,157 @@ class MapContainer extends Component {
 	}
 
 	render() {
-		let mediterraneanRoutes = MediterraneanRoutes.map((location, index) => {
-			if (location.by === 'sea') {
-				return (
-					<Curve
-						key={index}
-						positions={location.coordinates}
-						option={this.seaRouteStyle}
-					>
-						<Popup>{location.route}</Popup>
-					</Curve>
-				);
-			} else {
-				return (
-					<Curve
-						key={index}
-						positions={location.coordinates}
-						option={this.landRouteStyle}
-					>
-						<Popup>{location.route}</Popup>
-					</Curve>
-				);
+		let mediterraneanRoutes = MediterraneanRoutes.map(
+			({ coordinates, by, route }, index) => {
+				if (by === 'sea') {
+					return (
+						<Curve
+							key={index}
+							positions={coordinates}
+							option={this.seaRouteStyle}
+						>
+							<Popup>{route}</Popup>
+						</Curve>
+					);
+				} else {
+					return (
+						<Curve
+							key={index}
+							positions={coordinates}
+							option={this.landRouteStyle}
+						>
+							<Popup>{route}</Popup>
+						</Curve>
+					);
+				}
 			}
-		});
+		);
 
-		let spainRoutes = SpainRoutes.map((location, index) => {
-			if (location.by === 'sea') {
+		let mediterraneanLandExclusive = MediterraneanLandExclusiveRoutes.map(
+			({ coordinates, route }, index) => {
 				return (
-					<Curve
+					<Polyline
 						key={index}
-						positions={location.coordinates}
-						option={this.seaRouteStyle}
+						positions={coordinates}
+						color={this.landRouteStyle.color}
 					>
-						<Popup>{location.route}</Popup>
-					</Curve>
-				);
-			} else {
-				return (
-					<Curve
-						key={index}
-						positions={location.coordinates}
-						option={this.landRouteStyle}
-					>
-						<Popup>{location.route}</Popup>
-					</Curve>
+						<Popup>{route}</Popup>
+					</Polyline>
 				);
 			}
-		});
+		);
 
-		let westEuropeRoutes = WestEuropeRoutes.map((location, index) => {
-			if (location.by === 'sea') {
+		let eastEuropeLandExclusive = EastEuropeLandExclusiveRoutes.map(
+			({ coordinates, route }, index) => {
 				return (
-					<Curve
+					<Polyline
 						key={index}
-						positions={location.coordinates}
-						option={this.seaRouteStyle}
+						positions={coordinates}
+						color={this.landRouteStyle.color}
 					>
-						<Popup>{location.route}</Popup>
-					</Curve>
-				);
-			} else {
-				return (
-					<Curve
-						key={index}
-						positions={location.coordinates}
-						option={this.landRouteStyle}
-					>
-						<Popup>{location.route}</Popup>
-					</Curve>
+						<Popup>{route}</Popup>
+					</Polyline>
 				);
 			}
-		});
+		);
 
-		let northEuropeRoutes = NorthEuropeRoutes.map((location, index) => {
-			if (location.by === 'sea') {
+		let westEuropeLandExclusive = WestEuropeLandExclusiveRoutes.map(
+			({ coordinates, route }, index) => {
 				return (
-					<Curve
+					<Polyline
 						key={index}
-						positions={location.coordinates}
-						option={this.seaRouteStyle}
+						positions={coordinates}
+						color={this.landRouteStyle.color}
 					>
-						<Popup>{location.route}</Popup>
-					</Curve>
-				);
-			} else {
-				return (
-					<Curve
-						key={index}
-						positions={location.coordinates}
-						option={this.landRouteStyle}
-					>
-						<Popup>{location.route}</Popup>
-					</Curve>
+						<Popup>{route}</Popup>
+					</Polyline>
 				);
 			}
-		});
+		);
+
+		let spainRoutes = SpainRoutes.map(
+			({ coordinates, by, route }, index) => {
+				if (by === 'sea') {
+					return (
+						<Curve
+							key={index}
+							positions={coordinates}
+							option={this.seaRouteStyle}
+						>
+							<Popup>{route}</Popup>
+						</Curve>
+					);
+				} else {
+					return (
+						<Curve
+							key={index}
+							positions={coordinates}
+							option={this.landRouteStyle}
+						>
+							<Popup>{route}</Popup>
+						</Curve>
+					);
+				}
+			}
+		);
+
+		let westEuropeRoutes = WestEuropeRoutes.map(
+			({ coordinates, by, route }, index) => {
+				if (by === 'sea') {
+					return (
+						<Curve
+							key={index}
+							positions={coordinates}
+							option={this.seaRouteStyle}
+						>
+							<Popup>{route}</Popup>
+						</Curve>
+					);
+				} else {
+					return (
+						<Curve
+							key={index}
+							positions={coordinates}
+							option={this.landRouteStyle}
+						>
+							<Popup>{route}</Popup>
+						</Curve>
+					);
+				}
+			}
+		);
+
+		let northEuropeRoutes = NorthEuropeRoutes.map(
+			({ coordinates, by, route }, index) => {
+				if (by === 'sea') {
+					return (
+						<Curve
+							key={index}
+							positions={coordinates}
+							option={this.seaRouteStyle}
+						>
+							<Popup>{route}</Popup>
+						</Curve>
+					);
+				} else {
+					return (
+						<Curve
+							key={index}
+							positions={coordinates}
+							option={this.landRouteStyle}
+						>
+							<Popup>{route}</Popup>
+						</Curve>
+					);
+				}
+			}
+		);
 
 		let allRoutes = [
 			mediterraneanRoutes,
+			mediterraneanLandExclusive,
+			westEuropeLandExclusive,
+			eastEuropeLandExclusive,
 			spainRoutes,
 			westEuropeRoutes,
 			northEuropeRoutes,
@@ -537,79 +684,68 @@ class MapContainer extends Component {
 					/>
 					<SidebarContainer
 						displayElements={this.state.displayElements}
-						handleLayer={layerName =>
-							this.handleLayerControl(layerName)
-						}
 						infoboxLocation={this.state.infoboxLocation}
 						infoboxLocationInfo={this.state.infoboxLocationInfo}
 						collapsed={this.state.collapsed}
 						selected={this.state.selected}
+						terrainLabelsValues={this.terrainLabelsValues}
 						onClose={() => this.onClose()}
 						onOpen={child => this.onOpen(child)}
-						terrainLabelsValues={this.terrainLabelsValues}
+						handleLayer={layerName =>
+							this.handleLayerControl(layerName)
+						}
 					/>
-
-					{!this.state.displayElements.displayDiseaseSpread ? (
-						false
-					) : (
-						<>
-							{DiseaseYears.map((item, index) => {
-								return (
-									<Polygon
-										key={index}
-										color={item.colour}
-										positions={item.coordinates}
-									>
-										<Popup>{item.date}</Popup>
-									</Polygon>
-								);
-							})}
-						</>
-					)}
-
-					{!this.state.displayElements.displayDiseaseSpread_1346 ? (
+					{!this.state.displayElements.disease
+						.displayDiseaseSpread_1346 ? (
 						false
 					) : (
 						<V1346 />
 					)}
 
-					{!this.state.displayElements.displayDiseaseSpread_1347 ? (
+					{!this.state.displayElements.disease
+						.displayDiseaseSpread_1347 ? (
 						false
 					) : (
 						<V1347 />
 					)}
 
-					{!this.state.displayElements.displayDiseaseSpread_1348 ? (
+					{!this.state.displayElements.disease
+						.displayDiseaseSpread_1348 ? (
 						false
 					) : (
 						<V1348 />
 					)}
 
-					{!this.state.displayElements.displayDiseaseSpread_1349 ? (
+					{!this.state.displayElements.disease
+						.displayDiseaseSpread_1349 ? (
 						false
 					) : (
 						<V1349 />
 					)}
 
-					{!this.state.displayElements.displayDiseaseSpread_1350 ? (
+					{!this.state.displayElements.disease
+						.displayDiseaseSpread_1350 ? (
 						false
 					) : (
 						<V1350 />
 					)}
 
-					{!this.state.displayElements.displayDiseaseSpread_1351 ? (
+					{!this.state.displayElements.disease
+						.displayDiseaseSpread_1351 ? (
 						false
 					) : (
 						<V1351 />
 					)}
 
-					{!this.state.displayElements.displayDiseaseSpread_1352 ? (
+					{!this.state.displayElements.disease
+						.displayDiseaseSpread_1352 ? (
 						false
 					) : (
 						<V1352 />
 					)}
 
-					{!this.state.displayElements.displayDiseaseSpread_1353 ? (
+					{!this.state.displayElements.disease
+						.displayDiseaseSpread_1353 ? (
 						false
 					) : (
 						<V1353 />
