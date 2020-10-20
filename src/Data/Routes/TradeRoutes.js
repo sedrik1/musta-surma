@@ -647,6 +647,53 @@ const SpainLandExclusiveRoutes = [
 		],
 	},
 	{
+		route: 'Zaragoza-Tudela-Burgos',
+		coordinates: [
+			[39.470278, -0.376944],
+			[42.065278, -1.606667],
+			[42.816667, -1.65],
+			[42.537904, -2.705087],
+			[42.35, -3.706667],
+		],
+	},
+	{
+		route: 'Valencia-Zaragoza',
+		coordinates: [
+			[39.470278, -0.376944],
+			[40.640009, 0.181664],
+			[41.134452, 0.82771],
+			[41.656389, -0.876667],
+		],
+	},
+	{
+		route: 'Granada-Cordoba',
+		coordinates: [
+			[37.147729, -4.137316],
+			[37.287711, -4.892293],
+			[37.697133, -5.220391],
+		],
+	},
+	{
+		route: 'Burgos-Soria-Alarilla',
+		coordinates: [
+			[42.35, -3.706667],
+			[41.976848, -3.219666],
+			[41.766667, -2.466667],
+			[40.848889, -3.105556],
+		],
+	},
+	{
+		route: 'Santiago de Compostela-León-Burgos-Segovia',
+		coordinates: [
+			[42.877778, -8.544444],
+			[42.605556, -5.57],
+			[42.35, -3.706667],
+			[40.95, -4.166667],
+			[40.792222, -4.06],
+			[40.419644, -3.68526],
+		],
+	},
+	{
 		route: 'Huesca-Zaragoza-Calatayud-Alarilla-Toledo',
 		coordinates: [
 			[42.133333, -0.416667],
