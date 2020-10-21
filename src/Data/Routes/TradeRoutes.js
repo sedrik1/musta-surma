@@ -343,7 +343,7 @@ const WestEuropeRoutes = [
 		by: 'land',
 	},
 	{
-		route: 'Leipzig-Wittenberg-Bernau bei Berlin-Szczecin',
+		route: 'Leipzig-Lutherstadt Wittenberg-Bernau bei Berlin-Szczecin',
 		coordinates: [
 			'M',
 			[51.333333, 12.383333],
@@ -531,6 +531,35 @@ const MediterraneanLandExclusiveRoutes = [
 
 const EastEuropeLandExclusiveRoutes = [
 	{
+		route: 'Krakova-Wrocław-Görlitz-Dresden-Praha-Leipzig',
+		coordinates: [
+			[50.064722, 19.945],
+			[51.107778, 17.038611],
+			[51.152778, 14.987222],
+			[51.033333, 13.733333],
+			[51.333333, 12.383333],
+			[51.033333, 13.733333],
+			[50.083333, 14.416667],
+		],
+	},
+	{
+		route:
+			'Vitsebsk-Smolensk-Gnjozdovo-Minsk-Brest-Lublin-Sandomierz-Krakova',
+		coordinates: [
+			[54.766667, 31.783333],
+			[54.782778, 32.045278],
+			[55.193325, 30.206317],
+			[54.766667, 31.783333],
+			[53.763325, 30.344437],
+			[53.902233, 27.561858],
+			[53.763325, 30.344437],
+			[52.100278, 23.68],
+			[51.246389, 22.568333],
+			[50.686111, 21.7375],
+			[50.064722, 19.945],
+		],
+	},
+	{
 		route: 'Sofia-Vidin',
 		coordinates: [
 			[42.7, 23.333333],
@@ -634,6 +663,22 @@ const EastEuropeLandExclusiveRoutes = [
 
 const SpainLandExclusiveRoutes = [
 	{
+		route: 'Bayonne-Tolouse',
+		coordinates: [
+			[43.49, -1.48],
+			[43.604444, 1.443056],
+		],
+	},
+	{
+		route: 'Narbonne-Barcelona-Tarragona',
+		coordinates: [
+			[41.115556, 1.249444],
+			[41.388056, 2.17],
+			[42.180706, 2.931397],
+			[43.1836, 3.0042],
+		],
+	},
+	{
 		route:
 			'Nola-Santiago de Compostela-Gijón-Santander-Castro-Urdiales-Pamplona',
 		coordinates: [
@@ -735,6 +780,91 @@ const SpainLandExclusiveRoutes = [
 
 const WestEuropeLandExclusiveRoutes = [
 	{
+		route: 'Narbonne-Montpellier-Arles',
+		coordinates: [
+			[43.1836, 3.0042],
+			[43.270206, 3.178748],
+			[43.611944, 3.877222],
+			[43.6767, 4.6278],
+			[43.7983, 4.851168],
+		],
+	},
+	{
+		route: 'Nürnberg-Bamberg',
+		coordinates: [
+			[49.45, 11.083333],
+			[49.9, 10.9],
+			[50.488313, 9.333474],
+		],
+	},
+	{
+		route: 'Nürnberg-Hof-Zwickau-Leipzig',
+		coordinates: [
+			[49.45, 11.083333],
+			[50.316667, 11.916667],
+			[50.716667, 12.5],
+			[51.333333, 12.383333],
+		],
+	},
+	{
+		route: 'Innsbruck-Regensburg-Nürnberg',
+		coordinates: [
+			[47.268333, 11.393333],
+			[48.684614, 12.512207],
+			[49.016667, 12.083333],
+			[49.45, 11.083333],
+		],
+	},
+	{
+		route: 'Bologna-Verona-Trento-Bolzano-Innsbruck-Augsburg-Nürnberg',
+		coordinates: [
+			[44.493889, 11.342778],
+			[45.438611, 10.992778],
+			[46.066667, 11.116667],
+			[46.5, 11.35],
+			[47.268333, 11.393333],
+			[48.366667, 10.9],
+			[48.981118, 10.468076],
+			[49.45, 11.083333],
+		],
+	},
+	{
+		route: 'Bremen-Hannover-Braunschweig-Magdeburg-Lutherstadt Wittenberg',
+		coordinates: [
+			[53.083333, 8.8],
+			[52.366667, 9.733333],
+			[52.266667, 10.516667],
+			[52.133333, 11.616667],
+			[51.85, 12.633333],
+		],
+	},
+	{
+		route: 'Pariisi-Reims-Frankfurt am Main',
+		coordinates: [
+			[48.856613, 2.352222],
+			[49.258333, 4.033333],
+			[50.111389, 8.680556],
+		],
+	},
+	{
+		route: 'Pariisi-Troyes-Bar-sur-Aube-Basel',
+		coordinates: [
+			[48.856613, 2.352222],
+			[48.2997, 4.0792],
+			[48.27, 4.72],
+			[47.481945, 5.818419],
+			[47.566667, 7.6],
+		],
+	},
+	{
+		route: 'Troyes-Reims-Arras-Saint-Omer',
+		coordinates: [
+			[48.2997, 4.0792],
+			[49.258333, 4.033333],
+			[50.746111, 2.261667],
+		],
+	},
+	{
 		route: 'Tarragona-Huesca-Pamplona-Bayonne-Bordeaux',
 		coordinates: [
 			[41.115556, 1.249444],
@@ -755,6 +885,32 @@ const WestEuropeLandExclusiveRoutes = [
 			[50.289722, 2.780833],
 			[50.85, 2.883333],
 			[51.216667, 3.233333],
+		],
+	},
+	{
+		route: 'Milano-Basel',
+		coordinates: [
+			[45.466667, 9.183333],
+			[47.154237, 9.159805],
+			[47.521838, 8.677319],
+			[47.528793, 7.917623],
+		],
+	},
+	{
+		route: 'Lausanne-Bern-Basel',
+		coordinates: [
+			[46.521944, 6.633611],
+			[46.95, 7.45],
+			[47.24428, 7.85441],
+			[47.528793, 7.917623],
+			[47.566667, 7.6],
+		],
+	},
+	{
+		route: 'Savona-Torino',
+		coordinates: [
+			[44.309167, 8.474722],
+			[45.066667, 7.683333],
 		],
 	},
 	{
