@@ -270,17 +270,6 @@ const WestEuropeRoutes = [
 		by: 'sea',
 	},
 	{
-		route: 'Lontoo-Lincoln-York',
-		coordinates: [
-			'M',
-			[51.507222, -0.1275],
-			'Q',
-			[53.232719, -0.265],
-			[53.958333, -1.080278],
-		],
-		by: 'land',
-	},
-	{
 		route: 'York-Hampuri',
 		coordinates: [
 			'M',
@@ -375,6 +364,63 @@ const WestEuropeRoutes = [
 			[53.553333, 9.992222],
 		],
 		by: 'land',
+	},
+];
+
+const BritainLandExclusiveRoutes = [
+	{
+		route: 'Lontoo-Lincoln-York',
+		coordinates: [
+			[51.500278, -0.126111],
+			[53.232719, -0.537661],
+			[53.958333, -1.080278],
+		],
+	},
+	{
+		route: 'Ilchester-Southampton',
+		coordinates: [
+			[51.0011, -2.6825],
+			[50.907, -1.405],
+		],
+	},
+	{
+		route: 'Winchester-Southampton',
+		coordinates: [
+			[51.063, -1.309],
+			[50.907, -1.405],
+		],
+	},
+	{
+		route: 'Cirencester-Winchester-Lontoo',
+		coordinates: [
+			[51.719, -1.968],
+			[51.063, -1.309],
+			[51.500278, -0.126111],
+		],
+	},
+	{
+		route: 'Chester-Wroxeter-Gloucester-High Cross-St Albans-Lontoo-Dover',
+		coordinates: [
+			[53.19, -2.89],
+			[52.67, -2.648],
+			[51.864, -2.244],
+			[52.67, -2.648],
+			[52.49325, -1.30182],
+			[51.755, -0.336],
+			[51.500278, -0.126111],
+			[51.128, 1.312],
+		],
+	},
+	{
+		route: 'Lincoln-High Cross-Cirencester-Bath-Ilchester-Exter',
+		coordinates: [
+			[53.232719, -0.537661],
+			[52.49325, -1.30182],
+			[51.719, -1.968],
+			[51.379425, -2.367061],
+			[51.0011, -2.6825],
+			[50.716667, -3.533333],
+		],
 	},
 ];
 
@@ -530,6 +576,84 @@ const MediterraneanLandExclusiveRoutes = [
 ];
 
 const EastEuropeLandExclusiveRoutes = [
+	{
+		route: 'Shumen-Conopa-Pereyslavets',
+		coordinates: [
+			[43.283333, 26.933333],
+			[44.524906, 28.547266],
+			[45.020156, 28.723162],
+			[45.152264, 29.648188],
+		],
+	},
+	{
+		route: 'Košice-Buda (nyk. Budapest)-Székesfehérvár-Bruck an der Mur',
+		coordinates: [
+			[49.957314, 21.944178],
+			[48.716667, 21.25],
+			[47.4925, 19.051389],
+			[47.188889, 18.413889],
+			[47.416667, 15.266667],
+		],
+	},
+	{
+		route: 'Kiova-Žytomyr-Halych-Lviv-Sandomierz-Krakova',
+		coordinates: [
+			[50.45, 30.523333],
+			[50.25329, 28.66534],
+			[49.124722, 24.728611],
+			[49.8433, 24.0266],
+			[50.683333, 21.75],
+			[49.8433, 24.0266],
+			[50.064722, 19.945],
+		],
+	},
+	{
+		route: 'Gnjozdovo-Liubech-Vyšhorod-Kiova',
+		coordinates: [
+			[54.766667, 31.783333],
+			[51.705222, 30.661667],
+			[50.58279, 30.48536],
+			[50.45, 30.523333],
+		],
+	},
+	{
+		route: 'Reval-Tartu-Riga-Pskov-Polotsk-Vitsebsk',
+		coordinates: [
+			[59.437222, 24.745278],
+			[58.383333, 26.716667],
+			[57.593919, 26.539775],
+			[56.948889, 24.106389],
+			[57.593919, 26.539775],
+			[57.816667, 28.333333],
+			[55.483333, 28.8],
+			[56.948889, 24.106389],
+			[55.483333, 28.8],
+			[55.191667, 30.205556],
+		],
+	},
+	{
+		route: 'Pskov-Novgorod-Laatokanlinna',
+		coordinates: [
+			[57.816667, 28.333333],
+			[58.533333, 31.266667],
+			[59.875, 31.325],
+		],
+	},
+	{
+		route: 'Ostrava-Brno',
+		coordinates: [
+			[50.452941, 18.870854],
+			[49.835556, 18.2925],
+			[49.2, 16.616667],
+		],
+	},
+	{
+		route: 'Wrocław-Lublin',
+		coordinates: [
+			[51.107778, 17.038611],
+			[51.246389, 22.568333],
+		],
+	},
 	{
 		route: 'Krakova-Wrocław-Görlitz-Dresden-Praha-Leipzig',
 		coordinates: [
@@ -998,6 +1122,7 @@ export {
 	MediterraneanRoutes,
 	MediterraneanLandExclusiveRoutes,
 	SpainRoutes,
+	BritainLandExclusiveRoutes,
 	EastEuropeLandExclusiveRoutes,
 	WestEuropeLandExclusiveRoutes,
 	SpainLandExclusiveRoutes,

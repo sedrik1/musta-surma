@@ -30,6 +30,7 @@ import {
 	WestEuropeRoutes,
 	SpainLandExclusiveRoutes,
 	NorthEuropeRoutes,
+	BritainLandExclusiveRoutes,
 	SpainRoutes,
 } from '../../Data/Routes/TradeRoutes';
 import SidebarContainer from '../../Components/UI/Sidebar';
@@ -58,6 +59,14 @@ class MapContainer extends Component {
 			displayMediterranean: false,
 			displayGoldenHorde: false,
 			displayDiseaseSpread: false,
+			routes: {
+				BritainRoutes: false,
+				MediterraneanRoutes: false,
+				EastEuropeRoutes: false,
+				WestEuropeRoutes: false,
+				NorthEuropeRoutes: false,
+				SpainRoutes: false,
+			},
 			disease: {
 				displayDiseaseSpread_1346: false,
 				displayDiseaseSpread_1347: false,
@@ -77,7 +86,7 @@ class MapContainer extends Component {
 		{ label: 'Länsi-Eurooppa', value: 'MainlandWest' },
 		{ label: 'Itä-Eurooppa', value: 'MainlandEast' },
 		{ label: 'Välimeri', value: 'Mediterranean' },
-		{ label: 'Britannia', value: 'Britain' },
+		{ label: 'Brittein saaret', value: 'Britain' },
 	];
 
 	seaRouteStyle = { color: '#003366', fill: false };
@@ -137,212 +146,108 @@ class MapContainer extends Component {
 	handleLayerControl(layerName) {
 		switch (layerName) {
 			case 'Disease_v. 1346':
-				if (
-					!this.state.displayElements.disease
-						.displayDiseaseSpread_1346
-				) {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							disease: {
-								...this.state.displayElements.disease,
-								displayDiseaseSpread_1346: true,
-							},
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						disease: {
+							...this.state.displayElements.disease,
+							displayDiseaseSpread_1346: !this.state
+								.displayElements.disease
+								.displayDiseaseSpread_1346,
 						},
-					});
-				} else {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							disease: {
-								...this.state.displayElements.disease,
-								displayDiseaseSpread_1346: false,
-							},
-						},
-					});
-				}
+					},
+				});
 				break;
 			case 'Disease_v. 1347':
-				if (
-					!this.state.displayElements.disease
-						.displayDiseaseSpread_1347
-				) {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							disease: {
-								...this.state.displayElements.disease,
-								displayDiseaseSpread_1347: true,
-							},
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						disease: {
+							...this.state.displayElements.disease,
+							displayDiseaseSpread_1347: !this.state
+								.displayElements.disease
+								.displayDiseaseSpread_1347,
 						},
-					});
-				} else {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							disease: {
-								...this.state.displayElements.disease,
-								displayDiseaseSpread_1347: false,
-							},
-						},
-					});
-				}
+					},
+				});
 				break;
 			case 'Disease_v. 1348':
-				if (
-					!this.state.displayElements.disease
-						.displayDiseaseSpread_1348
-				) {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							disease: {
-								...this.state.displayElements.disease,
-								displayDiseaseSpread_1348: true,
-							},
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						disease: {
+							...this.state.displayElements.disease,
+							displayDiseaseSpread_1348: !this.state
+								.displayElements.disease
+								.displayDiseaseSpread_1348,
 						},
-					});
-				} else {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							disease: {
-								...this.state.displayElements.disease,
-								displayDiseaseSpread_1348: false,
-							},
-						},
-					});
-				}
+					},
+				});
 				break;
 			case 'Disease_v. 1349':
-				if (
-					!this.state.displayElements.disease
-						.displayDiseaseSpread_1349
-				) {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							disease: {
-								...this.state.displayElements.disease,
-								displayDiseaseSpread_1349: true,
-							},
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						disease: {
+							...this.state.displayElements.disease,
+							displayDiseaseSpread_1349: !this.state
+								.displayElements.disease
+								.displayDiseaseSpread_1349,
 						},
-					});
-				} else {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							disease: {
-								...this.state.displayElements.disease,
-								displayDiseaseSpread_1349: false,
-							},
-						},
-					});
-				}
+					},
+				});
 				break;
 			case 'Disease_v. 1350':
-				if (
-					!this.state.displayElements.disease
-						.displayDiseaseSpread_1350
-				) {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							disease: {
-								...this.state.displayElements.disease,
-								displayDiseaseSpread_1350: true,
-							},
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						disease: {
+							...this.state.displayElements.disease,
+							displayDiseaseSpread_1350: !this.state
+								.displayElements.disease
+								.displayDiseaseSpread_1350,
 						},
-					});
-				} else {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							disease: {
-								...this.state.displayElements.disease,
-								displayDiseaseSpread_1350: false,
-							},
-						},
-					});
-				}
+					},
+				});
 				break;
 			case 'Disease_v. 1351':
-				if (
-					!this.state.displayElements.disease
-						.displayDiseaseSpread_1351
-				) {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							disease: {
-								...this.state.displayElements.disease,
-								displayDiseaseSpread_1351: true,
-							},
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						disease: {
+							...this.state.displayElements.disease,
+							displayDiseaseSpread_1351: !this.state
+								.displayElements.disease
+								.displayDiseaseSpread_1351,
 						},
-					});
-				} else {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							disease: {
-								...this.state.displayElements.disease,
-								displayDiseaseSpread_1351: false,
-							},
-						},
-					});
-				}
+					},
+				});
 				break;
 			case 'Disease_v. 1352':
-				if (
-					!this.state.displayElements.disease
-						.displayDiseaseSpread_1352
-				) {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							disease: {
-								...this.state.displayElements.disease,
-								displayDiseaseSpread_1352: true,
-							},
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						disease: {
+							...this.state.displayElements.disease,
+							displayDiseaseSpread_1352: !this.state
+								.displayElements.disease
+								.displayDiseaseSpread_1352,
 						},
-					});
-				} else {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							disease: {
-								...this.state.displayElements.disease,
-								displayDiseaseSpread_1352: false,
-							},
-						},
-					});
-				}
+					},
+				});
 				break;
 			case 'Disease_v. 1353':
-				if (
-					!this.state.displayElements.disease
-						.displayDiseaseSpread_1353
-				) {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							disease: {
-								...this.state.displayElements.disease,
-								displayDiseaseSpread_1353: true,
-							},
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						disease: {
+							...this.state.displayElements.disease,
+							displayDiseaseSpread_1353: !this.state
+								.displayElements.disease
+								.displayDiseaseSpread_1353,
 						},
-					});
-				} else {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							disease: {
-								...this.state.displayElements.disease,
-								displayDiseaseSpread_1353: false,
-							},
-						},
-					});
-				}
+					},
+				});
 				break;
 			case 'Disease':
 				if (!this.state.displayElements.displayDiseaseSpread) {
@@ -384,124 +289,145 @@ class MapContainer extends Component {
 				}
 				break;
 			case 'Mediterranean':
-				if (!this.state.displayElements.displayMediterranean) {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							displayMediterranean: true,
-						},
-					});
-				} else {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							displayMediterranean: false,
-						},
-					});
-				}
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						displayMediterranean: !this.state.displayElements
+							.displayMediterranean,
+					},
+				});
 				break;
 			case 'MainlandEast':
-				if (!this.state.displayElements.displayMainlandEast) {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							displayMainlandEast: true,
-						},
-					});
-				} else {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							displayMainlandEast: false,
-						},
-					});
-				}
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						displayMainlandEast: !this.state.displayElements
+							.displayMainlandEast,
+					},
+				});
 				break;
 			case 'MainlandWest':
-				if (!this.state.displayElements.displayMainlandWest) {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							displayMainlandWest: true,
-						},
-					});
-				} else {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							displayMainlandWest: false,
-						},
-					});
-				}
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						displayMainlandWest: !this.state.displayElements
+							.displayMainlandWest,
+					},
+				});
 				break;
 			case 'Britain':
-				if (!this.state.displayElements.displayBritain) {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							displayBritain: true,
-						},
-					});
-				} else {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							displayBritain: false,
-						},
-					});
-				}
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						displayBritain: !this.state.displayElements
+							.displayBritain,
+					},
+				});
 				break;
 			case 'AllTerrains':
-				if (!this.state.displayElements.displayAllTerrain) {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							displayAllTerrain: true,
-						},
-					});
-				} else {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							displayAllTerrain: false,
-						},
-					});
-				}
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						displayAllTerrain: !this.state.displayElements
+							.displayAllTerrain,
+					},
+				});
 				break;
 			case 'GoldenHorde':
-				if (!this.state.displayElements.displayGoldenHorde) {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							displayGoldenHorde: true,
-						},
-					});
-				} else {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							displayGoldenHorde: false,
-						},
-					});
-				}
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						displayGoldenHorde: !this.state.displayElements
+							.displayGoldenHorde,
+					},
+				});
 				break;
 			case 'Routes':
-				if (!this.state.displayElements.displayRoutes) {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							displayRoutes: true,
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						displayRoutes: !this.state.displayElements
+							.displayRoutes,
+					},
+				});
+				break;
+			/* 				Britain: false,
+				Mediterranean: false,
+				EastEurope: false,
+				WestEurope: false,
+				NorthEurope: false,
+				Spain: false */
+			case 'MediterraneanRoutes':
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						routes: {
+							...this.state.displayElements.routes,
+							MediterraneanRoutes: !this.state.displayElements
+								.routes.MediterraneanRoutes,
 						},
-					});
-				} else {
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							displayRoutes: false,
+					},
+				});
+				break;
+			case 'BritainRoutes':
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						routes: {
+							...this.state.displayElements.routes,
+							BritainRoutes: !this.state.displayElements.routes
+								.BritainRoutes,
 						},
-					});
-				}
-
+					},
+				});
+				break;
+			case 'EastEuropeRoutes':
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						routes: {
+							...this.state.displayElements.routes,
+							EastEuropeRoutes: !this.state.displayElements.routes
+								.EastEuropeRoutes,
+						},
+					},
+				});
+				break;
+			case 'WestEuropeRoutes':
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						routes: {
+							...this.state.displayElements.routes,
+							WestEuropeRoutes: !this.state.displayElements.routes
+								.WestEuropeRoutes,
+						},
+					},
+				});
+				break;
+			case 'NorthEuropeRoutes':
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						routes: {
+							...this.state.displayElements.routes,
+							NorthEuropeRoutes: !this.state.displayElements
+								.routes.NorthEuropeRoutes,
+						},
+					},
+				});
+				break;
+			case 'SpainRoutes':
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						routes: {
+							...this.state.displayElements.routes,
+							SpainRoutes: !this.state.displayElements.routes
+								.SpainRoutes,
+						},
+					},
+				});
 				break;
 			default:
 				break;
@@ -563,6 +489,19 @@ class MapContainer extends Component {
 			}
 		);
 
+		let britainLandExclusiveRoutes = BritainLandExclusiveRoutes.map(
+			({ coordinates, route }, index) => {
+				return (
+					<Polyline
+						key={index}
+						positions={coordinates}
+						color={this.landRouteStyle.color}
+					>
+						<Popup>{route}</Popup>
+					</Polyline>
+				);
+			}
+		);
 		let eastEuropeLandExclusive = EastEuropeLandExclusiveRoutes.map(
 			({ coordinates, route }, index) => {
 				return (
@@ -675,6 +614,7 @@ class MapContainer extends Component {
 			westEuropeLandExclusive,
 			eastEuropeLandExclusive,
 			spainRoutes,
+			britainLandExclusiveRoutes,
 			westEuropeRoutes,
 			spainLandExclusive,
 			northEuropeRoutes,
@@ -698,11 +638,7 @@ class MapContainer extends Component {
 						url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png"
 					/>
 					<SidebarContainer
-						displayElements={this.state.displayElements}
-						infoboxLocation={this.state.infoboxLocation}
-						infoboxLocationInfo={this.state.infoboxLocationInfo}
-						collapsed={this.state.collapsed}
-						selected={this.state.selected}
+						state={this.state}
 						terrainLabelsValues={this.terrainLabelsValues}
 						onClose={() => this.onClose()}
 						onOpen={child => this.onOpen(child)}
@@ -710,6 +646,8 @@ class MapContainer extends Component {
 							this.handleLayerControl(layerName)
 						}
 					/>
+
+					{/* vuodet */}
 					{!this.state.displayElements.disease
 						.displayDiseaseSpread_1346 ? (
 						false
@@ -765,6 +703,8 @@ class MapContainer extends Component {
 					) : (
 						<V1353 />
 					)}
+
+					{/* kaupungit */}
 
 					{!this.state.displayElements.displayMainlandWest ? (
 						false

@@ -67,8 +67,10 @@
 	text-align: left;
 }
 
-#sidebar #cities-paragraph {
+#sidebar #cities-paragraph,
+#sidebar #paragraph {
 	font-family: 'Oxygen', sans-serif;
+	align-self: center;
 	text-align: center;
 }
 
@@ -156,6 +158,8 @@ ul li {
 #years-list,
 #cities-list,
 #curves-list,
+#routes-list,
+#misc-list,
 #colours-list {
 	display: flex;
 	flex-direction: row;
@@ -165,6 +169,11 @@ ul li {
 
 #years-list > li,
 #curves-list > li {
+	flex: 1 50%;
+	text-align: center;
+}
+
+#routes-list > li {
 	flex: 1 50%;
 	text-align: center;
 }
@@ -194,7 +203,8 @@ ul li {
 	float: left;
 }
 
-#cities-list > li {
+#cities-list > li,
+#misc-list > li {
 	flex: 1 auto;
 	text-align: center;
 }

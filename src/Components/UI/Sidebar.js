@@ -34,9 +34,9 @@ const SidebarContainer = props => {
 		<Sidebar
 			id="sidebar"
 			position="right"
-			collapsed={props.collapsed}
+			collapsed={props.state.collapsed}
 			closeIcon={<HiOutlineChevronRight />}
-			selected={props.selected}
+			selected={props.state.selected}
 			onOpen={props.onOpen.bind(this)}
 			onClose={props.onClose.bind(this)}
 		>
@@ -59,7 +59,8 @@ const SidebarContainer = props => {
 												<Checkbox
 													color="primary"
 													disabled={
-														!props.displayElements
+														!props.state
+															.displayElements
 															.displayDiseaseSpread
 															? false
 															: true
@@ -107,7 +108,7 @@ const SidebarContainer = props => {
 										<Checkbox
 											color="primary"
 											disabled={
-												props.displayElements
+												props.state.displayElements
 													.displayAllTerrain
 													? true
 													: false
@@ -141,7 +142,8 @@ const SidebarContainer = props => {
 					</li>
 				</ul>
 				<hr />
-				<ul id="curves-list">
+				<p id="paragraph">Kauppareitit</p>
+				<ul id="routes-list">
 					<li>
 						<FormControlLabel
 							control={
@@ -164,6 +166,93 @@ const SidebarContainer = props => {
 									onClick={event =>
 										props.handleLayer(event.target.value)
 									}
+									value="MediterraneanRoutes"
+								/>
+							}
+							label="Välimeri ja sen lähialue"
+						/>
+					</li>
+					<li>
+						<FormControlLabel
+							control={
+								<Checkbox
+									color="primary"
+									onClick={event =>
+										props.handleLayer(event.target.value)
+									}
+									value="BritainRoutes"
+								/>
+							}
+							label="Brittein saaret"
+						/>
+					</li>
+					<li>
+						<FormControlLabel
+							control={
+								<Checkbox
+									color="primary"
+									onClick={event =>
+										props.handleLayer(event.target.value)
+									}
+									value="EastEuropeRoutes"
+								/>
+							}
+							label="Itä-Eurooppa"
+						/>
+					</li>
+					<li>
+						<FormControlLabel
+							control={
+								<Checkbox
+									color="primary"
+									onClick={event =>
+										props.handleLayer(event.target.value)
+									}
+									value="WestEuropeRoutes"
+								/>
+							}
+							label="Länsi-Eurooppa"
+						/>
+					</li>
+					<li>
+						<FormControlLabel
+							control={
+								<Checkbox
+									color="primary"
+									onClick={event =>
+										props.handleLayer(event.target.value)
+									}
+									value="NorthEuropeRoutes"
+								/>
+							}
+							label="Pohjois-Eurooppa"
+						/>
+					</li>
+					<li>
+						<FormControlLabel
+							control={
+								<Checkbox
+									color="primary"
+									onClick={event =>
+										props.handleLayer(event.target.value)
+									}
+									value="SpainRoutes"
+								/>
+							}
+							label="Espanja"
+						/>
+					</li>
+				</ul>
+				<hr />
+				<ul id="misc-list">
+					<li>
+						<FormControlLabel
+							control={
+								<Checkbox
+									color="primary"
+									onClick={event =>
+										props.handleLayer(event.target.value)
+									}
 									value="GoldenHorde"
 								/>
 							}
@@ -175,20 +264,22 @@ const SidebarContainer = props => {
 			<Tab
 				id="locationInfo"
 				header={
-					props.infoboxLocation.length === 0
+					props.state.infoboxLocation.length === 0
 						? 'Tietoa'
-						: props.infoboxLocation.split(' ')[0].toUpperCase()
+						: props.state.infoboxLocation
+								.split(' ')[0]
+								.toUpperCase()
 				}
 				icon={<BsQuestionCircleFill />}
 			>
 				<div id="paragraph-parent">
 					<h3>
-						{props.infoboxLocation.length !== 0
-							? props.infoboxLocation
+						{props.state.infoboxLocation.length !== 0
+							? props.state.infoboxLocation
 							: false}
 					</h3>
-					{props.infoboxLocationInfo.length !== 0 ? (
-						createParagraphs(props.infoboxLocationInfo)
+					{props.state.infoboxLocationInfo.length !== 0 ? (
+						createParagraphs(props.state.infoboxLocationInfo)
 					) : (
 						<p>
 							Tämä osio päivittyy aluetiedoilla valitessasi jonkin
@@ -218,7 +309,7 @@ const SidebarContainer = props => {
 							target="blank"
 							href="https://www.youtube.com/watch?v=_5ImYgBeBS0"
 						>
-							The Black Death - Professor Sir Richard J. Evans FBA
+							Professor Sir Richard J. Evans FBA - The Black Death
 						</a>
 					</li>
 					<li className="circle">
@@ -234,9 +325,22 @@ const SidebarContainer = props => {
 						<a
 							rel="noopener noreferrer"
 							target="blank"
+							href="https://www.jstage.jst.go.jp/article/ase/advpub/0/advpub_161011/_pdf"
+						>
+							D. Cesana, O.J. Benedictow, R. Bianucci - The origin
+							and early spread of the Black Death in Italy: first
+							evidence of plague victims from 14th-century Liguria
+							(northern Italy)
+						</a>
+					</li>
+					<li>
+						<a
+							rel="noopener noreferrer"
+							target="blank"
 							href="https://www.thoughtco.com/spread-of-the-black-death-through-europe-4123214"
 						>
-							The Arrival and Spread of the Black Plague in Europe
+							Melissa Snell - The Arrival and Spread of the Black
+							Plague in Europe
 						</a>
 					</li>
 					<li>
@@ -245,7 +349,8 @@ const SidebarContainer = props => {
 							target="blank"
 							href="https://www.visualcapitalist.com/medieval-trade-route-map/"
 						>
-							A Fascinating Map of Medieval Trade Routes
+							Nick Routley - A Fascinating Map of Medieval Trade
+							Routes
 						</a>
 					</li>
 				</ul>
