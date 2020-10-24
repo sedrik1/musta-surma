@@ -1,17 +1,17 @@
 import React from 'react';
 import { Popup, CircleMarker } from 'react-leaflet';
-import { MainlandWest as data } from '../../../Data/Cities/LocationData';
+import { WestEurope as data } from '../../../Data/Cities/LocationData';
 
 const MainlandWest = props => {
-	return data.coordinates.map((marker, index) => {
+	return data.map(({ info, location, coordinates }, index) => {
 		return (
 			<CircleMarker
 				key={index}
-				onClick={() => props.handleOverlayClick(data.info[index])}
-				center={marker}
+				onClick={() => props.handleOverlayClick(info)}
+				center={coordinates}
 				radius={7}
 			>
-				<Popup>{data.info[index].location}</Popup>
+				<Popup>{location}</Popup>
 			</CircleMarker>
 		);
 	});

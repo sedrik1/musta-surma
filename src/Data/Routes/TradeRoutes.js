@@ -188,33 +188,6 @@ const SpainRoutes = [
 
 const WestEuropeRoutes = [
 	{
-		route: 'Marseille-Avignon-Strasbourg',
-		coordinates: [
-			'M',
-			[43.2975, 5.381111],
-			'Q',
-			[43.99, 3.5],
-			[48.58, 7.75],
-		],
-		by: 'land',
-	},
-	{
-		route: 'Strasbourg-Frankfurt',
-		coordinates: ['M', [48.58, 7.75], [50.111389, 8.680556]],
-		by: 'land',
-	},
-	{
-		route: 'Narbonne-Bordeaux',
-		coordinates: [
-			'M',
-			[43.1836, 3.0042],
-			'Q',
-			[43.3, 1.444],
-			[44.84, -0.58],
-		],
-		by: 'land',
-	},
-	{
 		route: 'Bordeaux-Le Havre-Weymouth',
 		coordinates: [
 			'M',
@@ -282,6 +255,34 @@ const WestEuropeRoutes = [
 		],
 		by: 'sea',
 	},
+	{
+		route: 'Marseille-Avignon-Strasbourg',
+		coordinates: [
+			'M',
+			[43.2975, 5.381111],
+			'Q',
+			[43.99, 3.5],
+			[48.58, 7.75],
+		],
+		by: 'land',
+	},
+	{
+		route: 'Strasbourg-Frankfurt',
+		coordinates: ['M', [48.58, 7.75], [50.111389, 8.680556]],
+		by: 'land',
+	},
+	{
+		route: 'Narbonne-Bordeaux',
+		coordinates: [
+			'M',
+			[43.1836, 3.0042],
+			'Q',
+			[43.3, 1.444],
+			[44.84, -0.58],
+		],
+		by: 'land',
+	},
+
 	{
 		route: 'Hampuri-Lyypekki',
 		coordinates: [
@@ -367,6 +368,97 @@ const WestEuropeRoutes = [
 	},
 ];
 
+const BritainRoutes = [
+	WestEuropeRoutes[0],
+	WestEuropeRoutes[1],
+	WestEuropeRoutes[2],
+	WestEuropeRoutes[3],
+	{
+		route: 'Bristol-Cork-Dublin-Ayr-Aberdeen',
+		coordinates: [
+			'M',
+			[51.41, -2.85],
+			'Q',
+			[51.174177, -5.726813],
+			[51.760403, -8.236172],
+			'L',
+			[51.839278, -8.278478],
+			'L',
+			[51.83591, -8.317089],
+			'L',
+			[51.848107, -8.3298],
+			'L',
+			[51.873126, -8.329457],
+			'L',
+			[51.885419, -8.379271],
+			'L',
+			[51.900674, -8.396632],
+			'L',
+			[51.897222, -8.47],
+			'M',
+			[51.760403, -8.236172],
+			'Q',
+			[51.857835, -5.044247],
+			[53.247139, -5.824786],
+			'L',
+			[53.247139, -5.824786],
+			'M',
+			[53.247139, -5.824786],
+			'L',
+			[53.35, -6.266667],
+			'M',
+			[53.247139, -5.824786],
+			'Q',
+			[54.39735, -5.110448],
+			[55.138855, -5.242126],
+			[55.445374, -4.929055],
+			[55.466667, -4.616667],
+			'M',
+			[55.138781, -5.242073],
+			'Q',
+			[55.26386, -5.971956],
+			[55.703903, -6.640529],
+			[56.165435, -7.815384],
+			[57.576252, -6.84848],
+			[59.104078, -5.398364],
+			[58.712081, -3.054626],
+			[57.784036, -1.373679],
+			[57.244137, -1.708981],
+			'L',
+			[57.15, -2.11],
+		],
+		by: 'sea',
+	},
+	{
+		route: 'Aberdeen-Bergen-Stavanger-Oslo',
+		coordinates: [
+			'M',
+			[57.244137, -1.708981],
+			'L',
+			[59.580242, 4.337008],
+			'L',
+			[60.193169, 5.190214],
+			'L',
+			[60.26068, 5.14143],
+			'L',
+			[60.3925, 5.323333],
+			'M',
+			[59.580242, 4.337008],
+			'Q',
+			[59.097378, 5.138074],
+			[58.960833, 5.715556],
+			'M',
+			[59.146617, 5.1693],
+			'Q',
+			[57.927976, 5.643484],
+			[57.723219, 7.039659],
+			[58.282064, 10.700495],
+			[59.913889, 10.738611],
+		],
+		by: 'sea',
+	},
+];
+
 const BritainLandExclusiveRoutes = [
 	{
 		route: 'Lontoo-Lincoln-York',
@@ -412,7 +504,7 @@ const BritainLandExclusiveRoutes = [
 		],
 	},
 	{
-		route: 'Lincoln-High Cross-Cirencester-Bath-Ilchester-Exter',
+		route: 'Lincoln-High Cross-Cirencester-Bath-Ilchester-Exeter',
 		coordinates: [
 			[53.232719, -0.537661],
 			[52.49325, -1.30182],
@@ -425,6 +517,45 @@ const BritainLandExclusiveRoutes = [
 ];
 
 const NorthEuropeRoutes = [
+	{
+		route: 'Aberdeen-Bergen-Stavanger-Oslo',
+		coordinates: [
+			'M',
+			[57.244137, -1.708981],
+			'L',
+			[59.580242, 4.337008],
+			'L',
+			[60.193169, 5.190214],
+			'L',
+			[60.26068, 5.14143],
+			'L',
+			[60.3925, 5.323333],
+			'M',
+			[59.580242, 4.337008],
+			'Q',
+			[59.097378, 5.138074],
+			[58.960833, 5.715556],
+			'M',
+			[59.146617, 5.1693],
+			'Q',
+			[57.927976, 5.643484],
+			[57.723219, 7.039659],
+			[58.282064, 10.700495],
+			[59.913889, 10.738611],
+		],
+		by: 'sea',
+	},
+	{
+		route: 'Oslo-Roskilde',
+		coordinates: [
+			'M',
+			[59.913889, 10.738611],
+			'Q',
+			[55.894181, 11.845221],
+			[55.633333, 12.066667],
+		],
+		by: 'sea',
+	},
 	{
 		route: 'Kesoniemi-Itämeren länsirannikko',
 		coordinates: [
@@ -617,7 +748,7 @@ const EastEuropeLandExclusiveRoutes = [
 		],
 	},
 	{
-		route: 'Reval-Tartu-Riga-Pskov-Polotsk-Vitsebsk',
+		route: 'Kesoniemi-Tartu-Riga-Pskov-Polotsk-Vitsebsk',
 		coordinates: [
 			[59.437222, 24.745278],
 			[58.383333, 26.716667],
@@ -1121,11 +1252,12 @@ const WestEuropeLandExclusiveRoutes = [
 export {
 	MediterraneanRoutes,
 	MediterraneanLandExclusiveRoutes,
-	SpainRoutes,
-	BritainLandExclusiveRoutes,
-	EastEuropeLandExclusiveRoutes,
-	WestEuropeLandExclusiveRoutes,
-	SpainLandExclusiveRoutes,
 	WestEuropeRoutes,
+	WestEuropeLandExclusiveRoutes,
+	EastEuropeLandExclusiveRoutes,
 	NorthEuropeRoutes,
+	BritainRoutes,
+	BritainLandExclusiveRoutes,
+	SpainRoutes,
+	SpainLandExclusiveRoutes,
 };

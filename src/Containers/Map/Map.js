@@ -26,12 +26,13 @@ import {
 	MediterraneanRoutes,
 	MediterraneanLandExclusiveRoutes,
 	EastEuropeLandExclusiveRoutes,
-	WestEuropeLandExclusiveRoutes,
 	WestEuropeRoutes,
-	SpainLandExclusiveRoutes,
+	WestEuropeLandExclusiveRoutes,
 	NorthEuropeRoutes,
+	BritainRoutes,
 	BritainLandExclusiveRoutes,
 	SpainRoutes,
+	SpainLandExclusiveRoutes,
 } from '../../Data/Routes/TradeRoutes';
 import SidebarContainer from '../../Components/UI/Sidebar';
 
@@ -49,22 +50,22 @@ class MapContainer extends Component {
 		collapsed: false,
 		selected: 'layers',
 		displayElements: {
-			displayRoutes: true,
+			displayRoutes: false,
 			displayLandRoutes: false,
 			displaySeaRoutes: false,
 			displayMainlandEast: false,
 			displayMainlandWest: false,
 			displayBritain: false,
-			displayAllTerrain: true,
+			displayAllTerrain: false,
 			displayMediterranean: false,
 			displayGoldenHorde: false,
 			displayDiseaseSpread: false,
 			routes: {
-				BritainRoutes: false,
 				MediterraneanRoutes: false,
 				EastEuropeRoutes: false,
 				WestEuropeRoutes: false,
 				NorthEuropeRoutes: false,
+				BritainRoutes: true,
 				SpainRoutes: false,
 			},
 			disease: {
@@ -489,6 +490,32 @@ class MapContainer extends Component {
 			}
 		);
 
+		let britainRoutes = BritainRoutes.map(
+			({ coordinates, by, route }, index) => {
+				if (by === 'sea') {
+					return (
+						<Curve
+							key={index}
+							positions={coordinates}
+							option={this.seaRouteStyle}
+						>
+							<Popup>{route}</Popup>
+						</Curve>
+					);
+				} else {
+					return (
+						<Curve
+							key={index}
+							positions={coordinates}
+							option={this.landRouteStyle}
+						>
+							<Popup>{route}</Popup>
+						</Curve>
+					);
+				}
+			}
+		);
+
 		let britainLandExclusiveRoutes = BritainLandExclusiveRoutes.map(
 			({ coordinates, route }, index) => {
 				return (
@@ -502,6 +529,7 @@ class MapContainer extends Component {
 				);
 			}
 		);
+
 		let eastEuropeLandExclusive = EastEuropeLandExclusiveRoutes.map(
 			({ coordinates, route }, index) => {
 				return (
@@ -614,6 +642,7 @@ class MapContainer extends Component {
 			westEuropeLandExclusive,
 			eastEuropeLandExclusive,
 			spainRoutes,
+			britainRoutes,
 			britainLandExclusiveRoutes,
 			westEuropeRoutes,
 			spainLandExclusive,
@@ -778,6 +807,31 @@ class MapContainer extends Component {
 						{!this.state.displayElements.displayRoutes
 							? false
 							: allRoutes.map(item => item)}
+
+						{!this.state.displayElements.routes.MediterraneanRoutes
+							? false
+							: [mediterraneanRoutes, mediterraneanLandExclusive]}
+
+						{!this.state.displayElements.routes.BritainRoutes
+							? false
+							: [britainRoutes, britainLandExclusiveRoutes]}
+
+						{!this.state.displayElements.routes.EastEuropeRoutes
+							? false
+							: eastEuropeLandExclusive}
+
+						{!this.state.displayElements.routes.WestEuropeRoutes
+							? false
+							: [westEuropeRoutes, westEuropeLandExclusive]}
+
+						{!this.state.displayElements.routes.NorthEuropeRoutes
+							? false
+							: northEuropeRoutes}
+
+						{!this.state.displayElements.routes.SpainRoutes
+							? false
+							: [spainRoutes, spainLandExclusive]}
+
 						{!this.state.displayElements.displayGoldenHorde ? (
 							false
 						) : (

@@ -152,24 +152,10 @@ const SidebarContainer = props => {
 									onClick={event =>
 										props.handleLayer(event.target.value)
 									}
-									value="Routes"
-								/>
-							}
-							label="Kauppareitit"
-						/>
-					</li>
-					<li>
-						<FormControlLabel
-							control={
-								<Checkbox
-									color="primary"
-									onClick={event =>
-										props.handleLayer(event.target.value)
-									}
 									value="MediterraneanRoutes"
 								/>
 							}
-							label="Välimeri ja sen lähialue"
+							label="Välimeri ja Konstantinopolin lähialue"
 						/>
 					</li>
 					<li>
@@ -240,6 +226,20 @@ const SidebarContainer = props => {
 								/>
 							}
 							label="Espanja"
+						/>
+					</li>
+					<li>
+						<FormControlLabel
+							control={
+								<Checkbox
+									color="primary"
+									onClick={event =>
+										props.handleLayer(event.target.value)
+									}
+									value="Routes"
+								/>
+							}
+							label="Kaikki kauppareitit"
 						/>
 					</li>
 				</ul>
