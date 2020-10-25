@@ -7,7 +7,7 @@ const MainlandEast = props => {
 		return (
 			<CircleMarker
 				key={index}
-				onClick={() => props.handleOverlayClick(info)}
+				onClick={() => props.handleOverlayClick([location, info])}
 				center={coordinates}
 				radius={7}
 			>

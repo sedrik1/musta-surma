@@ -64,8 +64,8 @@ class MapContainer extends Component {
 				MediterraneanRoutes: false,
 				EastEuropeRoutes: false,
 				WestEuropeRoutes: false,
-				NorthEuropeRoutes: false,
-				BritainRoutes: true,
+				NorthEuropeRoutes: true,
+				BritainRoutes: false,
 				SpainRoutes: false,
 			},
 			disease: {
@@ -110,10 +110,10 @@ class MapContainer extends Component {
 	}
 
 	infoBoxClickHandler(index) {
-		if (this.state.infoboxLocation !== index.location) {
+		if (this.state.infoboxLocation !== index[0]) {
 			this.setState({
-				infoboxLocation: index.location,
-				infoboxLocationInfo: index.info,
+				infoboxLocation: index[0],
+				infoboxLocationInfo: index[1],
 				collapsed: false,
 				selected: 'locationInfo',
 			});
@@ -651,6 +651,15 @@ class MapContainer extends Component {
 
 		return (
 			<div>
+				<SidebarContainer
+					state={this.state}
+					terrainLabelsValues={this.terrainLabelsValues}
+					onClose={() => this.onClose()}
+					onOpen={child => this.onOpen(child)}
+					handleLayer={layerName =>
+						this.handleLayerControl(layerName)
+					}
+				/>
 				<Map
 					className="map-style"
 					ref={this.mapRef}
@@ -665,15 +674,6 @@ class MapContainer extends Component {
 					<TileLayer
 						attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
 						url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png"
-					/>
-					<SidebarContainer
-						state={this.state}
-						terrainLabelsValues={this.terrainLabelsValues}
-						onClose={() => this.onClose()}
-						onOpen={child => this.onOpen(child)}
-						handleLayer={layerName =>
-							this.handleLayerControl(layerName)
-						}
 					/>
 
 					{/* vuodet */}
