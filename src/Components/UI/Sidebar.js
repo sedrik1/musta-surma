@@ -12,11 +12,32 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
+import withWidth from '@material-ui/core/withWidth';
 import DiseaseYears from '../../Data/DiseaseSpread/DiseaseSpreadInfo';
 import ColourLegends from './ColourLegends';
 import './Sidebar.css';
 
 const SidebarContainer = props => {
+	const terrainLabelsValues = [
+		{ label: 'Länsi-Eurooppa', value: 'MainlandWest' },
+		{ label: 'Itä-Eurooppa', value: 'MainlandEast' },
+		{ label: 'Välimeri', value: 'Mediterranean' },
+		{ label: 'Brittein saaret', value: 'Britain' },
+	];
+
+	const routeLabelsValues = [
+		{
+			label: 'Välimeri ja Konstantinopolin lähialue',
+			value: 'MediterraneanRoutes',
+		},
+		{ label: 'Brittein saaret', value: 'BritainRoutes' },
+		{ label: 'Itä-Eurooppa', value: 'EastEuropeRoutes' },
+		{ label: 'Länsi-Eurooppa', value: 'WestEuropeRoutes' },
+		{ label: 'Pohjois-Eurooppa', value: 'NorthEuropeRoutes' },
+		{ label: 'Espanja', value: 'SpainRoutes' },
+		{ label: 'Kaikki kauppareitit', value: 'Routes' },
+	];
+
 	const createParagraphs = text => {
 		const infoList = document.getElementsByClassName('info');
 		Object.values(infoList).forEach(element => element.remove());
@@ -41,15 +62,11 @@ const SidebarContainer = props => {
 			onClose={props.onClose.bind(this)}
 		>
 			<Tab id="layers" header="Karttataso-ohjain" icon={<FaLayerGroup />}>
-				<Accordion>
-					<AccordionSummary
-						expandIcon={<HiOutlineChevronDown />}
-						aria-controls="panel-content"
-						id="panel-header"
-					>
-						Taudin leviäminen
-					</AccordionSummary>
-					<AccordionDetails>
+				{
+					/* prettier-ignore */
+					(props.width === 'xl' || props.width === 'lg') ? (
+					<>
+						<p id="paragraph">Taudin leviäminen</p>
 						<ul id="years-list">
 							{DiseaseYears.map(({ date }) => {
 								return (
@@ -88,19 +105,78 @@ const SidebarContainer = props => {
 													event.target.value
 												)
 											}
-											value={'Disease'}
+											value="Disease"
 										/>
 									}
-									label={'Kaikki vuodet'}
+									label="Kaikki vuodet"
 								/>
 							</li>
 						</ul>
-					</AccordionDetails>
-				</Accordion>
+					</>
+				) : (
+					<Accordion>
+						<AccordionSummary
+							expandIcon={<HiOutlineChevronDown />}
+							aria-controls="panel-content"
+							id="panel-header"
+						>
+							Taudin leviäminen
+						</AccordionSummary>
+						<AccordionDetails>
+							<ul id="years-list">
+								{DiseaseYears.map(({ date }) => {
+									return (
+										<li key={date}>
+											<FormControlLabel
+												control={
+													<Checkbox
+														color="primary"
+														disabled={
+															!props.state
+																.displayElements
+																.displayDiseaseSpread
+																? false
+																: true
+														}
+														onClick={event =>
+															props.handleLayer(
+																event.target
+																	.value
+															)
+														}
+														value={`Disease_${date}`}
+													/>
+												}
+												label={date}
+											/>
+										</li>
+									);
+								})}
+								<li>
+									<FormControlLabel
+										control={
+											<Checkbox
+												color="primary"
+												onClick={event =>
+													props.handleLayer(
+														event.target.value
+													)
+												}
+												value="Disease"
+											/>
+										}
+										label="Kaikki vuodet"
+									/>
+								</li>
+							</ul>
+						</AccordionDetails>
+					</Accordion>
+				)
+				}
 				<hr />
 				<p id="cities-paragraph">Kaupungit maa-alueittain</p>
 				<ul id="cities-list">
-					{props.terrainLabelsValues.map(({ label, value }) => {
+					{terrainLabelsValues.map(({ label, value }) => {
 						return (
 							<li key={label}>
 								<FormControlLabel
@@ -144,104 +220,26 @@ const SidebarContainer = props => {
 				<hr />
 				<p id="paragraph">Kauppareitit</p>
 				<ul id="routes-list">
-					<li>
-						<FormControlLabel
-							control={
-								<Checkbox
-									color="primary"
-									onClick={event =>
-										props.handleLayer(event.target.value)
+					{routeLabelsValues.map(({ label, value }) => {
+						return (
+							<li key={label}>
+								<FormControlLabel
+									control={
+										<Checkbox
+											color="primary"
+											onClick={event =>
+												props.handleLayer(
+													event.target.value
+												)
+											}
+											value={value}
+										/>
 									}
-									value="MediterraneanRoutes"
+									label={label}
 								/>
-							}
-							label="Välimeri ja Konstantinopolin lähialue"
-						/>
-					</li>
-					<li>
-						<FormControlLabel
-							control={
-								<Checkbox
-									color="primary"
-									onClick={event =>
-										props.handleLayer(event.target.value)
-									}
-									value="BritainRoutes"
-								/>
-							}
-							label="Brittein saaret"
-						/>
-					</li>
-					<li>
-						<FormControlLabel
-							control={
-								<Checkbox
-									color="primary"
-									onClick={event =>
-										props.handleLayer(event.target.value)
-									}
-									value="EastEuropeRoutes"
-								/>
-							}
-							label="Itä-Eurooppa"
-						/>
-					</li>
-					<li>
-						<FormControlLabel
-							control={
-								<Checkbox
-									color="primary"
-									onClick={event =>
-										props.handleLayer(event.target.value)
-									}
-									value="WestEuropeRoutes"
-								/>
-							}
-							label="Länsi-Eurooppa"
-						/>
-					</li>
-					<li>
-						<FormControlLabel
-							control={
-								<Checkbox
-									color="primary"
-									onClick={event =>
-										props.handleLayer(event.target.value)
-									}
-									value="NorthEuropeRoutes"
-								/>
-							}
-							label="Pohjois-Eurooppa"
-						/>
-					</li>
-					<li>
-						<FormControlLabel
-							control={
-								<Checkbox
-									color="primary"
-									onClick={event =>
-										props.handleLayer(event.target.value)
-									}
-									value="SpainRoutes"
-								/>
-							}
-							label="Espanja"
-						/>
-					</li>
-					<li>
-						<FormControlLabel
-							control={
-								<Checkbox
-									color="primary"
-									onClick={event =>
-										props.handleLayer(event.target.value)
-									}
-									value="Routes"
-								/>
-							}
-							label="Kaikki kauppareitit"
-						/>
-					</li>
+							</li>
+						);
+					})}
 				</ul>
 				<hr />
 				<ul id="misc-list">
@@ -307,18 +305,9 @@ const SidebarContainer = props => {
 						<a
 							rel="noopener noreferrer"
 							target="blank"
-							href="https://www.youtube.com/watch?v=_5ImYgBeBS0"
+							href="https://www.britannica.com/event/Black-Death/Cause-and-outbreak"
 						>
-							Professor Sir Richard J. Evans FBA - The Black Death
-						</a>
-					</li>
-					<li className="circle">
-						<a
-							rel="noopener noreferrer"
-							target="blank"
-							href="https://www.gresham.ac.uk/lectures-and-events/the-black-death"
-						>
-							Gresham College - The Black Death
+							Britannica - Black Death: Cause and outbreak
 						</a>
 					</li>
 					<li>
@@ -353,10 +342,37 @@ const SidebarContainer = props => {
 							Routes
 						</a>
 					</li>
+					<li>
+						<a
+							rel="noopener noreferrer"
+							target="blank"
+							href="https://www.youtube.com/watch?v=_5ImYgBeBS0"
+						>
+							Professor Sir Richard J. Evans FBA - The Black Death
+						</a>
+					</li>
+					<li className="circle">
+						<a
+							rel="noopener noreferrer"
+							target="blank"
+							href="https://www.gresham.ac.uk/lectures-and-events/the-black-death"
+						>
+							Gresham College - The Black Death
+						</a>
+					</li>
+					<li>
+						<a
+							rel="noopener noreferrer"
+							target="blank"
+							href="https://journal.fi/tt/article/view/57247"
+						>
+							Pekka Heikura - Musta surma. Tieteessä tapahtuu
+						</a>
+					</li>
 				</ul>
 			</Tab>
 		</Sidebar>
 	);
 };
 
-export default SidebarContainer;
+export default withWidth()(SidebarContainer);

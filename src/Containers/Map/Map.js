@@ -51,15 +51,15 @@ class MapContainer extends Component {
 		selected: 'layers',
 		displayElements: {
 			displayRoutes: false,
-			displayLandRoutes: false,
-			displaySeaRoutes: false,
-			displayMainlandEast: false,
-			displayMainlandWest: false,
-			displayBritain: false,
 			displayAllTerrain: false,
-			displayMediterranean: false,
-			displayGoldenHorde: false,
 			displayDiseaseSpread: false,
+			displayGoldenHorde: false,
+			cities: {
+				displayMainlandEast: false,
+				displayMainlandWest: false,
+				displayBritain: false,
+				displayMediterranean: false,
+			},
 			routes: {
 				MediterraneanRoutes: false,
 				EastEuropeRoutes: false,
@@ -82,13 +82,6 @@ class MapContainer extends Component {
 	};
 
 	cities = [Mediterranean, MainlandEast, MainlandWest, Britain];
-
-	terrainLabelsValues = [
-		{ label: 'Länsi-Eurooppa', value: 'MainlandWest' },
-		{ label: 'Itä-Eurooppa', value: 'MainlandEast' },
-		{ label: 'Välimeri', value: 'Mediterranean' },
-		{ label: 'Brittein saaret', value: 'Britain' },
-	];
 
 	seaRouteStyle = { color: '#003366', fill: false };
 	landRouteStyle = { color: '#8a0303', fill: false };
@@ -293,8 +286,11 @@ class MapContainer extends Component {
 				this.setState({
 					displayElements: {
 						...this.state.displayElements,
-						displayMediterranean: !this.state.displayElements
-							.displayMediterranean,
+						cities: {
+							...this.state.displayElements.cities,
+							displayMediterranean: !this.state.displayElements
+								.cities.displayMediterranean,
+						},
 					},
 				});
 				break;
@@ -302,8 +298,11 @@ class MapContainer extends Component {
 				this.setState({
 					displayElements: {
 						...this.state.displayElements,
-						displayMainlandEast: !this.state.displayElements
-							.displayMainlandEast,
+						cities: {
+							...this.state.displayElements.cities,
+							displayMainlandEast: !this.state.displayElements
+								.cities.displayMainlandEast,
+						},
 					},
 				});
 				break;
@@ -311,17 +310,24 @@ class MapContainer extends Component {
 				this.setState({
 					displayElements: {
 						...this.state.displayElements,
-						displayMainlandWest: !this.state.displayElements
-							.displayMainlandWest,
+						cities: {
+							...this.state.displayElements.cities,
+							displayMainlandWest: !this.state.displayElements
+								.cities.displayMainlandWest,
+						},
 					},
 				});
 				break;
 			case 'Britain':
+				console.log();
 				this.setState({
 					displayElements: {
 						...this.state.displayElements,
-						displayBritain: !this.state.displayElements
-							.displayBritain,
+						cities: {
+							...this.state.displayElements.cities,
+							displayBritain: !this.state.displayElements.cities
+								.displayBritain,
+						},
 					},
 				});
 				break;
@@ -334,15 +340,6 @@ class MapContainer extends Component {
 					},
 				});
 				break;
-			case 'GoldenHorde':
-				this.setState({
-					displayElements: {
-						...this.state.displayElements,
-						displayGoldenHorde: !this.state.displayElements
-							.displayGoldenHorde,
-					},
-				});
-				break;
 			case 'Routes':
 				this.setState({
 					displayElements: {
@@ -352,12 +349,6 @@ class MapContainer extends Component {
 					},
 				});
 				break;
-			/* 				Britain: false,
-				Mediterranean: false,
-				EastEurope: false,
-				WestEurope: false,
-				NorthEurope: false,
-				Spain: false */
 			case 'MediterraneanRoutes':
 				this.setState({
 					displayElements: {
@@ -431,6 +422,15 @@ class MapContainer extends Component {
 				});
 				break;
 			default:
+				break;
+			case 'GoldenHorde':
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						displayGoldenHorde: !this.state.displayElements
+							.displayGoldenHorde,
+					},
+				});
 				break;
 		}
 	}
@@ -639,27 +639,70 @@ class MapContainer extends Component {
 		let allRoutes = [
 			mediterraneanRoutes,
 			mediterraneanLandExclusive,
+			westEuropeRoutes,
 			westEuropeLandExclusive,
 			eastEuropeLandExclusive,
-			spainRoutes,
+			northEuropeRoutes,
 			britainRoutes,
 			britainLandExclusiveRoutes,
-			westEuropeRoutes,
+			spainRoutes,
 			spainLandExclusive,
-			northEuropeRoutes,
+		];
+
+		let years = [
+			{
+				year: <V1346 key="V1346" />,
+				value: this.state.displayElements.disease
+					.displayDiseaseSpread_1346,
+			},
+			{
+				year: <V1347 key="V1347" />,
+				value: this.state.displayElements.disease
+					.displayDiseaseSpread_1347,
+			},
+			{
+				year: <V1348 key="V1348" />,
+				value: this.state.displayElements.disease
+					.displayDiseaseSpread_1348,
+			},
+			{
+				year: <V1349 key="V1349" />,
+				value: this.state.displayElements.disease
+					.displayDiseaseSpread_1349,
+			},
+			{
+				year: <V1350 key="V1350" />,
+				value: this.state.displayElements.disease
+					.displayDiseaseSpread_1350,
+			},
+			{
+				year: <V1351 key="V1351" />,
+				value: this.state.displayElements.disease
+					.displayDiseaseSpread_1351,
+			},
+			{
+				year: <V1352 key="V1352" />,
+				value: this.state.displayElements.disease
+					.displayDiseaseSpread_1352,
+			},
+			{
+				year: <V1353 key="V1353" />,
+				value: this.state.displayElements.disease
+					.displayDiseaseSpread_1353,
+			},
 		];
 
 		return (
-			<div>
+			<>
 				<SidebarContainer
 					state={this.state}
-					terrainLabelsValues={this.terrainLabelsValues}
 					onClose={() => this.onClose()}
 					onOpen={child => this.onOpen(child)}
 					handleLayer={layerName =>
 						this.handleLayerControl(layerName)
 					}
 				/>
+
 				<Map
 					className="map-style"
 					ref={this.mapRef}
@@ -676,66 +719,9 @@ class MapContainer extends Component {
 						url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png"
 					/>
 
-					{/* vuodet */}
-					{!this.state.displayElements.disease
-						.displayDiseaseSpread_1346 ? (
-						false
-					) : (
-						<V1346 />
-					)}
+					{years.map(({ year, value }) => (!value ? false : year))}
 
-					{!this.state.displayElements.disease
-						.displayDiseaseSpread_1347 ? (
-						false
-					) : (
-						<V1347 />
-					)}
-
-					{!this.state.displayElements.disease
-						.displayDiseaseSpread_1348 ? (
-						false
-					) : (
-						<V1348 />
-					)}
-
-					{!this.state.displayElements.disease
-						.displayDiseaseSpread_1349 ? (
-						false
-					) : (
-						<V1349 />
-					)}
-
-					{!this.state.displayElements.disease
-						.displayDiseaseSpread_1350 ? (
-						false
-					) : (
-						<V1350 />
-					)}
-
-					{!this.state.displayElements.disease
-						.displayDiseaseSpread_1351 ? (
-						false
-					) : (
-						<V1351 />
-					)}
-
-					{!this.state.displayElements.disease
-						.displayDiseaseSpread_1352 ? (
-						false
-					) : (
-						<V1352 />
-					)}
-
-					{!this.state.displayElements.disease
-						.displayDiseaseSpread_1353 ? (
-						false
-					) : (
-						<V1353 />
-					)}
-
-					{/* kaupungit */}
-
-					{!this.state.displayElements.displayMainlandWest ? (
+					{!this.state.displayElements.cities.displayMainlandWest ? (
 						false
 					) : (
 						<FeatureGroup color="black">
@@ -747,7 +733,7 @@ class MapContainer extends Component {
 						</FeatureGroup>
 					)}
 
-					{!this.state.displayElements.displayMainlandEast ? (
+					{!this.state.displayElements.cities.displayMainlandEast ? (
 						false
 					) : (
 						<FeatureGroup color="black">
@@ -759,7 +745,7 @@ class MapContainer extends Component {
 						</FeatureGroup>
 					)}
 
-					{!this.state.displayElements.displayBritain ? (
+					{!this.state.displayElements.cities.displayBritain ? (
 						false
 					) : (
 						<FeatureGroup color="black">
@@ -771,7 +757,7 @@ class MapContainer extends Component {
 						</FeatureGroup>
 					)}
 
-					{!this.state.displayElements.displayMediterranean ? (
+					{!this.state.displayElements.cities.displayMediterranean ? (
 						false
 					) : (
 						<FeatureGroup color="black">
@@ -844,7 +830,7 @@ class MapContainer extends Component {
 						)}
 					</LayersControl>
 				</Map>
-			</div>
+			</>
 		);
 	}
 }

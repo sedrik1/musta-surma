@@ -418,7 +418,7 @@ const NorthEuropeRoutes = [
 		by: 'sea',
 	},
 	{
-		route: 'Rääveli-Itämeren länsirannikko',
+		route: 'Kesoniemi (nyk. Tallinna)-Itämeren länsirannikko',
 		coordinates: [
 			'M',
 			[59.438889, 24.754444],
@@ -782,7 +782,7 @@ const EastEuropeLandExclusiveRoutes = [
 		],
 	},
 	{
-		route: 'Rääveli-Tartu-Riga-Pskov-Polotsk-Vitsebsk',
+		route: 'Kesoniemi (nyk. Tallinna)-Tartu-Riga-Pskov-Polotsk-Vitsebsk',
 		coordinates: [
 			[59.437222, 24.745278],
 			[58.383333, 26.716667],
