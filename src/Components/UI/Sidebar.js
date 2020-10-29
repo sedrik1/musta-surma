@@ -14,7 +14,7 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import withWidth from '@material-ui/core/withWidth';
 import DiseaseYears from '../../Data/DiseaseSpread/DiseaseSpreadInfo';
-import ColourLegends from './ColourLegends';
+import ColourLegends from './SidebarTabContent/ColourLegends';
 import AdditionalReading from './SidebarTabContent/AdditionalReading';
 import './Sidebar.css';
 

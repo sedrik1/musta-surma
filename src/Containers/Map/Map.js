@@ -436,178 +436,64 @@ class MapContainer extends Component {
 	}
 
 	render() {
-		let mediterraneanRoutes = MediterraneanRoutes.map(
-			({ coordinates, by, route }, index) => {
-				return (
-					<Curve
-						key={index}
-						positions={coordinates}
-						option={
-							by === 'sea'
-								? this.seaRouteStyle
-								: this.landRouteStyle
-						}
-					>
-						<Popup>{route}</Popup>
-					</Curve>
-				);
-			}
-		);
+		let routesLand = [];
+		let routesVariable = [];
 
-		let mediterraneanLandExclusive = MediterraneanLandExclusiveRoutes.map(
-			({ coordinates, route }, index) => {
-				return (
-					<Polyline
-						key={index}
-						positions={coordinates}
-						color={this.landRouteStyle.color}
-					>
-						<Popup>{route}</Popup>
-					</Polyline>
-				);
-			}
-		);
-
-		let spainLandExclusive = SpainLandExclusiveRoutes.map(
-			({ coordinates, route }, index) => {
-				return (
-					<Polyline
-						key={index}
-						positions={coordinates}
-						color={this.landRouteStyle.color}
-					>
-						<Popup>{route}</Popup>
-					</Polyline>
-				);
-			}
-		);
-
-		let britainRoutes = BritainRoutes.map(
-			({ coordinates, by, route }, index) => {
-				return (
-					<Curve
-						key={index}
-						positions={coordinates}
-						option={
-							by === 'sea'
-								? this.seaRouteStyle
-								: this.landRouteStyle
-						}
-					>
-						<Popup>{route}</Popup>
-					</Curve>
-				);
-			}
-		);
-
-		let britainLandExclusiveRoutes = BritainLandExclusiveRoutes.map(
-			({ coordinates, route }, index) => {
-				return (
-					<Polyline
-						key={index}
-						positions={coordinates}
-						color={this.landRouteStyle.color}
-					>
-						<Popup>{route}</Popup>
-					</Polyline>
-				);
-			}
-		);
-
-		let eastEuropeLandExclusive = EastEuropeLandExclusiveRoutes.map(
-			({ coordinates, route }, index) => {
-				return (
-					<Polyline
-						key={index}
-						positions={coordinates}
-						color={this.landRouteStyle.color}
-					>
-						<Popup>{route}</Popup>
-					</Polyline>
-				);
-			}
-		);
-
-		let westEuropeLandExclusive = WestEuropeLandExclusiveRoutes.map(
-			({ coordinates, route }, index) => {
-				return (
-					<Polyline
-						key={index}
-						positions={coordinates}
-						color={this.landRouteStyle.color}
-					>
-						<Popup>{route}</Popup>
-					</Polyline>
-				);
-			}
-		);
-
-		let spainRoutes = SpainRoutes.map(
-			({ coordinates, by, route }, index) => {
-				return (
-					<Curve
-						key={index}
-						positions={coordinates}
-						option={
-							by === 'sea'
-								? this.seaRouteStyle
-								: this.landRouteStyle
-						}
-					>
-						<Popup>{route}</Popup>
-					</Curve>
-				);
-			}
-		);
-
-		let westEuropeRoutes = WestEuropeRoutes.map(
-			({ coordinates, by, route }, index) => {
-				return (
-					<Curve
-						key={index}
-						positions={coordinates}
-						option={
-							by === 'sea'
-								? this.seaRouteStyle
-								: this.landRouteStyle
-						}
-					>
-						<Popup>{route}</Popup>
-					</Curve>
-				);
-			}
-		);
-
-		let northEuropeRoutes = NorthEuropeRoutes.map(
-			({ coordinates, by, route }, index) => {
-				return (
-					<Curve
-						key={index}
-						positions={coordinates}
-						option={
-							by === 'sea'
-								? this.seaRouteStyle
-								: this.landRouteStyle
-						}
-					>
-						<Popup>{route}</Popup>
-					</Curve>
-				);
-			}
-		);
-
-		let allRoutes = [
-			mediterraneanRoutes,
-			mediterraneanLandExclusive,
-			westEuropeRoutes,
-			westEuropeLandExclusive,
-			eastEuropeLandExclusive,
-			northEuropeRoutes,
-			britainRoutes,
-			britainLandExclusiveRoutes,
-			spainRoutes,
-			spainLandExclusive,
+		const landExclusiveRoutes = [
+			EastEuropeLandExclusiveRoutes,
+			MediterraneanLandExclusiveRoutes,
+			WestEuropeLandExclusiveRoutes,
+			BritainLandExclusiveRoutes,
+			SpainLandExclusiveRoutes,
 		];
+
+		const variableRoutes = [
+			MediterraneanRoutes,
+			WestEuropeRoutes,
+			NorthEuropeRoutes,
+			BritainRoutes,
+			SpainRoutes,
+		];
+
+		landExclusiveRoutes.forEach(element => {
+			let assignLandElement;
+			assignLandElement = element.map(({ coordinates, route }, index) => {
+				return (
+					<Polyline
+						key={index}
+						positions={coordinates}
+						color={this.landRouteStyle.color}
+					>
+						<Popup>{route}</Popup>
+					</Polyline>
+				);
+			});
+			routesLand.push(assignLandElement);
+		});
+
+		variableRoutes.forEach(element => {
+			let assignVariableElement;
+			assignVariableElement = element.map(
+				({ coordinates, by, route }, index) => {
+					return (
+						<Curve
+							key={index}
+							positions={coordinates}
+							option={
+								by === 'sea'
+									? this.seaRouteStyle
+									: this.landRouteStyle
+							}
+						>
+							<Popup>{route}</Popup>
+						</Curve>
+					);
+				}
+			);
+			routesVariable.push(assignVariableElement);
+		});
+
+		const allRoutes = [routesLand, routesVariable];
 
 		let years = [
 			{
@@ -756,27 +642,27 @@ class MapContainer extends Component {
 
 						{!this.state.displayElements.routes.MediterraneanRoutes
 							? false
-							: [mediterraneanRoutes, mediterraneanLandExclusive]}
+							: [routesVariable[0], routesLand[1]]}
 
 						{!this.state.displayElements.routes.BritainRoutes
 							? false
-							: [britainRoutes, britainLandExclusiveRoutes]}
+							: [routesVariable[3], routesLand[3]]}
 
 						{!this.state.displayElements.routes.EastEuropeRoutes
 							? false
-							: eastEuropeLandExclusive}
+							: routesLand[0]}
 
 						{!this.state.displayElements.routes.WestEuropeRoutes
 							? false
-							: [westEuropeRoutes, westEuropeLandExclusive]}
+							: [routesVariable[1], routesLand[2]]}
 
 						{!this.state.displayElements.routes.NorthEuropeRoutes
 							? false
-							: northEuropeRoutes}
+							: routesVariable[2]}
 
 						{!this.state.displayElements.routes.SpainRoutes
 							? false
-							: [spainRoutes, spainLandExclusive]}
+							: [routesVariable[4], routesLand[4]]}
 
 						{!this.state.displayElements.displayGoldenHorde ? (
 							false
