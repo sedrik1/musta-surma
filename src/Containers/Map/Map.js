@@ -102,7 +102,7 @@ class MapContainer extends Component {
 		this.setState({ collapsed: false, selected: id });
 	}
 
-	infoBoxClickHandler(index) {
+	handleInfoboxClick(index) {
 		if (this.state.infoboxLocation !== index[0]) {
 			this.setState({
 				infoboxLocation: index[0],
@@ -438,27 +438,19 @@ class MapContainer extends Component {
 	render() {
 		let mediterraneanRoutes = MediterraneanRoutes.map(
 			({ coordinates, by, route }, index) => {
-				if (by === 'sea') {
-					return (
-						<Curve
-							key={index}
-							positions={coordinates}
-							option={this.seaRouteStyle}
-						>
-							<Popup>{route}</Popup>
-						</Curve>
-					);
-				} else {
-					return (
-						<Curve
-							key={index}
-							positions={coordinates}
-							option={this.landRouteStyle}
-						>
-							<Popup>{route}</Popup>
-						</Curve>
-					);
-				}
+				return (
+					<Curve
+						key={index}
+						positions={coordinates}
+						option={
+							by === 'sea'
+								? this.seaRouteStyle
+								: this.landRouteStyle
+						}
+					>
+						<Popup>{route}</Popup>
+					</Curve>
+				);
 			}
 		);
 
@@ -492,27 +484,19 @@ class MapContainer extends Component {
 
 		let britainRoutes = BritainRoutes.map(
 			({ coordinates, by, route }, index) => {
-				if (by === 'sea') {
-					return (
-						<Curve
-							key={index}
-							positions={coordinates}
-							option={this.seaRouteStyle}
-						>
-							<Popup>{route}</Popup>
-						</Curve>
-					);
-				} else {
-					return (
-						<Curve
-							key={index}
-							positions={coordinates}
-							option={this.landRouteStyle}
-						>
-							<Popup>{route}</Popup>
-						</Curve>
-					);
-				}
+				return (
+					<Curve
+						key={index}
+						positions={coordinates}
+						option={
+							by === 'sea'
+								? this.seaRouteStyle
+								: this.landRouteStyle
+						}
+					>
+						<Popup>{route}</Popup>
+					</Curve>
+				);
 			}
 		);
 
@@ -560,79 +544,55 @@ class MapContainer extends Component {
 
 		let spainRoutes = SpainRoutes.map(
 			({ coordinates, by, route }, index) => {
-				if (by === 'sea') {
-					return (
-						<Curve
-							key={index}
-							positions={coordinates}
-							option={this.seaRouteStyle}
-						>
-							<Popup>{route}</Popup>
-						</Curve>
-					);
-				} else {
-					return (
-						<Curve
-							key={index}
-							positions={coordinates}
-							option={this.landRouteStyle}
-						>
-							<Popup>{route}</Popup>
-						</Curve>
-					);
-				}
+				return (
+					<Curve
+						key={index}
+						positions={coordinates}
+						option={
+							by === 'sea'
+								? this.seaRouteStyle
+								: this.landRouteStyle
+						}
+					>
+						<Popup>{route}</Popup>
+					</Curve>
+				);
 			}
 		);
 
 		let westEuropeRoutes = WestEuropeRoutes.map(
 			({ coordinates, by, route }, index) => {
-				if (by === 'sea') {
-					return (
-						<Curve
-							key={index}
-							positions={coordinates}
-							option={this.seaRouteStyle}
-						>
-							<Popup>{route}</Popup>
-						</Curve>
-					);
-				} else {
-					return (
-						<Curve
-							key={index}
-							positions={coordinates}
-							option={this.landRouteStyle}
-						>
-							<Popup>{route}</Popup>
-						</Curve>
-					);
-				}
+				return (
+					<Curve
+						key={index}
+						positions={coordinates}
+						option={
+							by === 'sea'
+								? this.seaRouteStyle
+								: this.landRouteStyle
+						}
+					>
+						<Popup>{route}</Popup>
+					</Curve>
+				);
 			}
 		);
 
 		let northEuropeRoutes = NorthEuropeRoutes.map(
 			({ coordinates, by, route }, index) => {
-				if (by === 'sea') {
-					return (
-						<Curve
-							key={index}
-							positions={coordinates}
-							option={this.seaRouteStyle}
-						>
-							<Popup>{route}</Popup>
-						</Curve>
-					);
-				} else {
-					return (
-						<Curve
-							key={index}
-							positions={coordinates}
-							option={this.landRouteStyle}
-						>
-							<Popup>{route}</Popup>
-						</Curve>
-					);
-				}
+				return (
+					<Curve
+						key={index}
+						positions={coordinates}
+						option={
+							by === 'sea'
+								? this.seaRouteStyle
+								: this.landRouteStyle
+						}
+					>
+						<Popup>{route}</Popup>
+					</Curve>
+				);
 			}
 		);
 
@@ -727,7 +687,7 @@ class MapContainer extends Component {
 						<FeatureGroup color="black">
 							<MainlandWest
 								handleOverlayClick={location =>
-									this.infoBoxClickHandler(location)
+									this.handleInfoboxClick(location)
 								}
 							/>
 						</FeatureGroup>
@@ -739,7 +699,7 @@ class MapContainer extends Component {
 						<FeatureGroup color="black">
 							<MainlandEast
 								handleOverlayClick={location =>
-									this.infoBoxClickHandler(location)
+									this.handleInfoboxClick(location)
 								}
 							/>
 						</FeatureGroup>
@@ -751,7 +711,7 @@ class MapContainer extends Component {
 						<FeatureGroup color="black">
 							<Britain
 								handleOverlayClick={location =>
-									this.infoBoxClickHandler(location)
+									this.handleInfoboxClick(location)
 								}
 							/>
 						</FeatureGroup>
@@ -763,7 +723,7 @@ class MapContainer extends Component {
 						<FeatureGroup color="black">
 							<Mediterranean
 								handleOverlayClick={location =>
-									this.infoBoxClickHandler(location)
+									this.handleInfoboxClick(location)
 								}
 							/>
 						</FeatureGroup>
@@ -778,7 +738,7 @@ class MapContainer extends Component {
 									<FeatureGroup key={index} color="black">
 										<Item
 											handleOverlayClick={location =>
-												this.infoBoxClickHandler(
+												this.handleInfoboxClick(
 													location
 												)
 											}

@@ -15,6 +15,7 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import withWidth from '@material-ui/core/withWidth';
 import DiseaseYears from '../../Data/DiseaseSpread/DiseaseSpreadInfo';
 import ColourLegends from './ColourLegends';
+import AdditionalReading from './SidebarTabContent/AdditionalReading';
 import './Sidebar.css';
 
 const SidebarContainer = props => {
@@ -64,57 +65,8 @@ const SidebarContainer = props => {
 			<Tab id="layers" header="Karttataso-ohjain" icon={<FaLayerGroup />}>
 				{
 					/* prettier-ignore */
-					(props.width === 'xl' || props.width === 'lg') ? (
-					<>
-						<p id="paragraph">Taudin leviäminen</p>
-						<ul id="years-list">
-							{DiseaseYears.map(({ date }) => {
-								return (
-									<li key={date}>
-										<FormControlLabel
-											control={
-												<Checkbox
-													color="primary"
-													disabled={
-														!props.state
-															.displayElements
-															.displayDiseaseSpread
-															? false
-															: true
-													}
-													onClick={event =>
-														props.handleLayer(
-															event.target.value
-														)
-													}
-													value={`Disease_${date}`}
-												/>
-											}
-											label={date}
-										/>
-									</li>
-								);
-							})}
-							<li>
-								<FormControlLabel
-									control={
-										<Checkbox
-											color="primary"
-											onClick={event =>
-												props.handleLayer(
-													event.target.value
-												)
-											}
-											value="Disease"
-										/>
-									}
-									label="Kaikki vuodet"
-								/>
-							</li>
-						</ul>
-					</>
-				) : (
-					<Accordion>
+					(props.width === 'xs' || props.width === 'sm') ? (
+						<Accordion>
 						<AccordionSummary
 							expandIcon={<HiOutlineChevronDown />}
 							aria-controls="panel-content"
@@ -171,7 +123,56 @@ const SidebarContainer = props => {
 							</ul>
 						</AccordionDetails>
 					</Accordion>
-				)
+				) : (
+						<>
+							<p id="paragraph">Taudin leviäminen</p>
+							<ul id="years-list">
+								{DiseaseYears.map(({ date }) => {
+									return (
+										<li key={date}>
+											<FormControlLabel
+												control={
+													<Checkbox
+														color="primary"
+														disabled={
+															!props.state
+																.displayElements
+																.displayDiseaseSpread
+																? false
+																: true
+														}
+														onClick={event =>
+															props.handleLayer(
+																event.target.value
+															)
+														}
+														value={`Disease_${date}`}
+													/>
+												}
+												label={date}
+											/>
+										</li>
+									);
+								})}
+								<li>
+									<FormControlLabel
+										control={
+											<Checkbox
+												color="primary"
+												onClick={event =>
+													props.handleLayer(
+														event.target.value
+													)
+												}
+												value="Disease"
+											/>
+										}
+										label="Kaikki vuodet"
+									/>
+								</li>
+							</ul>
+						</>	
+					)
 				}
 				<hr />
 				<p id="cities-paragraph">Kaupungit maa-alueittain</p>
@@ -299,77 +300,7 @@ const SidebarContainer = props => {
 				anchor="bottom"
 				icon={<HiLightBulb />}
 			>
-				<p>Linkit avautuvat uuteen välilehteen</p>
-				<ul className="more-ul">
-					<li>
-						<a
-							rel="noopener noreferrer"
-							target="blank"
-							href="https://www.britannica.com/event/Black-Death/Cause-and-outbreak"
-						>
-							Britannica - Black Death: Cause and outbreak
-						</a>
-					</li>
-					<li>
-						<a
-							rel="noopener noreferrer"
-							target="blank"
-							href="https://www.jstage.jst.go.jp/article/ase/advpub/0/advpub_161011/_pdf"
-						>
-							D. Cesana, O.J. Benedictow, R. Bianucci - The origin
-							and early spread of the Black Death in Italy: first
-							evidence of plague victims from 14th-century Liguria
-							(northern Italy)
-						</a>
-					</li>
-					<li>
-						<a
-							rel="noopener noreferrer"
-							target="blank"
-							href="https://www.thoughtco.com/spread-of-the-black-death-through-europe-4123214"
-						>
-							Melissa Snell - The Arrival and Spread of the Black
-							Plague in Europe
-						</a>
-					</li>
-					<li>
-						<a
-							rel="noopener noreferrer"
-							target="blank"
-							href="https://www.visualcapitalist.com/medieval-trade-route-map/"
-						>
-							Nick Routley - A Fascinating Map of Medieval Trade
-							Routes
-						</a>
-					</li>
-					<li>
-						<a
-							rel="noopener noreferrer"
-							target="blank"
-							href="https://www.youtube.com/watch?v=_5ImYgBeBS0"
-						>
-							Professor Sir Richard J. Evans FBA - The Black Death
-						</a>
-					</li>
-					<li className="circle">
-						<a
-							rel="noopener noreferrer"
-							target="blank"
-							href="https://www.gresham.ac.uk/lectures-and-events/the-black-death"
-						>
-							Gresham College - The Black Death
-						</a>
-					</li>
-					<li>
-						<a
-							rel="noopener noreferrer"
-							target="blank"
-							href="https://journal.fi/tt/article/view/57247"
-						>
-							Pekka Heikura - Musta surma. Tieteessä tapahtuu
-						</a>
-					</li>
-				</ul>
+				<AdditionalReading />
 			</Tab>
 		</Sidebar>
 	);

@@ -61,14 +61,13 @@ const WestEurope = [
 
 const EastEurope = [
 	{
-		location:
-			'Sarai (nyk. Колобовка eli Kolobovka/ Селитренное eli Selitrennoye)',
+		location: 'Sarai (nyk. Kolobovka / Selitrennoye)',
 		coordinates: [48.65, 45.45],
 		info: `Volgan alajuoksulla sijaitseva Kultaisen ordan pääkaupunki Sarai, joista Uusi Sarai sijaitsi Kolobovkan ja Vanha Sarai Selitrennoyen kohdalla, oli mustan surman portti Konstantinopoliin ja sitä kautta muuhun Eurooppaan Välimeren kautta.
         Kauppareitit ja kaupunkien kehitys olivat keskeisiä tekijöitä sairauden tehokkaan leviämisen kannalta.`,
 	},
 	{
-		location: 'Kaffa (nyk. Феодо́сія / Феодосия eli Feodosija)',
+		location: 'Kaffa (nyk. Feodosija)',
 		coordinates: [45.048889, 35.379167],
 
 		info:
