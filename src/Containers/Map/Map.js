@@ -81,6 +81,22 @@ class MapContainer extends Component {
 		},
 	};
 
+	landExclusiveRoutes = [
+		EastEuropeLandExclusiveRoutes,
+		MediterraneanLandExclusiveRoutes,
+		WestEuropeLandExclusiveRoutes,
+		BritainLandExclusiveRoutes,
+		SpainLandExclusiveRoutes,
+	];
+
+	variableRoutes = [
+		MediterraneanRoutes,
+		WestEuropeRoutes,
+		NorthEuropeRoutes,
+		BritainRoutes,
+		SpainRoutes,
+	];
+
 	cities = [Mediterranean, MainlandEast, MainlandWest, Britain];
 
 	seaRouteStyle = { color: '#003366', fill: false };
@@ -439,23 +455,7 @@ class MapContainer extends Component {
 		let routesLand = [];
 		let routesVariable = [];
 
-		const landExclusiveRoutes = [
-			EastEuropeLandExclusiveRoutes,
-			MediterraneanLandExclusiveRoutes,
-			WestEuropeLandExclusiveRoutes,
-			BritainLandExclusiveRoutes,
-			SpainLandExclusiveRoutes,
-		];
-
-		const variableRoutes = [
-			MediterraneanRoutes,
-			WestEuropeRoutes,
-			NorthEuropeRoutes,
-			BritainRoutes,
-			SpainRoutes,
-		];
-
-		landExclusiveRoutes.forEach(element => {
+		this.landExclusiveRoutes.forEach(element => {
 			let assignLandElement;
 			assignLandElement = element.map(({ coordinates, route }, index) => {
 				return (
@@ -471,7 +471,7 @@ class MapContainer extends Component {
 			routesLand.push(assignLandElement);
 		});
 
-		variableRoutes.forEach(element => {
+		this.variableRoutes.forEach(element => {
 			let assignVariableElement;
 			assignVariableElement = element.map(
 				({ coordinates, by, route }, index) => {
