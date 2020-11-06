@@ -27,7 +27,7 @@ const MediterraneanRoutes = [
 	},
 
 	{
-		route: 'Kaffa-Konstantinopoli',
+		route: 'Kaffa-Konstantinopoli (nyk. Istanbul)',
 		coordinates: [
 			'M',
 			[45.048889, 35.379167],
@@ -39,7 +39,7 @@ const MediterraneanRoutes = [
 	},
 
 	{
-		route: 'Konstantinopoli-Ateena',
+		route: 'Konstantinopoli (nyk. Istanbul)-Ateena',
 		coordinates: [
 			'M',
 			[41.013611, 28.955],
@@ -368,6 +368,48 @@ const WestEuropeRoutes = [
 	},
 ];
 
+const NorthEuropeLandExclusiveRoutes = [
+	{
+		route: 'Oslo-Göötepori-Halmstad-Lund',
+		coordinates: [
+			[59.913889, 10.738611],
+			[57.7, 11.966667],
+			[56.666667, 12.85],
+			[56.649904, 12.910786],
+			[56.555935, 12.968244],
+			[55.703889, 13.195],
+		],
+	},
+	{
+		route: 'Göötepori-Itä- ja Pohjois-Ruotsi',
+		coordinates: [
+			[57.7, 11.966667],
+			[57.576252, 14.620971],
+			[58.66837, 15.136344],
+			[60.665106, 15.158331],
+			[61.577649, 15.180318],
+		],
+	},
+	{
+		route: 'Oslo-Hamar-Trondhjem-Pohjois-Norja',
+		coordinates: [
+			[59.913889, 10.738611],
+			[60.795448, 11.067939],
+			[63.426944, 10.393056],
+			[63.629185, 11.752842],
+			[64.05418, 11.940953],
+		],
+	},
+	{
+		route: 'Bergen-?-Oslo',
+		coordinates: [
+			[60.3925, 5.323333],
+			[60.997087, 8.696591],
+			[59.913889, 10.738611],
+		],
+	},
+];
+
 const NorthEuropeRoutes = [
 	{
 		route: 'Aberdeen-Bergen-Stavanger-Oslo',
@@ -414,6 +456,35 @@ const NorthEuropeRoutes = [
 			[59.868434, 10.634266],
 			'L',
 			[59.913889, 10.738611],
+		],
+		by: 'sea',
+	},
+	{
+		route: 'Bergen-Trondhjem',
+		coordinates: [
+			'M',
+			[60.3925, 5.323333],
+			'Q',
+			[61.063601, 3.413638],
+			[63.334878, 5.662385],
+			'L',
+			[63.671243, 8.744044],
+			'L',
+			[63.695748, 9.184169],
+			'L',
+			[63.600196, 9.30747],
+			'L',
+			[63.645345, 9.705985],
+			'L',
+			[63.653726, 9.77215],
+			'L',
+			[63.584315, 9.799517],
+			'L',
+			[63.456954, 9.967168],
+			'L',
+			[63.474132, 10.360186],
+			'L',
+			[63.426944, 10.393056],
 		],
 		by: 'sea',
 	},
@@ -1289,6 +1360,7 @@ export {
 	WestEuropeRoutes,
 	WestEuropeLandExclusiveRoutes,
 	EastEuropeLandExclusiveRoutes,
+	NorthEuropeLandExclusiveRoutes,
 	NorthEuropeRoutes,
 	BritainRoutes,
 	BritainLandExclusiveRoutes,

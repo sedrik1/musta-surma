@@ -28,7 +28,7 @@ const SidebarContainer = props => {
 
 	const routeLabelsValues = [
 		{
-			label: 'Välimeri ja Konstantinopolin lähialue',
+			label: 'Krim, Välimeri ja Konstantinopolin lähialue',
 			value: 'MediterraneanRoutes',
 		},
 		{ label: 'Brittein saaret', value: 'BritainRoutes' },
@@ -91,7 +91,7 @@ const SidebarContainer = props => {
 																: true
 														}
 														onClick={event =>
-															props.handleLayer(
+															props.handleLayerControl(
 																event.target
 																	.value
 															)
@@ -110,7 +110,7 @@ const SidebarContainer = props => {
 											<Checkbox
 												color="primary"
 												onClick={event =>
-													props.handleLayer(
+													props.handleLayerControl(
 														event.target.value
 													)
 												}
@@ -142,7 +142,7 @@ const SidebarContainer = props => {
 																: true
 														}
 														onClick={event =>
-															props.handleLayer(
+															props.handleLayerControl(
 																event.target.value
 															)
 														}
@@ -160,7 +160,7 @@ const SidebarContainer = props => {
 											<Checkbox
 												color="primary"
 												onClick={event =>
-													props.handleLayer(
+													props.handleLayerControl(
 														event.target.value
 													)
 												}
@@ -191,7 +191,7 @@ const SidebarContainer = props => {
 													: false
 											}
 											onClick={event =>
-												props.handleLayer(
+												props.handleLayerControl(
 													event.target.value
 												)
 											}
@@ -209,7 +209,9 @@ const SidebarContainer = props => {
 								<Checkbox
 									color="primary"
 									onClick={event =>
-										props.handleLayer(event.target.value)
+										props.handleLayerControl(
+											event.target.value
+										)
 									}
 									value="AllTerrains"
 								/>
@@ -229,7 +231,7 @@ const SidebarContainer = props => {
 										<Checkbox
 											color="primary"
 											onClick={event =>
-												props.handleLayer(
+												props.handleLayerControl(
 													event.target.value
 												)
 											}
@@ -250,7 +252,9 @@ const SidebarContainer = props => {
 								<Checkbox
 									color="primary"
 									onClick={event =>
-										props.handleLayer(event.target.value)
+										props.handleLayerControl(
+											event.target.value
+										)
 									}
 									value="GoldenHorde"
 								/>

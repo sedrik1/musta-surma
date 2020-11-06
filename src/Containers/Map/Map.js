@@ -33,20 +33,14 @@ import {
 	BritainLandExclusiveRoutes,
 	SpainRoutes,
 	SpainLandExclusiveRoutes,
+	NorthEuropeLandExclusiveRoutes,
 } from '../../Data/Routes/TradeRoutes';
 import SidebarContainer from '../../Components/UI/Sidebar';
 
 class MapContainer extends Component {
-	constructor() {
-		super();
-		this.mapRef = React.createRef();
-	}
-
 	state = {
-		showMap: false,
 		infoboxLocation: '',
 		infoboxLocationInfo: '',
-		textPathFontSize: 16,
 		collapsed: false,
 		selected: 'layers',
 		displayElements: {
@@ -85,6 +79,7 @@ class MapContainer extends Component {
 		EastEuropeLandExclusiveRoutes,
 		MediterraneanLandExclusiveRoutes,
 		WestEuropeLandExclusiveRoutes,
+		NorthEuropeLandExclusiveRoutes,
 		BritainLandExclusiveRoutes,
 		SpainLandExclusiveRoutes,
 	];
@@ -102,14 +97,6 @@ class MapContainer extends Component {
 	seaRouteStyle = { color: '#003366', fill: false };
 	landRouteStyle = { color: '#8a0303', fill: false };
 
-	textPathFontSizes = {
-		zoomLevel1: 5,
-		zoomLevel3: 7,
-		zoomLevel4: 16,
-		zoomLevel5: 25,
-		zoomLevelDef: 35,
-	};
-
 	onClose() {
 		this.setState({ collapsed: true });
 	}
@@ -125,30 +112,6 @@ class MapContainer extends Component {
 				infoboxLocationInfo: index[1],
 				collapsed: false,
 				selected: 'locationInfo',
-			});
-		}
-	}
-
-	handleMapZoom(zoomLevel) {
-		if (zoomLevel >= 0 && zoomLevel <= 2) {
-			this.setState({
-				textPathFontSize: this.textPathFontSizes.zoomLevel1,
-			});
-		} else if (zoomLevel === 3) {
-			this.setState({
-				textPathFontSize: this.textPathFontSizes.zoomLevel3,
-			});
-		} else if (zoomLevel === 4) {
-			this.setState({
-				textPathFontSize: this.textPathFontSizes.zoomLevel4,
-			});
-		} else if (zoomLevel === 5) {
-			this.setState({
-				textPathFontSize: this.textPathFontSizes.zoomLevel5,
-			});
-		} else {
-			this.setState({
-				textPathFontSize: this.textPathFontSizes.zoomLevelDef,
 			});
 		}
 	}
@@ -335,7 +298,6 @@ class MapContainer extends Component {
 				});
 				break;
 			case 'Britain':
-				console.log();
 				this.setState({
 					displayElements: {
 						...this.state.displayElements,
@@ -544,96 +506,19 @@ class MapContainer extends Component {
 					state={this.state}
 					onClose={() => this.onClose()}
 					onOpen={child => this.onOpen(child)}
-					handleLayer={layerName =>
+					handleLayerControl={layerName =>
 						this.handleLayerControl(layerName)
 					}
 				/>
 
-				<Map
-					className="map-style"
-					ref={this.mapRef}
-					center={[56.1, 23.106111]}
-					zoom={4}
-					onzoomend={() =>
-						this.handleMapZoom(
-							this.mapRef.current.leafletElement.getZoom()
-						)
-					}
-				>
+				<Map className="map-style" center={[56.1, 23.106111]} zoom={4}>
 					<TileLayer
-						attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+						attribution='
+						&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, 
+						&copy; <a href="https://openmaptiles.org/">OpenMapTiles</a>
+						&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
 						url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png"
 					/>
-
-					{years.map(({ year, value }) => (!value ? false : year))}
-
-					{!this.state.displayElements.cities.displayMainlandWest ? (
-						false
-					) : (
-						<FeatureGroup color="black">
-							<MainlandWest
-								handleOverlayClick={location =>
-									this.handleInfoboxClick(location)
-								}
-							/>
-						</FeatureGroup>
-					)}
-
-					{!this.state.displayElements.cities.displayMainlandEast ? (
-						false
-					) : (
-						<FeatureGroup color="black">
-							<MainlandEast
-								handleOverlayClick={location =>
-									this.handleInfoboxClick(location)
-								}
-							/>
-						</FeatureGroup>
-					)}
-
-					{!this.state.displayElements.cities.displayBritain ? (
-						false
-					) : (
-						<FeatureGroup color="black">
-							<Britain
-								handleOverlayClick={location =>
-									this.handleInfoboxClick(location)
-								}
-							/>
-						</FeatureGroup>
-					)}
-
-					{!this.state.displayElements.cities.displayMediterranean ? (
-						false
-					) : (
-						<FeatureGroup color="black">
-							<Mediterranean
-								handleOverlayClick={location =>
-									this.handleInfoboxClick(location)
-								}
-							/>
-						</FeatureGroup>
-					)}
-
-					{!this.state.displayElements.displayAllTerrain ? (
-						false
-					) : (
-						<>
-							{this.cities.map((Item, index) => {
-								return (
-									<FeatureGroup key={index} color="black">
-										<Item
-											handleOverlayClick={location =>
-												this.handleInfoboxClick(
-													location
-												)
-											}
-										/>
-									</FeatureGroup>
-								);
-							})}
-						</>
-					)}
 
 					<LayersControl position="bottomleft">
 						{!this.state.displayElements.displayRoutes
@@ -658,7 +543,7 @@ class MapContainer extends Component {
 
 						{!this.state.displayElements.routes.NorthEuropeRoutes
 							? false
-							: routesVariable[2]}
+							: [routesVariable[2], routesLand[3]]}
 
 						{!this.state.displayElements.routes.SpainRoutes
 							? false
@@ -673,6 +558,81 @@ class MapContainer extends Component {
 							>
 								<Popup>Kultaisen ordan raja</Popup>
 							</Curve>
+						)}
+
+						{years.map(({ year, value }) =>
+							!value ? false : year
+						)}
+
+						{!this.state.displayElements.cities
+							.displayMainlandWest ? (
+							false
+						) : (
+							<FeatureGroup color="black">
+								<MainlandWest
+									handleOverlayClick={location =>
+										this.handleInfoboxClick(location)
+									}
+								/>
+							</FeatureGroup>
+						)}
+
+						{!this.state.displayElements.cities
+							.displayMainlandEast ? (
+							false
+						) : (
+							<FeatureGroup color="black">
+								<MainlandEast
+									handleOverlayClick={location =>
+										this.handleInfoboxClick(location)
+									}
+								/>
+							</FeatureGroup>
+						)}
+
+						{!this.state.displayElements.cities.displayBritain ? (
+							false
+						) : (
+							<FeatureGroup color="black">
+								<Britain
+									handleOverlayClick={location =>
+										this.handleInfoboxClick(location)
+									}
+								/>
+							</FeatureGroup>
+						)}
+
+						{!this.state.displayElements.cities
+							.displayMediterranean ? (
+							false
+						) : (
+							<FeatureGroup color="black">
+								<Mediterranean
+									handleOverlayClick={location =>
+										this.handleInfoboxClick(location)
+									}
+								/>
+							</FeatureGroup>
+						)}
+
+						{!this.state.displayElements.displayAllTerrain ? (
+							false
+						) : (
+							<>
+								{this.cities.map((Item, index) => {
+									return (
+										<FeatureGroup key={index} color="black">
+											<Item
+												handleOverlayClick={location =>
+													this.handleInfoboxClick(
+														location
+													)
+												}
+											/>
+										</FeatureGroup>
+									);
+								})}
+							</>
 						)}
 					</LayersControl>
 				</Map>

@@ -14,7 +14,6 @@ const Mediterranean = [
 	{
 		location: 'Sardinia',
 		coordinates: [39.227778, 9.111111],
-
 		info:
 			'Messinnasta ripeästi poisajetut kauppalaivat saapuivat Sisilian naapurisaarelle Sardiniaan vain kuukautta myöhemmin, siten tuomiten senkin asukkaat sanomattomaan kurjuuteen.',
 	},
@@ -69,7 +68,6 @@ const EastEurope = [
 	{
 		location: 'Kaffa (nyk. Feodosija)',
 		coordinates: [45.048889, 35.379167],
-
 		info:
 			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
 	},
