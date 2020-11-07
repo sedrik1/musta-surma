@@ -1,32 +1,5 @@
 const MediterraneanRoutes = [
 	{
-		route: 'Sarai-Sarkel-Azov',
-		coordinates: [
-			'M',
-			[48.65, 45.45],
-			'Q',
-			[49, 42],
-			[47.719671, 42.219232],
-			'M',
-			[47.719671, 42.219232],
-			[47.1, 39.416667],
-		],
-		by: 'land',
-	},
-
-	{
-		route: 'Azov-Kertš',
-		coordinates: [
-			'M',
-			[47.1, 39.416667],
-			'Q',
-			[46.87, 36.7],
-			[45.36, 36.48],
-		],
-		by: 'sea',
-	},
-
-	{
 		route: 'Kaffa-Konstantinopoli (nyk. Istanbul)',
 		coordinates: [
 			'M',
@@ -37,7 +10,6 @@ const MediterraneanRoutes = [
 		],
 		by: 'sea',
 	},
-
 	{
 		route: 'Konstantinopoli (nyk. Istanbul)-Ateena',
 		coordinates: [
@@ -56,7 +28,6 @@ const MediterraneanRoutes = [
 		],
 		by: 'sea',
 	},
-
 	{
 		route: 'Ateena-Messina-Sardinia-Korsika-Geneve',
 		coordinates: [
@@ -87,7 +58,6 @@ const MediterraneanRoutes = [
 		],
 		by: 'sea',
 	},
-
 	{
 		route: 'Ateena-Dubrovnik-Split-Venetsia',
 		coordinates: [
@@ -109,7 +79,6 @@ const MediterraneanRoutes = [
 		],
 		by: 'sea',
 	},
-
 	{
 		route: 'Geneve-Marseille',
 		coordinates: [
@@ -121,7 +90,6 @@ const MediterraneanRoutes = [
 		],
 		by: 'sea',
 	},
-
 	{
 		route: 'Marseille-Baleaarit',
 		coordinates: [
@@ -144,7 +112,6 @@ const MediterraneanRoutes = [
 		],
 		by: 'sea',
 	},
-
 	{
 		route: 'Baleaarit-Espanjan itärannikko',
 		coordinates: [
@@ -156,7 +123,6 @@ const MediterraneanRoutes = [
 		],
 		by: 'sea',
 	},
-
 	{
 		route: 'Baleaarit-Pyreneiden niemimaa',
 		coordinates: [
@@ -170,6 +136,32 @@ const MediterraneanRoutes = [
 		],
 		by: 'sea',
 	},
+];
+
+const MediterraneanLandExclusiveRoutes = [
+	/* 	{
+		route:
+			'Konstantinopoli (nyk. Istanbul)-Selymbria (nyk. Silivri)-Hadrianopolis (nyk. Edirne)-Plovdiv-Sofia-Niš',
+		coordinates: [
+			[41.009167, 28.975833],
+			[41.080158, 28.26829],
+			[41.666667, 26.566667],
+			[42.15, 24.75],
+			[42.7, 23.333333],
+			[43.32102, 21.89567],
+		],
+	},
+	{
+		route:
+			'Hadrianopolis (nyk. Edirne)-Kızılağaç (nyk. Elhovo)-Burgas-Shumen',
+		coordinates: [
+			[41.666667, 26.566667],
+			[42.166667, 26.566667],
+			[42.5, 27.466667],
+			[42.166667, 26.566667],
+			[43.283333, 26.933333],
+		],
+	}, */
 ];
 
 const SpainRoutes = [
@@ -251,6 +243,37 @@ const WestEuropeRoutes = [
 			[53.314, -0.98],
 			[53.79, 2],
 			'T',
+			[53.553333, 9.992222],
+		],
+		by: 'sea',
+	},
+	{
+		route: 'Hampuri-Oslo',
+		coordinates: [
+			'M',
+			[59.913889, 10.738611],
+			'L',
+			[59.868434, 10.634266],
+			'L',
+			[59.750342, 10.543669],
+			'L',
+			[59.712876, 10.53977],
+			'L',
+			[59.683081, 10.558321],
+			'L',
+			[59.671078, 10.583515],
+			'L',
+			[59.66657, 10.607219],
+			'L',
+			[59.563028, 10.638566],
+			'L',
+			[59.459733, 10.545256],
+			'L',
+			[59.004506, 10.611217],
+			'Q',
+			[56.38046, 6.561097],
+			[54.114163, 8.188136],
+			'L',
 			[53.553333, 9.992222],
 		],
 		by: 'sea',
@@ -456,6 +479,37 @@ const NorthEuropeRoutes = [
 			[59.868434, 10.634266],
 			'L',
 			[59.913889, 10.738611],
+		],
+		by: 'sea',
+	},
+	{
+		route: 'Oslo-Hampuri',
+		coordinates: [
+			'M',
+			[59.913889, 10.738611],
+			'L',
+			[59.868434, 10.634266],
+			'L',
+			[59.750342, 10.543669],
+			'L',
+			[59.712876, 10.53977],
+			'L',
+			[59.683081, 10.558321],
+			'L',
+			[59.671078, 10.583515],
+			'L',
+			[59.66657, 10.607219],
+			'L',
+			[59.563028, 10.638566],
+			'L',
+			[59.459733, 10.545256],
+			'L',
+			[59.004506, 10.611217],
+			'Q',
+			[56.38046, 6.561097],
+			[54.114163, 8.188136],
+			'L',
+			[53.553333, 9.992222],
 		],
 		by: 'sea',
 	},
@@ -785,7 +839,81 @@ const BritainLandExclusiveRoutes = [
 	},
 ];
 
-const MediterraneanLandExclusiveRoutes = [
+const EastEuropeRoutes = [
+	{
+		route: 'Kiova-Tšernihiv-Novhorod-Siverskyi-Bryansk (jokiliikenne)',
+		coordinates: [
+			'M',
+			[50.45, 30.523333], //kiova
+			'Q',
+			[51.910814, 31.024377], //thser
+			[51.983333, 33.266667], //nov-siv
+			'L',
+			[53.233333, 34.366667], //bryansk
+		],
+		by: 'sea',
+	},
+	{
+		route: 'Sarai-Sarkel-Tana (nyk. Azov)',
+		coordinates: [
+			'M',
+			[48.65, 45.45],
+			'Q',
+			[49, 42],
+			[47.719671, 42.219232],
+			'M',
+			[47.719671, 42.219232],
+			[47.1, 39.416667],
+		],
+		by: 'land',
+	},
+	{
+		route: 'Sarai-Moskovan ja Uljanovskin väliset alueet',
+		coordinates: [
+			'M',
+			[48.65, 45.45],
+			'Q',
+			[49.389524, 42.901233],
+			[55.182004, 44.434703],
+		],
+		by: 'land',
+	},
+	{
+		route: 'Kaffa-Konstantinopoli (nyk. Istanbul)',
+		coordinates: [
+			'M',
+			[45.048889, 35.379167],
+			'Q',
+			[42, 32.555],
+			[41.013611, 28.955],
+		],
+		by: 'sea',
+	},
+	{
+		route: 'Tana (nyk. Azov)-Kertš',
+		coordinates: [
+			'M',
+			[47.1, 39.416667],
+			'Q',
+			[46.87, 36.7],
+			[45.36, 36.48],
+		],
+		by: 'sea',
+	},
+	{
+		route: 'Sarai-Moskovan ja Uljanovskin väliset alueet',
+		coordinates: [
+			'M',
+			[48.65, 45.45],
+			'Q',
+			[49.389524, 42.901233],
+			[55.182004, 44.434703],
+		],
+		by: 'land',
+	},
+];
+
+const EastEuropeLandExclusiveRoutes = [
 	{
 		route:
 			'Konstantinopoli (nyk. Istanbul)-Selymbria (nyk. Silivri)-Hadrianopolis (nyk. Edirne)-Plovdiv-Sofia-Niš',
@@ -809,9 +937,6 @@ const MediterraneanLandExclusiveRoutes = [
 			[43.283333, 26.933333],
 		],
 	},
-];
-
-const EastEuropeLandExclusiveRoutes = [
 	{
 		route: 'Shumen-Conopa-Pereyslavets',
 		coordinates: [
@@ -873,6 +998,27 @@ const EastEuropeLandExclusiveRoutes = [
 			[57.816667, 28.333333],
 			[58.533333, 31.266667],
 			[59.875, 31.325],
+		],
+	},
+	{
+		route: 'Novgorod-Toržok-Uglitš-Yaroslavl-Belozersk',
+		coordinates: [
+			[58.533333, 31.266667],
+			[58.334009, 33.088351],
+			[57.033333, 34.966667],
+			[57.533333, 38.333333],
+			[57.616667, 39.85],
+			[60.033333, 37.766667],
+		],
+	},
+	{
+		route: 'Yaroslav-Rostov-Suzdal-Vladimir-Murom',
+		coordinates: [
+			[57.616667, 39.85],
+			[57.183, 39.417],
+			[56.416667, 40.45],
+			[56.133333, 40.416667],
+			[55.573104, 42.042096],
 		],
 	},
 	{
@@ -1359,6 +1505,7 @@ export {
 	MediterraneanLandExclusiveRoutes,
 	WestEuropeRoutes,
 	WestEuropeLandExclusiveRoutes,
+	EastEuropeRoutes,
 	EastEuropeLandExclusiveRoutes,
 	NorthEuropeLandExclusiveRoutes,
 	NorthEuropeRoutes,

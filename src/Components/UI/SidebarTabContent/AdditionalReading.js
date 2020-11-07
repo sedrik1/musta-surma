@@ -56,7 +56,7 @@ const AdditionalReading = () => {
 			<p>
 				Luettelo on sekalaisessa järjestyksessä.
 				<br />
-				Linkit avautuvat uuteen välilehteen
+				Linkit avautuvat uuteen välilehteen.
 			</p>
 			<ul className="more-ul">
 				{AdditionalReadingContent.map(

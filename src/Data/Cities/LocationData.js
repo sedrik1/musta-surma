@@ -27,8 +27,20 @@ const Mediterranean = [
 
 const WestEurope = [
 	{
-		location: 'Geneve',
-		coordinates: [44.411111, 8.932778],
+		location: 'Firenze',
+		coordinates: [43.768611, 11.256944],
+		info:
+			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+	},
+	{
+		location: 'Siena',
+		coordinates: [43.318333, 11.331389],
+		info:
+			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+	},
+	{
+		location: 'Pistoia',
+		coordinates: [43.933333, 10.916667],
 		info:
 			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
 	},
@@ -41,6 +53,12 @@ const WestEurope = [
 	{
 		location: 'Pariisi',
 		coordinates: [48.85, 2.35],
+		info:
+			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+	},
+	{
+		location: 'Avignon',
+		coordinates: [43.95, 4.81],
 		info:
 			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
 	},
@@ -78,10 +96,19 @@ const EastEurope = [
 			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
 	},
 	{
-		location: 'Azov',
+		location: 'Tana (nyk. Azov)',
 		coordinates: [47.1, 39.416667],
 		info:
 			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+	},
+];
+
+const NorthEurope = [
+	{
+		location: 'Bjørgvin (nyk. Bergen)',
+		coordinates: [60.3925, 5.323333],
+		info: `Tavallisesti ruton esitetään tulleen Norjan Bergeniin villalaivan mukana 
+		Lontoosta toukokuussa 1349. Tosiasiassa rutto saapui Oslon seudulle ilmeisesti jo vuoden 1348 lopulla `,
 	},
 ];
 
@@ -92,7 +119,6 @@ const Britain = [
 		info:
 			'Elokuussa tai sen paikkeilla v. 1348 tauti levisi satamakaupunki Bristoliin',
 	},
-
 	{
 		location: 'Lontoo',
 		coordinates: [51.507222, -0.1275],
@@ -100,4 +126,4 @@ const Britain = [
 	},
 ];
 
-export { Mediterranean, WestEurope, EastEurope, Britain };
+export { Mediterranean, WestEurope, EastEurope, Britain, NorthEurope };

@@ -18,19 +18,23 @@ import ColourLegends from './SidebarTabContent/ColourLegends';
 import AdditionalReading from './SidebarTabContent/AdditionalReading';
 import './Sidebar.css';
 
-const SidebarContainer = props => {
+const SidebarContainer = ({
+	state,
+	onClose,
+	onOpen,
+	handleLayerControl,
+	width,
+}) => {
 	const terrainLabelsValues = [
 		{ label: 'Länsi-Eurooppa', value: 'MainlandWest' },
 		{ label: 'Itä-Eurooppa', value: 'MainlandEast' },
+		{ label: 'Pohjois-Eurooppa', value: 'NorthEurope' },
 		{ label: 'Välimeri', value: 'Mediterranean' },
 		{ label: 'Brittein saaret', value: 'Britain' },
 	];
 
 	const routeLabelsValues = [
-		{
-			label: 'Krim, Välimeri ja Konstantinopolin lähialue',
-			value: 'MediterraneanRoutes',
-		},
+		{ label: 'Välimeri', value: 'MediterraneanRoutes' },
 		{ label: 'Brittein saaret', value: 'BritainRoutes' },
 		{ label: 'Itä-Eurooppa', value: 'EastEuropeRoutes' },
 		{ label: 'Länsi-Eurooppa', value: 'WestEuropeRoutes' },
@@ -42,8 +46,8 @@ const SidebarContainer = props => {
 	const createParagraphs = text => {
 		const infoList = document.getElementsByClassName('info');
 		Object.values(infoList).forEach(element => element.remove());
-
 		const splitText = text.split('\n');
+
 		splitText.forEach(sentence => {
 			const p = document.createElement('p');
 			p.classList.add('info');
@@ -56,16 +60,16 @@ const SidebarContainer = props => {
 		<Sidebar
 			id="sidebar"
 			position="right"
-			collapsed={props.state.collapsed}
+			collapsed={state.collapsed}
 			closeIcon={<HiOutlineChevronRight />}
-			selected={props.state.selected}
-			onOpen={props.onOpen.bind(this)}
-			onClose={props.onClose.bind(this)}
+			selected={state.selected}
+			onOpen={onOpen.bind(this)}
+			onClose={onClose.bind(this)}
 		>
 			<Tab id="layers" header="Karttataso-ohjain" icon={<FaLayerGroup />}>
 				{
 					/* prettier-ignore */
-					(props.width === 'xs' || props.width === 'sm') ? (
+					(width === 'xs' || width === 'sm') ? (
 						<Accordion>
 						<AccordionSummary
 							expandIcon={<HiOutlineChevronDown />}
@@ -84,14 +88,14 @@ const SidebarContainer = props => {
 													<Checkbox
 														color="primary"
 														disabled={
-															!props.state
+															!state
 																.displayElements
 																.displayDiseaseSpread
 																? false
 																: true
 														}
 														onClick={event =>
-															props.handleLayerControl(
+															handleLayerControl(
 																event.target
 																	.value
 															)
@@ -110,7 +114,7 @@ const SidebarContainer = props => {
 											<Checkbox
 												color="primary"
 												onClick={event =>
-													props.handleLayerControl(
+													handleLayerControl(
 														event.target.value
 													)
 												}
@@ -135,14 +139,14 @@ const SidebarContainer = props => {
 													<Checkbox
 														color="primary"
 														disabled={
-															!props.state
+															!state
 																.displayElements
 																.displayDiseaseSpread
 																? false
 																: true
 														}
 														onClick={event =>
-															props.handleLayerControl(
+															handleLayerControl(
 																event.target.value
 															)
 														}
@@ -160,7 +164,7 @@ const SidebarContainer = props => {
 											<Checkbox
 												color="primary"
 												onClick={event =>
-													props.handleLayerControl(
+													handleLayerControl(
 														event.target.value
 													)
 												}
@@ -185,13 +189,13 @@ const SidebarContainer = props => {
 										<Checkbox
 											color="primary"
 											disabled={
-												props.state.displayElements
+												state.displayElements
 													.displayAllTerrain
 													? true
 													: false
 											}
 											onClick={event =>
-												props.handleLayerControl(
+												handleLayerControl(
 													event.target.value
 												)
 											}
@@ -209,9 +213,7 @@ const SidebarContainer = props => {
 								<Checkbox
 									color="primary"
 									onClick={event =>
-										props.handleLayerControl(
-											event.target.value
-										)
+										handleLayerControl(event.target.value)
 									}
 									value="AllTerrains"
 								/>
@@ -231,7 +233,7 @@ const SidebarContainer = props => {
 										<Checkbox
 											color="primary"
 											onClick={event =>
-												props.handleLayerControl(
+												handleLayerControl(
 													event.target.value
 												)
 											}
@@ -252,9 +254,7 @@ const SidebarContainer = props => {
 								<Checkbox
 									color="primary"
 									onClick={event =>
-										props.handleLayerControl(
-											event.target.value
-										)
+										handleLayerControl(event.target.value)
 									}
 									value="GoldenHorde"
 								/>
@@ -267,22 +267,20 @@ const SidebarContainer = props => {
 			<Tab
 				id="locationInfo"
 				header={
-					props.state.infoboxLocation.length === 0
+					state.infoboxLocation.length === 0
 						? 'Tietoa'
-						: props.state.infoboxLocation
-								.split(' ')[0]
-								.toUpperCase()
+						: state.infoboxLocation.split(' ')[0].toUpperCase()
 				}
 				icon={<BsQuestionCircleFill />}
 			>
 				<div id="paragraph-parent">
 					<h3>
-						{props.state.infoboxLocation.length !== 0
-							? props.state.infoboxLocation
+						{state.infoboxLocation.length !== 0
+							? state.infoboxLocation
 							: false}
 					</h3>
-					{props.state.infoboxLocationInfo.length !== 0 ? (
-						createParagraphs(props.state.infoboxLocationInfo)
+					{state.infoboxLocationInfo.length !== 0 ? (
+						createParagraphs(state.infoboxLocationInfo)
 					) : (
 						<p>
 							Tämä osio päivittyy aluetiedoilla valitessasi jonkin

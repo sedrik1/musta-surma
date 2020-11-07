@@ -1,9 +1,9 @@
 import React from 'react';
 import { Popup, CircleMarker } from 'react-leaflet';
-import { Britain as data } from '../../../Data/Cities/LocationData';
+import { NorthEurope as data } from '../../../Data/Cities/LocationData';
 
-const Britain = props => {
-	data.map(({ info, location, coordinates }, index) => {
+const NorthEurope = props => {
+	return data.map(({ info, location, coordinates }, index) => {
 		return (
 			<CircleMarker
 				key={index}
@@ -17,4 +17,4 @@ const Britain = props => {
 	});
 };
 
-export default Britain;
+export default NorthEurope;

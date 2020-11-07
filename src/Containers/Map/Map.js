@@ -9,10 +9,15 @@ import {
 	Polyline,
 } from 'react-leaflet';
 import { Curve } from 'react-leaflet-curve';
+
 import Mediterranean from '../../Components/Cities/Mediterranean/Mediterranean';
-import MainlandEast from '../../Components/Cities/MainlandEast/MainlandEast';
 import MainlandWest from '../../Components/Cities/MainlandWest/MainlandWest';
+import MainlandEast from '../../Components/Cities/MainlandEast/MainlandEast';
+import NorthEurope from '../../Components/Cities/NorthEurope/NorthEurope';
 import Britain from '../../Components/Cities/Britain/Britain';
+import GoldenHordeBorder from '../../Data/Misc/GoldenHorde';
+import SidebarContainer from '../../Components/UI/Sidebar';
+
 import V1346 from '../../Components/DiseaseSpread/V1346';
 import V1347 from '../../Components/DiseaseSpread/V1347';
 import V1348 from '../../Components/DiseaseSpread/V1348';
@@ -21,21 +26,21 @@ import V1350 from '../../Components/DiseaseSpread/V1350';
 import V1351 from '../../Components/DiseaseSpread/V1351';
 import V1352 from '../../Components/DiseaseSpread/V1352';
 import V1353 from '../../Components/DiseaseSpread/V1353';
-import GoldenHordeBorder from '../../Data/Misc/GoldenHorde';
+
 import {
 	MediterraneanRoutes,
 	MediterraneanLandExclusiveRoutes,
+	EastEuropeRoutes,
 	EastEuropeLandExclusiveRoutes,
 	WestEuropeRoutes,
 	WestEuropeLandExclusiveRoutes,
 	NorthEuropeRoutes,
+	NorthEuropeLandExclusiveRoutes,
 	BritainRoutes,
 	BritainLandExclusiveRoutes,
 	SpainRoutes,
 	SpainLandExclusiveRoutes,
-	NorthEuropeLandExclusiveRoutes,
 } from '../../Data/Routes/TradeRoutes';
-import SidebarContainer from '../../Components/UI/Sidebar';
 
 class MapContainer extends Component {
 	state = {
@@ -51,14 +56,15 @@ class MapContainer extends Component {
 			cities: {
 				displayMainlandEast: false,
 				displayMainlandWest: false,
+				displayNorthEurope: false,
 				displayBritain: false,
 				displayMediterranean: false,
 			},
 			routes: {
 				MediterraneanRoutes: false,
-				EastEuropeRoutes: false,
+				EastEuropeRoutes: true,
 				WestEuropeRoutes: false,
-				NorthEuropeRoutes: true,
+				NorthEuropeRoutes: false,
 				BritainRoutes: false,
 				SpainRoutes: false,
 			},
@@ -76,9 +82,9 @@ class MapContainer extends Component {
 	};
 
 	landExclusiveRoutes = [
-		EastEuropeLandExclusiveRoutes,
 		MediterraneanLandExclusiveRoutes,
 		WestEuropeLandExclusiveRoutes,
+		EastEuropeLandExclusiveRoutes,
 		NorthEuropeLandExclusiveRoutes,
 		BritainLandExclusiveRoutes,
 		SpainLandExclusiveRoutes,
@@ -87,12 +93,13 @@ class MapContainer extends Component {
 	variableRoutes = [
 		MediterraneanRoutes,
 		WestEuropeRoutes,
+		EastEuropeRoutes,
 		NorthEuropeRoutes,
 		BritainRoutes,
 		SpainRoutes,
 	];
 
-	cities = [Mediterranean, MainlandEast, MainlandWest, Britain];
+	cities = [Mediterranean, MainlandEast, MainlandWest, Britain, NorthEurope];
 
 	seaRouteStyle = { color: '#003366', fill: false };
 	landRouteStyle = { color: '#8a0303', fill: false };
@@ -297,6 +304,18 @@ class MapContainer extends Component {
 					},
 				});
 				break;
+			case 'NorthEurope':
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						cities: {
+							...this.state.displayElements.cities,
+							displayNorthEurope: !this.state.displayElements
+								.cities.displayNorthEurope,
+						},
+					},
+				});
+				break;
 			case 'Britain':
 				this.setState({
 					displayElements: {
@@ -399,8 +418,6 @@ class MapContainer extends Component {
 					},
 				});
 				break;
-			default:
-				break;
 			case 'GoldenHorde':
 				this.setState({
 					displayElements: {
@@ -410,53 +427,14 @@ class MapContainer extends Component {
 					},
 				});
 				break;
+			default:
+				break;
 		}
 	}
 
 	render() {
 		let routesLand = [];
 		let routesVariable = [];
-
-		this.landExclusiveRoutes.forEach(element => {
-			let assignLandElement;
-			assignLandElement = element.map(({ coordinates, route }, index) => {
-				return (
-					<Polyline
-						key={index}
-						positions={coordinates}
-						color={this.landRouteStyle.color}
-					>
-						<Popup>{route}</Popup>
-					</Polyline>
-				);
-			});
-			routesLand.push(assignLandElement);
-		});
-
-		this.variableRoutes.forEach(element => {
-			let assignVariableElement;
-			assignVariableElement = element.map(
-				({ coordinates, by, route }, index) => {
-					return (
-						<Curve
-							key={index}
-							positions={coordinates}
-							option={
-								by === 'sea'
-									? this.seaRouteStyle
-									: this.landRouteStyle
-							}
-						>
-							<Popup>{route}</Popup>
-						</Curve>
-					);
-				}
-			);
-			routesVariable.push(assignVariableElement);
-		});
-
-		const allRoutes = [routesLand, routesVariable];
-
 		let years = [
 			{
 				year: <V1346 key="V1346" />,
@@ -499,6 +477,103 @@ class MapContainer extends Component {
 					.displayDiseaseSpread_1353,
 			},
 		];
+		let cities = [
+			{
+				City: (
+					<MainlandEast
+						handleOverlayClick={location =>
+							this.handleInfoboxClick(location)
+						}
+						key="MainlandEast"
+					/>
+				),
+				value: this.state.displayElements.cities.displayMainlandEast,
+			},
+			{
+				City: (
+					<MainlandWest
+						handleOverlayClick={location =>
+							this.handleInfoboxClick(location)
+						}
+						key="MainlandWest"
+					/>
+				),
+				value: this.state.displayElements.cities.displayMainlandEast,
+			},
+			{
+				City: (
+					<NorthEurope
+						handleOverlayClick={location =>
+							this.handleInfoboxClick(location)
+						}
+						key="NorthEurope"
+					/>
+				),
+				value: this.state.displayElements.cities.displayNorthEurope,
+			},
+			{
+				City: (
+					<Britain
+						handleOverlayClick={location =>
+							this.handleInfoboxClick(location)
+						}
+						key="Britain"
+					/>
+				),
+				value: this.state.displayElements.cities.displayBritain,
+			},
+			{
+				City: (
+					<Mediterranean
+						handleOverlayClick={location =>
+							this.handleInfoboxClick(location)
+						}
+						key="Mediterranean"
+					/>
+				),
+				value: this.state.displayElements.cities.displayMediterranean,
+			},
+		];
+
+		this.landExclusiveRoutes.forEach(element => {
+			let assignLandElement;
+			assignLandElement = element.map(({ coordinates, route }, index) => {
+				return (
+					<Polyline
+						key={index}
+						positions={coordinates}
+						color={this.landRouteStyle.color}
+					>
+						<Popup>{route}</Popup>
+					</Polyline>
+				);
+			});
+			routesLand.push(assignLandElement);
+		});
+
+		this.variableRoutes.forEach(element => {
+			let assignVariableElement;
+			assignVariableElement = element.map(
+				({ coordinates, by, route }, index) => {
+					return (
+						<Curve
+							key={index}
+							positions={coordinates}
+							option={
+								by === 'sea'
+									? this.seaRouteStyle
+									: this.landRouteStyle
+							}
+						>
+							<Popup>{route}</Popup>
+						</Curve>
+					);
+				}
+			);
+			routesVariable.push(assignVariableElement);
+		});
+
+		const allRoutes = [routesLand, routesVariable];
 
 		return (
 			<>
@@ -527,27 +602,27 @@ class MapContainer extends Component {
 
 						{!this.state.displayElements.routes.MediterraneanRoutes
 							? false
-							: [routesVariable[0], routesLand[1]]}
-
-						{!this.state.displayElements.routes.BritainRoutes
-							? false
-							: [routesVariable[3], routesLand[3]]}
-
-						{!this.state.displayElements.routes.EastEuropeRoutes
-							? false
-							: routesLand[0]}
+							: [routesVariable[0], routesLand[0]]}
 
 						{!this.state.displayElements.routes.WestEuropeRoutes
 							? false
-							: [routesVariable[1], routesLand[2]]}
+							: [routesVariable[1], routesLand[1]]}
+
+						{!this.state.displayElements.routes.EastEuropeRoutes
+							? false
+							: [routesVariable[2], routesLand[2]]}
 
 						{!this.state.displayElements.routes.NorthEuropeRoutes
 							? false
-							: [routesVariable[2], routesLand[3]]}
+							: [routesVariable[3], routesLand[3]]}
+
+						{!this.state.displayElements.routes.BritainRoutes
+							? false
+							: [routesVariable[4], routesLand[4]]}
 
 						{!this.state.displayElements.routes.SpainRoutes
 							? false
-							: [routesVariable[4], routesLand[4]]}
+							: [routesVariable[5], routesLand[5]]}
 
 						{!this.state.displayElements.displayGoldenHorde ? (
 							false
@@ -564,64 +639,21 @@ class MapContainer extends Component {
 							!value ? false : year
 						)}
 
-						{!this.state.displayElements.cities
-							.displayMainlandWest ? (
-							false
-						) : (
-							<FeatureGroup color="black">
-								<MainlandWest
-									handleOverlayClick={location =>
-										this.handleInfoboxClick(location)
-									}
-								/>
-							</FeatureGroup>
+						{cities.map(({ City, value, index }) =>
+							!value ? (
+								false
+							) : (
+								<FeatureGroup key={index} color="#000">
+									{City}
+								</FeatureGroup>
+							)
 						)}
 
-						{!this.state.displayElements.cities
-							.displayMainlandEast ? (
-							false
-						) : (
-							<FeatureGroup color="black">
-								<MainlandEast
-									handleOverlayClick={location =>
-										this.handleInfoboxClick(location)
-									}
-								/>
-							</FeatureGroup>
-						)}
-
-						{!this.state.displayElements.cities.displayBritain ? (
-							false
-						) : (
-							<FeatureGroup color="black">
-								<Britain
-									handleOverlayClick={location =>
-										this.handleInfoboxClick(location)
-									}
-								/>
-							</FeatureGroup>
-						)}
-
-						{!this.state.displayElements.cities
-							.displayMediterranean ? (
-							false
-						) : (
-							<FeatureGroup color="black">
-								<Mediterranean
-									handleOverlayClick={location =>
-										this.handleInfoboxClick(location)
-									}
-								/>
-							</FeatureGroup>
-						)}
-
-						{!this.state.displayElements.displayAllTerrain ? (
-							false
-						) : (
-							<>
-								{this.cities.map((Item, index) => {
+						{!this.state.displayElements.displayAllTerrain
+							? false
+							: this.cities.map((Item, index) => {
 									return (
-										<FeatureGroup key={index} color="black">
+										<FeatureGroup key={index} color="#000">
 											<Item
 												handleOverlayClick={location =>
 													this.handleInfoboxClick(
@@ -631,14 +663,11 @@ class MapContainer extends Component {
 											/>
 										</FeatureGroup>
 									);
-								})}
-							</>
-						)}
+							  })}
 					</LayersControl>
 				</Map>
 			</>
 		);
 	}
 }
-
 export default MapContainer;
