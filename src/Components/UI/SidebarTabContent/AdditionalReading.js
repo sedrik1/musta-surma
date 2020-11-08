@@ -10,6 +10,11 @@ const AdditionalReading = () => {
 				'Elämä tautisessa kaupungissa – Mustan surman vaikutus toscanalaiskaupunkien arkeen',
 		},
 		{
+			link: 'https://journal.fi/tt/article/view/57247',
+			author: 'Pekka Heikura',
+			contentName: 'Musta surma',
+		},
+		{
 			link: 'https://www.youtube.com/watch?v=_5ImYgBeBS0',
 			author: 'Professor Sir Richard J. Evans FBA',
 			contentName: 'The Black Death',
@@ -37,11 +42,6 @@ const AdditionalReading = () => {
 			link: 'https://www.visualcapitalist.com/medieval-trade-route-map/',
 			author: 'Nick Routley',
 			contentName: 'A Fascinating Map of Medieval Trade Routes',
-		},
-		{
-			link: 'https://journal.fi/tt/article/view/57247',
-			author: 'Pekka Heikura',
-			contentName: 'Musta surma',
 		},
 		{
 			link:

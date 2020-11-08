@@ -41,6 +41,10 @@ import {
 	SpainRoutes,
 	SpainLandExclusiveRoutes,
 } from '../../Data/Routes/TradeRoutes';
+import {
+	seaRouteStyle,
+	landRouteStyle,
+} from '../../Data/Misc/TradeRouteStyles';
 
 class MapContainer extends Component {
 	state = {
@@ -50,7 +54,7 @@ class MapContainer extends Component {
 		selected: 'layers',
 		displayElements: {
 			displayRoutes: false,
-			displayAllTerrain: false,
+			displayAllTerrain: true,
 			displayDiseaseSpread: false,
 			displayGoldenHorde: false,
 			cities: {
@@ -101,9 +105,6 @@ class MapContainer extends Component {
 
 	cities = [Mediterranean, MainlandEast, MainlandWest, Britain, NorthEurope];
 
-	seaRouteStyle = { color: '#003366', fill: false };
-	landRouteStyle = { color: '#8a0303', fill: false };
-
 	onClose() {
 		this.setState({ collapsed: true });
 	}
@@ -113,12 +114,13 @@ class MapContainer extends Component {
 	}
 
 	handleInfoboxClick(index) {
+		console.log('this.state', this.state.collapsed, this.state.selected);
+		this.setState({ selected: 'locationInfo' });
 		if (this.state.infoboxLocation !== index[0]) {
 			this.setState({
 				infoboxLocation: index[0],
 				infoboxLocationInfo: index[1],
 				collapsed: false,
-				selected: 'locationInfo',
 			});
 		}
 	}
@@ -229,7 +231,7 @@ class MapContainer extends Component {
 					},
 				});
 				break;
-			case 'Disease':
+			case 'Kaikki vuodet':
 				if (!this.state.displayElements.displayDiseaseSpread) {
 					let disease = {
 						displayDiseaseSpread_1346: true,
@@ -542,7 +544,7 @@ class MapContainer extends Component {
 					<Polyline
 						key={index}
 						positions={coordinates}
-						color={this.landRouteStyle.color}
+						color={landRouteStyle.color}
 					>
 						<Popup>{route}</Popup>
 					</Polyline>
@@ -560,9 +562,7 @@ class MapContainer extends Component {
 							key={index}
 							positions={coordinates}
 							option={
-								by === 'sea'
-									? this.seaRouteStyle
-									: this.landRouteStyle
+								by === 'sea' ? seaRouteStyle : landRouteStyle
 							}
 						>
 							<Popup>{route}</Popup>

@@ -2,14 +2,14 @@ const Mediterranean = [
 	{
 		location: 'Konstantinopoli (nyk. Istanbul)',
 		coordinates: [41.013611, 28.955],
-		info:
-			'Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+		info: `Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
 	},
 	{
 		location: 'Messina',
 		coordinates: [38.189, 15.55],
 		info: `Euroopan kaupungeista Messina, joka sijaitsee Italian saappaankärjessä eli Sisiliassa, joutui ensimmäisenä kokemaan mustan surman julmuuden. 
-			Lokakuussa vuonna 1347 Konstantinopolista saapuneet kauppalaivat saastuttivat kaupungin, ja todellisuus valitettavan tilanteen aiheuttamasta säälimättömästä ankaruudesta saattoi asukkaat kauhun valtaan. Kauppalaivat karkotettiin satamasta hetimmiten asian tultua tietoon, mutta liian myöhään. Kulkutauti oli jo saanut otteen kaupungista ja paniikissaan asukkaat pakenivat maalle, epätoivoisesti pyrkien kauas muusta yhteiskunnasta.`,
+			Lokakuussa vuonna 1347 Konstantinopolista saapuneet kauppalaivat saastuttivat kaupungin, ja todellisuus valitettavan tilanteen aiheuttamasta säälimättömästä ankaruudesta saattoi asukkaat kauhun valtaan.
+			Kauppalaivat karkotettiin satamasta hetimmiten asian tultua tietoon, mutta liian myöhään. Kulkutauti oli jo saanut otteen kaupungista ja paniikissaan asukkaat pakenivat maalle, epätoivoisesti pyrkien kauas muusta yhteiskunnasta.`,
 	},
 	{
 		location: 'Sardinia',
@@ -29,50 +29,74 @@ const WestEurope = [
 	{
 		location: 'Firenze',
 		coordinates: [43.768611, 11.256944],
-		info:
-			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+		info: `Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
 	},
 	{
 		location: 'Siena',
 		coordinates: [43.318333, 11.331389],
-		info:
-			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+		info: `Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
 	},
 	{
 		location: 'Pistoia',
 		coordinates: [43.933333, 10.916667],
-		info:
-			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+		info: `Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
 	},
 	{
 		location: 'Erfurt',
 		coordinates: [50.983333, 11.033333],
-		info:
-			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+		info: `Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
 	},
 	{
 		location: 'Pariisi',
 		coordinates: [48.85, 2.35],
-		info:
-			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+		info: `Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
 	},
 	{
 		location: 'Avignon',
 		coordinates: [43.95, 4.81],
-		info:
-			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+		info: `Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
 	},
 	{
 		location: 'Givry',
 		coordinates: [46.7831, 4.7436],
-		info:
-			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+		info: `Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
 	},
 	{
 		location: 'Lyon',
 		coordinates: [45.767222, 4.834444],
-		info:
-			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+		info: `Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
 	},
 ];
 
@@ -86,20 +110,29 @@ const EastEurope = [
 	{
 		location: 'Kaffa (nyk. Feodosija)',
 		coordinates: [45.048889, 35.379167],
-		info:
-			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+		info: `Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
 	},
 	{
 		location: 'Moskova',
 		coordinates: [55.755833, 37.617222],
-		info:
-			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+		info: `Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
 	},
 	{
 		location: 'Tana (nyk. Azov)',
 		coordinates: [47.1, 39.416667],
-		info:
-			'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+		info: `Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
+			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
 	},
 ];
 
@@ -107,6 +140,12 @@ const NorthEurope = [
 	{
 		location: 'Bjørgvin (nyk. Bergen)',
 		coordinates: [60.3925, 5.323333],
+		info: `Tavallisesti ruton esitetään tulleen Norjan Bergeniin villalaivan mukana 
+		Lontoosta toukokuussa 1349. Tosiasiassa rutto saapui Oslon seudulle ilmeisesti jo vuoden 1348 lopulla `,
+	},
+	{
+		location: 'Oslo',
+		coordinates: [59.913889, 10.752222],
 		info: `Tavallisesti ruton esitetään tulleen Norjan Bergeniin villalaivan mukana 
 		Lontoosta toukokuussa 1349. Tosiasiassa rutto saapui Oslon seudulle ilmeisesti jo vuoden 1348 lopulla `,
 	},

@@ -7,16 +7,35 @@ import {
 	HiOutlineChevronDown,
 } from 'react-icons/hi';
 import { BsFillInfoCircleFill, BsQuestionCircleFill } from 'react-icons/bs';
+
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import withWidth from '@material-ui/core/withWidth';
+
 import DiseaseYears from '../../Data/DiseaseSpread/DiseaseSpreadInfo';
 import ColourLegends from './SidebarTabContent/ColourLegends';
 import AdditionalReading from './SidebarTabContent/AdditionalReading';
+import {
+	terrainLabelValues,
+	routeLabelValues,
+} from '../../Data/Misc/SidebarValues';
 import './Sidebar.css';
+
+const createParagraphs = text => {
+	const infoList = document.getElementsByClassName('info');
+	Object.values(infoList).forEach(element => element.remove());
+	const splitText = text.split('\n');
+
+	splitText.forEach(sentence => {
+		const p = document.createElement('p');
+		p.classList.add('info');
+		p.appendChild(document.createTextNode(sentence));
+		document.getElementById('paragraph-parent').appendChild(p);
+	});
+};
 
 const SidebarContainer = ({
 	state,
@@ -25,37 +44,6 @@ const SidebarContainer = ({
 	handleLayerControl,
 	width,
 }) => {
-	const terrainLabelsValues = [
-		{ label: 'Länsi-Eurooppa', value: 'MainlandWest' },
-		{ label: 'Itä-Eurooppa', value: 'MainlandEast' },
-		{ label: 'Pohjois-Eurooppa', value: 'NorthEurope' },
-		{ label: 'Välimeri', value: 'Mediterranean' },
-		{ label: 'Brittein saaret', value: 'Britain' },
-	];
-
-	const routeLabelsValues = [
-		{ label: 'Välimeri', value: 'MediterraneanRoutes' },
-		{ label: 'Brittein saaret', value: 'BritainRoutes' },
-		{ label: 'Itä-Eurooppa', value: 'EastEuropeRoutes' },
-		{ label: 'Länsi-Eurooppa', value: 'WestEuropeRoutes' },
-		{ label: 'Pohjois-Eurooppa', value: 'NorthEuropeRoutes' },
-		{ label: 'Espanja', value: 'SpainRoutes' },
-		{ label: 'Kaikki kauppareitit', value: 'Routes' },
-	];
-
-	const createParagraphs = text => {
-		const infoList = document.getElementsByClassName('info');
-		Object.values(infoList).forEach(element => element.remove());
-		const splitText = text.split('\n');
-
-		splitText.forEach(sentence => {
-			const p = document.createElement('p');
-			p.classList.add('info');
-			p.appendChild(document.createTextNode(sentence));
-			document.getElementById('paragraph-parent').appendChild(p);
-		});
-	};
-
 	return (
 		<Sidebar
 			id="sidebar"
@@ -87,20 +75,32 @@ const SidebarContainer = ({
 												control={
 													<Checkbox
 														color="primary"
-														disabled={
-															!state
-																.displayElements
-																.displayDiseaseSpread
+														checked={
+															date === 'Kaikki vuodet'
+																? false
+																: !state.displayElements
+																		.displayDiseaseSpread
 																? false
 																: true
 														}
-														onClick={event =>
-															handleLayerControl(
-																event.target
-																	.value
-															)
+														disabled={
+															date === 'Kaikki vuodet'
+																? false
+																: !state.displayElements
+																		.displayDiseaseSpread
+																? false
+																: true
 														}
-														value={`Disease_${date}`}
+														onClick={event => {
+															handleLayerControl(
+																event.target.value
+															);
+														}}
+														value={
+															date === 'Kaikki vuodet'
+																? date
+																: `Disease_${date}`
+														}
 													/>
 												}
 												label={date}
@@ -108,22 +108,6 @@ const SidebarContainer = ({
 										</li>
 									);
 								})}
-								<li>
-									<FormControlLabel
-										control={
-											<Checkbox
-												color="primary"
-												onClick={event =>
-													handleLayerControl(
-														event.target.value
-													)
-												}
-												value="Disease"
-											/>
-										}
-										label="Kaikki vuodet"
-									/>
-								</li>
 							</ul>
 						</AccordionDetails>
 					</Accordion>
@@ -138,19 +122,26 @@ const SidebarContainer = ({
 												control={
 													<Checkbox
 														color="primary"
+														checked={undefined}
 														disabled={
-															!state
-																.displayElements
-																.displayDiseaseSpread
+															date === 'Kaikki vuodet'
+																? false
+																: !state.displayElements
+																		.displayDiseaseSpread
 																? false
 																: true
 														}
-														onClick={event =>
+														onClick={event => {			
+															console.log(document.querySelectorAll(".PrivateSwitchBase-input-4"));
 															handleLayerControl(
 																event.target.value
-															)
+															);
+														}}
+														value={
+															date === 'Kaikki vuodet'
+																? date
+																: `Disease_${date}`
 														}
-														value={`Disease_${date}`}
 													/>
 												}
 												label={date}
@@ -158,22 +149,6 @@ const SidebarContainer = ({
 										</li>
 									);
 								})}
-								<li>
-									<FormControlLabel
-										control={
-											<Checkbox
-												color="primary"
-												onClick={event =>
-													handleLayerControl(
-														event.target.value
-													)
-												}
-												value="Disease"
-											/>
-										}
-										label="Kaikki vuodet"
-									/>
-								</li>
 							</ul>
 						</>	
 					)
@@ -181,7 +156,7 @@ const SidebarContainer = ({
 				<hr />
 				<p id="cities-paragraph">Kaupungit maa-alueittain</p>
 				<ul id="cities-list">
-					{terrainLabelsValues.map(({ label, value }) => {
+					{terrainLabelValues.map(({ label, value }) => {
 						return (
 							<li key={label}>
 								<FormControlLabel
@@ -189,8 +164,10 @@ const SidebarContainer = ({
 										<Checkbox
 											color="primary"
 											disabled={
-												state.displayElements
-													.displayAllTerrain
+												label === 'Kaikki maa-alueet'
+													? false
+													: state.displayElements
+															.displayAllTerrain
 													? true
 													: false
 											}
@@ -207,25 +184,11 @@ const SidebarContainer = ({
 							</li>
 						);
 					})}
-					<li>
-						<FormControlLabel
-							control={
-								<Checkbox
-									color="primary"
-									onClick={event =>
-										handleLayerControl(event.target.value)
-									}
-									value="AllTerrains"
-								/>
-							}
-							label="Kaikki maa-alueet"
-						/>
-					</li>
 				</ul>
 				<hr />
 				<p id="paragraph">Kauppareitit</p>
 				<ul id="routes-list">
-					{routeLabelsValues.map(({ label, value }) => {
+					{routeLabelValues.map(({ label, value }) => {
 						return (
 							<li key={label}>
 								<FormControlLabel

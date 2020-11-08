@@ -4309,6 +4309,7 @@ const DiseaseYears = [
 	{ coordinates: coordinates_1351, colour: '#c923fc', date: 'v. 1351' },
 	{ coordinates: coordinates_1352, colour: '#5d23fc', date: 'v. 1352' },
 	{ coordinates: coordinates_1353, colour: '#2356fc', date: 'v. 1353' },
+	{ coordinates: [], colour: '', date: 'Kaikki vuodet' },
 ];
 
 const v1346 = DiseaseYears[0];
