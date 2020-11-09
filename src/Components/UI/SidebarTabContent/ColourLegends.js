@@ -39,7 +39,7 @@ const ColourLegends = () => {
 			colour: '#8a0303',
 		},
 		{
-			name: 'Merireitit',
+			name: 'Meri- ja jokireitit',
 			colour: '#003366',
 		},
 		{

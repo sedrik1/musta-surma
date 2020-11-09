@@ -192,14 +192,19 @@ ul li {
 
 #colours-list > li:nth-of-type(9),
 #colours-list > li:nth-of-type(10),
-#colours-list > li:nth-of-type(11) {
+#colours-list > li:nth-of-type(11),
+#colours-list > li:last-of-type {
 	margin-top: 15px;
-	flex: 1 33%;
+	flex: 1 50%;
 }
 
-#colours-list > li:last-of-type {
-	flex: 2 100%;
-	margin-top: 15px;
+@media only screen and (max-width: 992px) {
+	#colours-list > li:nth-of-type(9),
+	#colours-list > li:nth-of-type(10),
+	#colours-list > li:nth-of-type(11),
+	#colours-list > li:last-of-type {
+		flex: 1 100%;
+	}
 }
 
 #colours-list > li > span {

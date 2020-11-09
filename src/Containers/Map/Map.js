@@ -54,7 +54,7 @@ class MapContainer extends Component {
 		selected: 'layers',
 		displayElements: {
 			displayRoutes: false,
-			displayAllTerrain: true,
+			displayAllTerrain: false,
 			displayDiseaseSpread: false,
 			displayGoldenHorde: false,
 			cities: {
@@ -66,7 +66,7 @@ class MapContainer extends Component {
 			},
 			routes: {
 				MediterraneanRoutes: false,
-				EastEuropeRoutes: true,
+				EastEuropeRoutes: false,
 				WestEuropeRoutes: false,
 				NorthEuropeRoutes: false,
 				BritainRoutes: false,
@@ -232,43 +232,13 @@ class MapContainer extends Component {
 				});
 				break;
 			case 'Kaikki vuodet':
-				if (!this.state.displayElements.displayDiseaseSpread) {
-					let disease = {
-						displayDiseaseSpread_1346: true,
-						displayDiseaseSpread_1347: true,
-						displayDiseaseSpread_1348: true,
-						displayDiseaseSpread_1349: true,
-						displayDiseaseSpread_1350: true,
-						displayDiseaseSpread_1351: true,
-						displayDiseaseSpread_1352: true,
-						displayDiseaseSpread_1353: true,
-					};
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							displayDiseaseSpread: true,
-							disease: disease,
-						},
-					});
-				} else {
-					let disease = {
-						displayDiseaseSpread_1346: false,
-						displayDiseaseSpread_1347: false,
-						displayDiseaseSpread_1348: false,
-						displayDiseaseSpread_1349: false,
-						displayDiseaseSpread_1350: false,
-						displayDiseaseSpread_1351: false,
-						displayDiseaseSpread_1352: false,
-						displayDiseaseSpread_1353: false,
-					};
-					this.setState({
-						displayElements: {
-							...this.state.displayElements,
-							displayDiseaseSpread: false,
-							disease: disease,
-						},
-					});
-				}
+				this.setState({
+					displayElements: {
+						...this.state.displayElements,
+						displayDiseaseSpread: !this.state.displayElements
+							.displayDiseaseSpread,
+					},
+				});
 				break;
 			case 'Mediterranean':
 				this.setState({
@@ -573,7 +543,32 @@ class MapContainer extends Component {
 			routesVariable.push(assignVariableElement);
 		});
 
-		const allRoutes = [routesLand, routesVariable];
+		const allRoutes = [
+			{
+				value: this.state.displayElements.routes.MediterraneanRoutes,
+				routes: [routesVariable[0], routesLand[0]],
+			},
+			{
+				value: this.state.displayElements.routes.WestEuropeRoutes,
+				routes: [routesVariable[1], routesLand[1]],
+			},
+			{
+				value: this.state.displayElements.routes.EastEuropeRoutes,
+				routes: [routesVariable[2], routesLand[2]],
+			},
+			{
+				value: this.state.displayElements.routes.NorthEuropeRoutes,
+				routes: [routesVariable[3], routesLand[3]],
+			},
+			{
+				value: this.state.displayElements.routes.BritainRoutes,
+				routes: [routesVariable[4], routesLand[4]],
+			},
+			{
+				value: this.state.displayElements.routes.SpainRoutes,
+				routes: [routesVariable[5], routesLand[5]],
+			},
+		];
 
 		return (
 			<>
@@ -596,34 +591,6 @@ class MapContainer extends Component {
 					/>
 
 					<LayersControl position="bottomleft">
-						{!this.state.displayElements.displayRoutes
-							? false
-							: allRoutes.map(item => item)}
-
-						{!this.state.displayElements.routes.MediterraneanRoutes
-							? false
-							: [routesVariable[0], routesLand[0]]}
-
-						{!this.state.displayElements.routes.WestEuropeRoutes
-							? false
-							: [routesVariable[1], routesLand[1]]}
-
-						{!this.state.displayElements.routes.EastEuropeRoutes
-							? false
-							: [routesVariable[2], routesLand[2]]}
-
-						{!this.state.displayElements.routes.NorthEuropeRoutes
-							? false
-							: [routesVariable[3], routesLand[3]]}
-
-						{!this.state.displayElements.routes.BritainRoutes
-							? false
-							: [routesVariable[4], routesLand[4]]}
-
-						{!this.state.displayElements.routes.SpainRoutes
-							? false
-							: [routesVariable[5], routesLand[5]]}
-
 						{!this.state.displayElements.displayGoldenHorde ? (
 							false
 						) : (
@@ -631,39 +598,49 @@ class MapContainer extends Component {
 								option={{ color: '#FFD700', fill: false }}
 								positions={GoldenHordeBorder}
 							>
-								<Popup>Kultaisen ordan raja</Popup>
+								<Popup>
+									Kultaisen ordan raja (suunnilleen)
+								</Popup>
 							</Curve>
 						)}
 
-						{years.map(({ year, value }) =>
-							!value ? false : year
-						)}
+						{!this.state.displayElements.displayDiseaseSpread
+							? years.map(({ year, value }) =>
+									!value ? false : year
+							  )
+							: this.state.displayElements.displayDiseaseSpread
+							? years.map(({ year }) => {
+									return year;
+							  })
+							: false}
 
-						{cities.map(({ City, value, index }) =>
-							!value ? (
-								false
-							) : (
-								<FeatureGroup key={index} color="#000">
-									{City}
-								</FeatureGroup>
-							)
-						)}
+						{!this.state.displayElements.displayRoutes
+							? allRoutes.map(({ value, routes }) =>
+									!value ? false : routes
+							  )
+							: this.state.displayElements.displayRoutes
+							? allRoutes.map(({ routes }) => {
+									return routes;
+							  })
+							: false}
 
 						{!this.state.displayElements.displayAllTerrain
-							? false
-							: this.cities.map((Item, index) => {
-									return (
+							? cities.map(({ City, value, index }) =>
+									!value ? (
+										false
+									) : (
 										<FeatureGroup key={index} color="#000">
-											<Item
-												handleOverlayClick={location =>
-													this.handleInfoboxClick(
-														location
-													)
-												}
-											/>
+											{City}
 										</FeatureGroup>
-									);
-							  })}
+									)
+							  )
+							: this.state.displayElements.displayAllTerrain
+							? cities.map(({ City, index }) => (
+									<FeatureGroup key={index} color="#000">
+										{City}
+									</FeatureGroup>
+							  ))
+							: false}
 					</LayersControl>
 				</Map>
 			</>

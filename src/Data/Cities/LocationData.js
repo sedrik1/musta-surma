@@ -2,7 +2,7 @@ const Mediterranean = [
 	{
 		location: 'Konstantinopoli (nyk. Istanbul)',
 		coordinates: [41.013611, 28.955],
-		info: `Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
+		info: `Kaffasta lähteneet genovalaiset kauppiaat toivat taudin mukanaan Konstantinopoliin`,
 	},
 	{
 		location: 'Messina',
@@ -110,11 +110,9 @@ const EastEurope = [
 	{
 		location: 'Kaffa (nyk. Feodosija)',
 		coordinates: [45.048889, 35.379167],
-		info: `Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
+		info: `Musta meri oli italialaisten kauppiaiden eräs kauppapaikkasijoituskohde. Genovalaisilla, venetsialaisten röyhkeimmillä kilpailijoilla, oli Kaffan kaupungissa kauppapaikka ja tuotantotehdas.
+		Kaupunki kuitenkin joutui Kultaisen ordan valloitusaikomusten kohteeksi, ja piirittäessään Kaffaa Janibeg, ordan päämies, päättii hyödyntää ruttoon menehtyneiden ruumiita sotilaskäytössä.
+		Käsky heitättää katapultein ajasta ikuisuuteen siirtyneiden ruumiit kaupungin muurien yli tuotti mitä hirveimpiä tuloksia. Kaupunkilaisten seuratessa vainajien läsähtelyä talojensa seiniin ja katukivityksille, heidän kohtalonsa oli sinetöity. Kaffa saastui ja asukkaat kokivat ruton aiheuttaman kalmankauhun.`,
 	},
 	{
 		location: 'Moskova',
@@ -128,11 +126,8 @@ const EastEurope = [
 	{
 		location: 'Tana (nyk. Azov)',
 		coordinates: [47.1, 39.416667],
-		info: `Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
+		info: `Tana oli italialaisten kauppapaikka, kuten Kaffakin. Vallanhimoinen Kultainen orda, eräs mongoli-imperiumin seuraajavaltakunta, ajoi armeijoineen kauppiaat ulos kaupungista v. 1343.
+		Kauppiaat kääntyivät genovalaisten puoleen pelastaakseen henkensä arokansojen ratsuväeltä. Muurien sisään päästyään pelastunut kauppiasrykelmä tuskin osasi aavistaa, kuinka nopeasti Tana joutuisi samaan ahdinkoon, josta olivat vastikään itse paenneet.`,
 	},
 ];
 
@@ -162,6 +157,12 @@ const Britain = [
 		location: 'Lontoo',
 		coordinates: [51.507222, -0.1275],
 		info: 'Lontoon kaupunki altistui taudille saman vuoden marraskuussa',
+	},
+	{
+		location: 'Weymouth',
+		coordinates: [50.613, -2.457],
+		info:
+			'Ensimmäinen tunnettu tapaus todettiin Gasconysta, Ranskasta palanneella merimiehellä.',
 	},
 ];
 
