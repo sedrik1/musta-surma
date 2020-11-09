@@ -103,8 +103,6 @@ class MapContainer extends Component {
 		SpainRoutes,
 	];
 
-	cities = [Mediterranean, MainlandEast, MainlandWest, Britain, NorthEurope];
-
 	onClose() {
 		this.setState({ collapsed: true });
 	}
