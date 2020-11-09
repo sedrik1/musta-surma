@@ -122,7 +122,6 @@ const SidebarContainer = ({
 												control={
 													<Checkbox
 														color="primary"
-														checked={undefined}
 														disabled={
 															date === 'Kaikki vuodet'
 																? false
@@ -132,7 +131,6 @@ const SidebarContainer = ({
 																: true
 														}
 														onClick={event => {			
-															console.log(document.querySelectorAll(".PrivateSwitchBase-input-4"));
 															handleLayerControl(
 																event.target.value
 															);
@@ -195,6 +193,14 @@ const SidebarContainer = ({
 									control={
 										<Checkbox
 											color="primary"
+											disabled={
+												label === 'Kaikki kauppareitit'
+													? false
+													: state.displayElements
+															.displayRoutes
+													? true
+													: false
+											}
 											onClick={event =>
 												handleLayerControl(
 													event.target.value
