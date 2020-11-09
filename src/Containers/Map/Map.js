@@ -607,9 +607,7 @@ class MapContainer extends Component {
 									!value ? false : year
 							  )
 							: this.state.displayElements.displayDiseaseSpread
-							? years.map(({ year }) => {
-									return year;
-							  })
+							? years.map(({ year }) => year)
 							: false}
 
 						{!this.state.displayElements.displayRoutes
@@ -617,9 +615,7 @@ class MapContainer extends Component {
 									!value ? false : routes
 							  )
 							: this.state.displayElements.displayRoutes
-							? allRoutes.map(({ routes }) => {
-									return routes;
-							  })
+							? allRoutes.map(({ routes }) => routes)
 							: false}
 
 						{!this.state.displayElements.displayAllTerrain
