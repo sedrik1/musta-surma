@@ -29,11 +29,8 @@ const WestEurope = [
 	{
 		location: 'Firenze',
 		coordinates: [43.768611, 11.256944],
-		info: `Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
+		info: `Firenzen asukkaat toimivat samalla tavalla kuin messinalaiset: jokainen kynnelle kykenevä hylkäsi kaupungin ja pakeni maallee ylhäiseen yksinäisyyteensä.
+		Kaupunkielämä ei suinkaan kuollut ainoastaan rikkaiden osalta, vaan tuotantoon liittyvä toiminta kuihtui kokoon täysin. Sepänpajat ja kestikievarit sulkivat ovensa. Ainoastaan hengellisen elämän tyyssija, kirkko, sekä apteekit jatkoivat toimintaansa.`,
 	},
 	{
 		location: 'Siena',
@@ -56,18 +53,19 @@ const WestEurope = [
 	{
 		location: 'San Gimignano',
 		coordinates: [43.468, 11.042],
-		info: `Eurooppa koki järisyttävän väkikadon, kuten hyvin tiedetään. Kaupunkitasolla kuolleisuus vaihteli, mutta asian havainnollistamiseksi otetaan esimerkiksi Asikkala, Lahden naapurikunta.
+		info: `Musta surma aiheutti Euroopassa järisyttävän väkikadon, kuten hyvin tiedetään. Kaupunkitasolla kuolleisuus vaihteli, mutta asian havainnollistamiseksi otetaan esimerkiksi Asikkala, Lahden naapurikunta.
 		Kunnan asukasluku on n. 8000 henkilöä, piirun verran yli. San Gimignano menetti tutkimuksien mukaan 66% väestöstään.
-		Yksinkertaisella prosenttilaskulla, 8000 / 100 * 66, saadan tulokseksi 5280. Suomessa syntyi elävänä vuonna 2019 45 613 lasta. Toimittamalla laskusuorituksen 5280 * 100 / 45613 saadaan vastaukseksi n. 11,6%. Pelkistettynä nykyajan Suomessa San Gimignanon kokema väestökuolleisuus olisi merkinnyt melkein kahdentoista prosentin laskua syntyvyydessä.`,
+		Yksinkertaisella prosenttilaskulla, 8000 / 100 * 66, saadan tulokseksi 5280. Pelkkä kuolinluku sellaisenaankin on suuri, mutta jos otetaan tarkastelukohteeksi synnyinluvut Suomessa vuonna 2019, voidaan asiaa tarkastella pelkistetysti syntymät-kuolemat-asetelmalla.
+		Vuonna 2019 Suomessa elävänä syntyneitä oli 45 613. Toimittamalla laskusuorituksen 5280 * 100 / 45613 saadaan vastaukseksi n. 11,6%. San Gimignanon koettelemus ei olisi siis nykypäivänkään kunnassa pieni asia, saatika koko valtiossa syntyvyyteen suhteutettuna.`,
 	},
 	{
-		location: 'Erfurt',
-		coordinates: [50.983333, 11.033333],
-		info: `Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
+		location: 'Frankfurt am Main',
+		coordinates: [50.116667, 8.683333],
+		info: `Ruton iskettyä kaupunkiin tai vastaavaan urbaaniin sijaintiin, väestökeskuksen luhistuminen noudatti enemmän tai vähemmän samaa kaavaa: 
+		- Ylhäiset pakenevat maalle, kaupunkiin jäävä alempi kansa joko lakkaa työllistämästä tai työskentelemästä tartuntapelon tai lähestyvän kuoleman takia.
+		- Paikallishallinnosta vastaavaat ovat itsekin samassa pinteessä; kaupunkien väestö, riippumatta sosioekonomisesta tilanteestaan, koostuu kuolevaisista. Tapaamisten pitäminen keskeytetään ja kaikki hallintotoimenpiteet supistetaan vähimmäisvaatimuksiin.
+		Ylhäiset eivät ole toimittamassa virkaansa kaupungeissa. Työntekijöitä, vaikka heitä olisikin, ei voi hyödyntää kokonaismäärän vähäisyyden takia. Työllistäjät eivät pidä kauppojensa ovia auki samoista syistä, joista hallinnon viranomaiset eivät suorita velvollisuuksiaan kaupungin kaitsemiseksi.
+		Hengenviljelys, seurapiirielämä, teollisuus ja kaupungin ylläpito kuolee pystyyn. Ainoa jatkumo maanpäällisessä helvetissä on Herraan turvautuminen.`,
 	},
 	{
 		location: 'Marseille',

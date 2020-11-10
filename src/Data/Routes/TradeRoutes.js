@@ -381,7 +381,7 @@ const WestEuropeRoutes = [
 		by: 'land',
 	},
 	{
-		route: 'Strasbourg-Frankfurt',
+		route: 'Strasbourg-Frankfurt am Main',
 		coordinates: ['M', [48.58, 7.75], [50.111389, 8.680556]],
 		by: 'land',
 	},
@@ -409,7 +409,7 @@ const WestEuropeRoutes = [
 		by: 'land',
 	},
 	{
-		route: 'Frankfurt-Erfurt-Leipzig',
+		route: 'Frankfurt am Main-Erfurt-Leipzig',
 		coordinates: [
 			'M',
 			[50.116667, 8.683333],
