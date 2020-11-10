@@ -238,6 +238,8 @@ const SidebarContainer = ({
 				header={
 					state.infoboxLocation.length === 0
 						? 'Tietoa'
+						: !state.infoboxLocation.split(' ')[1].startsWith('(')
+						? state.infoboxLocation.toUpperCase()
 						: state.infoboxLocation.split(' ')[0].toUpperCase()
 				}
 				icon={<BsQuestionCircleFill />}

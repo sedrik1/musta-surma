@@ -54,6 +54,13 @@ const WestEurope = [
 			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
 	},
 	{
+		location: 'San Gimignano',
+		coordinates: [43.468, 11.042],
+		info: `Eurooppa koki järisyttävän väkikadon, kuten hyvin tiedetään. Kaupunkitasolla kuolleisuus vaihteli, mutta asian havainnollistamiseksi otetaan esimerkiksi Asikkala, Lahden naapurikunta.
+		Kunnan asukasluku on n. 8000 henkilöä, piirun verran yli. San Gimignano menetti tutkimuksien mukaan 66% väestöstään.
+		Yksinkertaisella prosenttilaskulla, 8000 / 100 * 66, saadan tulokseksi 5280. Suomessa syntyi elävänä vuonna 2019 45 613 lasta. Toimittamalla laskusuorituksen 5280 * 100 / 45613 saadaan vastaukseksi n. 11,6%. Pelkistettynä nykyajan Suomessa San Gimignanon kokema väestökuolleisuus olisi merkinnyt melkein kahdentoista prosentin laskua syntyvyydessä.`,
+	},
+	{
 		location: 'Erfurt',
 		coordinates: [50.983333, 11.033333],
 		info: `Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -61,6 +68,13 @@ const WestEurope = [
 			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
 			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
 			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
+	},
+	{
+		location: 'Marseille',
+		coordinates: [43.2975, 5.381111],
+		info: `Rutto saapui Marseilleen marraskuussa v. 1347. Todennäköisesti tauti levisi marseillelaisten omien kauppalaivojen palatessa Genovasta, joiden kauppareitti kulki rantoja mukaillen ja niiden läheisyydessä.
+		Muutenkin oli tavallista, että rantaviivaa matkatessa kauppalaivat laskivat pienempiin satamakaupunkeihin, joita historia ei mainitse lainkaan. Kuitenkin näidenkin satamien todennäköisin kohtalo oli altistua rutolle.
+		Välimeren tehokas ja tiuhaan kuljettu kauppareittiverkosto oli omiaan levittämään kulkutaudin pitkällekin, paljon nopeammin maalla kulkevia kauppareittejä.`,
 	},
 	{
 		location: 'Pariisi',

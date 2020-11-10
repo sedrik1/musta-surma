@@ -58,16 +58,16 @@ class MapContainer extends Component {
 			displayDiseaseSpread: false,
 			displayGoldenHorde: false,
 			cities: {
-				displayMainlandEast: false,
+				displayMediterranean: false,
 				displayMainlandWest: false,
+				displayMainlandEast: false,
 				displayNorthEurope: false,
 				displayBritain: false,
-				displayMediterranean: false,
 			},
 			routes: {
-				MediterraneanRoutes: false,
-				EastEuropeRoutes: false,
+				MediterraneanRoutes: true,
 				WestEuropeRoutes: false,
+				EastEuropeRoutes: false,
 				NorthEuropeRoutes: false,
 				BritainRoutes: false,
 				SpainRoutes: false,
@@ -468,7 +468,7 @@ class MapContainer extends Component {
 						key="MainlandWest"
 					/>
 				),
-				value: this.state.displayElements.cities.displayMainlandEast,
+				value: this.state.displayElements.cities.displayMainlandWest,
 			},
 			{
 				City: (
