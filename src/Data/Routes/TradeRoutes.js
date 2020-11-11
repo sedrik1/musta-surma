@@ -260,17 +260,6 @@ const WestEuropeRoutes = [
 		by: 'sea',
 	},
 	{
-		route: 'Venetsia-Split',
-		coordinates: [
-			'M',
-			[45.434444, 12.338889],
-			'Q',
-			[46.982126, 14.861917],
-			[43.5, 16.433333],
-		],
-		by: 'land',
-	},
-	{
 		route: 'Bordeaux-Le Havre-Weymouth',
 		coordinates: [
 			'M',
@@ -337,6 +326,17 @@ const WestEuropeRoutes = [
 			[53.553333, 9.992222],
 		],
 		by: 'sea',
+	},
+	{
+		route: 'Venetsia-Split',
+		coordinates: [
+			'M',
+			[45.434444, 12.338889],
+			'Q',
+			[46.982126, 14.861917],
+			[43.5, 16.433333],
+		],
+		by: 'land',
 	},
 	{
 		route: 'Hampuri-Oslo',

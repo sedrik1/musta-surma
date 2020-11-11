@@ -282,7 +282,7 @@ const SidebarContainer = ({
 									target="blank"
 									href={link}
 									key={reference}
-									title="Avaa lisätieto-osion"
+									title="Avaa linkin ja lähdeosion"
 									onClick={() => handleSource()}
 								>
 									{reference}

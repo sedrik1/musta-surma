@@ -1,28 +1,34 @@
 const RN = {
-	reference: `Nykänen, R. 2010. Elämä tautisessa kaupungissa – Mustan surman vaikutus toscanalaiskaupunkien arkeen. Historian Pro Gradu -tutkielma. Humanistinen tiedekunta. Tampere: Tampereen yliopisto. Viitattu 28.10.2020.`,
+	reference:
+		'Nykänen, R. 2010. Elämä tautisessa kaupungissa – Mustan surman vaikutus toscanalaiskaupunkien arkeen. Historian Pro Gradu -tutkielma. Humanistinen tiedekunta. Tampere: Tampereen yliopisto. Viitattu 28.10.2020.',
 	link: 'https://trepo.tuni.fi/bitstream/handle/10024/81816/gradu04473.pdf',
 };
 const CBC = {
-	reference: `Benedictow, O. J.; Bianucci, R. & Cesana, D. 2016. The origin and early spread of the Black Death in Italy: first evidence of plague victims from 14th-century Liguria (northern Italy). Viitattu 28.10.2020.`,
+	reference:
+		'Benedictow, O. J.; Bianucci, R. & Cesana, D. 2016. The origin and early spread of the Black Death in Italy: first evidence of plague victims from 14th-century Liguria (northern Italy). Viitattu 28.10.2020.',
 	link:
 		'https://www.jstage.jst.go.jp/article/ase/advpub/0/advpub_161011/_pdf',
 };
 const PTH = {
-	reference: `Heikura, P. T. 2003. Musta surma. Tieteessä Tapahtuu, 21(8). Viitattu 27.10.2020.`,
+	reference:
+		'Heikura, P. T. 2003. Musta surma. Tieteessä Tapahtuu, 21(8). Viitattu 27.10.2020.',
 	link: 'https://journal.fi/tt/article/view/57247',
 };
 const JF = {
-	reference: `Frith, J. 2012. The History of Plague – Part 1. The Three Great Pandemics. Journal of Military and Verans’ Health, 20(2). Viitattu 28.10.2020.`,
+	reference:
+		'Frith, J. 2012. The History of Plague – Part 1. The Three Great Pandemics. Journal of Military and Verans’ Health, 20(2). Viitattu 28.10.2020.',
 	link:
 		'https://jmvh.org/article/the-history-of-plague-part-1-the-three-great-pandemics/',
 };
 const KC = {
-	reference: `Kjaer, C. 2019. Tutkijat paljastavat: Täältä musta surma alkoi. Tieteen Kuvalehti. Viitattu 28.10.2020.`,
+	reference:
+		'Kjaer, C. 2019. Tutkijat paljastavat: Täältä musta surma alkoi. Tieteen Kuvalehti. Viitattu 28.10.2020.',
 	link:
 		'https://tieku.fi/laaketiede/sairaudet/tutkijat-paljastavat-taalta-musta-surma-alkoi',
 };
 const MS = {
-	reference: `Snell, M. 2019. The Arrival and Spread of the Black Plague in Europe. ThoughtCo. Viitattu 14.10.2020.`,
+	reference:
+		'Snell, M. 2019. The Arrival and Spread of the Black Plague in Europe. ThoughtCo. Viitattu 14.10.2020.',
 	link:
 		'https://www.thoughtco.com/spread-of-the-black-death-through-europe-4123214',
 };
@@ -164,7 +170,7 @@ const EastEurope = [
         Kauppareitit ja kaupunkien kehitys olivat keskeisiä tekijöitä sairauden tehokkaan leviämisen kannalta.`,
 	},
 	{
-		reference: [PTH, CBC, MS],
+		reference: [CBC, PTH, MS],
 		location: 'Kaffa (nyk. Feodosija)',
 		coordinates: [45.048889, 35.379167],
 		info: `Musta meri oli italialaisten kauppiaiden eräs kauppapaikkasijoituskohde. Genovalaisilla, venetsialaisten röyhkeimmillä kilpailijoilla, oli Kaffan kaupungissa kauppapaikka ja tuotantotehdas.
@@ -182,7 +188,7 @@ const EastEurope = [
 			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
 	},
 	{
-		reference: [PTH, CBC],
+		reference: [CBC, PTH],
 		location: 'Tana (nyk. Azov)',
 		coordinates: [47.1, 39.416667],
 		info: `Tana oli italialaisten kauppapaikka, kuten Kaffakin. Vallanhimoinen Kultainen orda, eräs mongoli-imperiumin seuraajavaltakunta, ajoi armeijoineen kauppiaat ulos kaupungista v. 1343.

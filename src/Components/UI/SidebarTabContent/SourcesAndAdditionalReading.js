@@ -5,7 +5,7 @@ const SourcesAndAdditionalReading = () => {
 		{
 			link:
 				'https://www.jstage.jst.go.jp/article/ase/advpub/0/advpub_161011/_pdf',
-			author: 'D. Cesana, O.J. Benedictow, R. Bianucci',
+			author: 'Benedictow, O. J.; Bianucci, R. & Cesana, D.',
 			contentName:
 				'The origin and early spread of the Black Death in Italy: first evidence of plague victims from 14th-century Liguria (northern Italy)',
 		},

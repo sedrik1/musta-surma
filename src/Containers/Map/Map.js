@@ -55,7 +55,7 @@ class MapContainer extends Component {
 		selected: 'layers',
 		displayElements: {
 			displayRoutes: false,
-			displayAllTerrain: true,
+			displayAllTerrain: false,
 			displayDiseaseSpread: false,
 			displayGoldenHorde: false,
 			cities: {
