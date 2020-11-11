@@ -17,7 +17,7 @@ import withWidth from '@material-ui/core/withWidth';
 
 import DiseaseYears from '../../Data/DiseaseSpread/DiseaseSpreadInfo';
 import ColourLegends from './SidebarTabContent/ColourLegends';
-import AdditionalReading from './SidebarTabContent/AdditionalReading';
+import SourcesAndAdditionalReading from './SidebarTabContent/SourcesAndAdditionalReading';
 import {
 	terrainLabelValues,
 	routeLabelValues,
@@ -42,6 +42,7 @@ const SidebarContainer = ({
 	onClose,
 	onOpen,
 	handleLayerControl,
+	handleSource,
 	width,
 }) => {
 	return (
@@ -256,10 +257,42 @@ const SidebarContainer = ({
 					) : (
 						<p>
 							Tämä osio päivittyy aluetiedoilla valitessasi jonkin
-							kaupungin kartalta
+							kaupungin kartalta.
 						</p>
 					)}
 				</div>
+				{state.infoboxLocationInfo.length !== 0 ? (
+					<div className="source">
+						<strong>
+							Yllä oleva teksti perustuu merkittäviltä osiltaan
+							alla oleviin historiallisiin lähteisiin.
+							<br />
+							Huomaa siis, että esimerkiksi Kaffan piirityksestä
+							kertovassa sepustuksessa oleva osio ruumiiden
+							murskautumisesta talojen seiniin ei perustu
+							akateemiseen lähteeseen.
+							<br />
+							Sovelluksen lähteet -osiossa on lueteltu kaikki
+							sovelluksen käyttämät lähteet alla olevien lisäksi.
+						</strong>
+						{state.reference.map(({ reference, link }) => {
+							return (
+								<a
+									rel="noopener noreferrer"
+									target="blank"
+									href={link}
+									key={reference}
+									title="Avaa lisätieto-osion"
+									onClick={() => handleSource()}
+								>
+									{reference}
+								</a>
+							);
+						})}
+					</div>
+				) : (
+					false
+				)}
 			</Tab>
 			<Tab
 				id="info"
@@ -270,11 +303,11 @@ const SidebarContainer = ({
 			</Tab>
 			<Tab
 				id="more"
-				header="Mieltä kiinnittävää aineistoa"
+				header="Sovelluksen lähteet"
 				anchor="bottom"
 				icon={<HiLightBulb />}
 			>
-				<AdditionalReading />
+				<SourcesAndAdditionalReading />
 			</Tab>
 		</Sidebar>
 	);

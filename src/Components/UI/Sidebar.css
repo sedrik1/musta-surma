@@ -232,3 +232,49 @@ ul li {
 	padding-bottom: 5px;
 	font-size: 10px;
 }
+
+.source {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.source > * {
+	flex: 1;
+}
+
+.source > strong {
+	font-size: 12px;
+	margin-bottom: 8px;
+}
+
+.source > a {
+	color: inherit;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	font-size: 11px;
+	text-align: left;
+	cursor: pointer;
+	text-decoration-color: #8a0303;
+	font-style: italic;
+}
+
+.source > a:first-of-type {
+	margin-top: 10px;
+	margin-bottom: 8px;
+}
+
+.source > a:last-of-type {
+	margin-top: 8px;
+	margin-bottom: 0;
+}
+
+.source > a:hover {
+	color: #7a7a7a;
+	transition: 0.21s ease-in-out;
+}
+
+.info:last-of-type {
+	border-bottom: 1px solid black;
+	padding-bottom: 20px;
+}

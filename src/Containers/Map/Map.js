@@ -50,11 +50,12 @@ class MapContainer extends Component {
 	state = {
 		infoboxLocation: '',
 		infoboxLocationInfo: '',
+		reference: [],
 		collapsed: false,
 		selected: 'layers',
 		displayElements: {
 			displayRoutes: false,
-			displayAllTerrain: false,
+			displayAllTerrain: true,
 			displayDiseaseSpread: false,
 			displayGoldenHorde: false,
 			cities: {
@@ -65,7 +66,7 @@ class MapContainer extends Component {
 				displayBritain: false,
 			},
 			routes: {
-				MediterraneanRoutes: true,
+				MediterraneanRoutes: false,
 				WestEuropeRoutes: false,
 				EastEuropeRoutes: false,
 				NorthEuropeRoutes: false,
@@ -111,16 +112,21 @@ class MapContainer extends Component {
 		this.setState({ collapsed: false, selected: id });
 	}
 
-	handleInfoboxClick(index) {
-		console.log('this.state', this.state.collapsed, this.state.selected);
+	handleInfoboxClick({ location, info, reference }) {
+		console.log(reference);
 		this.setState({ selected: 'locationInfo' });
-		if (this.state.infoboxLocation !== index[0]) {
+		if (this.state.infoboxLocation !== location) {
 			this.setState({
-				infoboxLocation: index[0],
-				infoboxLocationInfo: index[1],
+				infoboxLocation: location,
+				infoboxLocationInfo: info,
+				reference: reference,
 				collapsed: false,
 			});
 		}
+	}
+
+	handleSource() {
+		this.setState({ selected: 'more' });
 	}
 
 	handleLayerControl(layerName) {
@@ -451,8 +457,8 @@ class MapContainer extends Component {
 			{
 				City: (
 					<MainlandEast
-						handleOverlayClick={location =>
-							this.handleInfoboxClick(location)
+						handleOverlayClick={locationData =>
+							this.handleInfoboxClick(locationData)
 						}
 						key="MainlandEast"
 					/>
@@ -462,8 +468,8 @@ class MapContainer extends Component {
 			{
 				City: (
 					<MainlandWest
-						handleOverlayClick={location =>
-							this.handleInfoboxClick(location)
+						handleOverlayClick={locationData =>
+							this.handleInfoboxClick(locationData)
 						}
 						key="MainlandWest"
 					/>
@@ -473,8 +479,8 @@ class MapContainer extends Component {
 			{
 				City: (
 					<NorthEurope
-						handleOverlayClick={location =>
-							this.handleInfoboxClick(location)
+						handleOverlayClick={locationData =>
+							this.handleInfoboxClick(locationData)
 						}
 						key="NorthEurope"
 					/>
@@ -484,8 +490,8 @@ class MapContainer extends Component {
 			{
 				City: (
 					<Britain
-						handleOverlayClick={location =>
-							this.handleInfoboxClick(location)
+						handleOverlayClick={locationData =>
+							this.handleInfoboxClick(locationData)
 						}
 						key="Britain"
 					/>
@@ -495,8 +501,8 @@ class MapContainer extends Component {
 			{
 				City: (
 					<Mediterranean
-						handleOverlayClick={location =>
-							this.handleInfoboxClick(location)
+						handleOverlayClick={locationData =>
+							this.handleInfoboxClick(locationData)
 						}
 						key="Mediterranean"
 					/>
@@ -577,6 +583,7 @@ class MapContainer extends Component {
 					handleLayerControl={layerName =>
 						this.handleLayerControl(layerName)
 					}
+					handleSource={() => this.handleSource()}
 				/>
 
 				<Map className="map-style" center={[56.1, 23.106111]} zoom={4}>
