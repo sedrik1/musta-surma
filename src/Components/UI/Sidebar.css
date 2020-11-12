@@ -229,17 +229,18 @@ ul li {
 }
 
 ::marker {
-	padding-bottom: 5px;
 	font-size: 10px;
 }
 
-.source {
+.source,
+.infoLinks {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 }
 
-.source > * {
+.source > *,
+.infoLinks > * {
 	flex: 1;
 }
 
@@ -248,7 +249,19 @@ ul li {
 	margin-bottom: 8px;
 }
 
-.source > a {
+.infoLinks > strong {
+	font-size: 12px;
+	margin-bottom: 0px;
+}
+
+.infoLinks > strong:last-of-type {
+	font-size: 12px;
+	margin-top: 13px;
+	margin-bottom: 0px;
+}
+
+.source > a,
+.infoLinks > a {
 	color: inherit;
 	margin-top: 8px;
 	margin-bottom: 8px;
@@ -257,6 +270,10 @@ ul li {
 	cursor: pointer;
 	text-decoration-color: #8a0303;
 	font-style: italic;
+}
+
+.infoLinks > a {
+	margin-top: auto;
 }
 
 .source > a:first-of-type {
@@ -269,7 +286,8 @@ ul li {
 	margin-bottom: 0;
 }
 
-.source > a:hover {
+.source > a:hover,
+.infoLinks > a:hover {
 	color: #7a7a7a;
 	transition: 0.21s ease-in-out;
 }

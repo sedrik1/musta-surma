@@ -3,7 +3,7 @@ const RN = {
 		'Nykänen, R. 2010. Elämä tautisessa kaupungissa – Mustan surman vaikutus toscanalaiskaupunkien arkeen. Historian Pro Gradu -tutkielma. Humanistinen tiedekunta. Tampere: Tampereen yliopisto. Viitattu 28.10.2020.',
 	link: 'https://trepo.tuni.fi/bitstream/handle/10024/81816/gradu04473.pdf',
 };
-const CBC = {
+export const CBC = {
 	reference:
 		'Benedictow, O. J.; Bianucci, R. & Cesana, D. 2016. The origin and early spread of the Black Death in Italy: first evidence of plague victims from 14th-century Liguria (northern Italy). Viitattu 28.10.2020.',
 	link:
@@ -31,6 +31,11 @@ const MS = {
 		'Snell, M. 2019. The Arrival and Spread of the Black Plague in Europe. ThoughtCo. Viitattu 14.10.2020.',
 	link:
 		'https://www.thoughtco.com/spread-of-the-black-death-through-europe-4123214',
+};
+export const NR = {
+	link: 'https://www.visualcapitalist.com/medieval-trade-route-map/',
+	author: 'Routley, N.',
+	contentName: 'A Fascinating Map of Medieval Trade Routes',
 };
 
 const Mediterranean = [

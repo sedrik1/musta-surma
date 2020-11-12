@@ -22,6 +22,7 @@ import {
 	terrainLabelValues,
 	routeLabelValues,
 } from '../../Data/Misc/SidebarValues';
+import { CBC, NR } from '../../Data/Cities/LocationData';
 import './Sidebar.css';
 
 const createParagraphs = text => {
@@ -241,8 +242,8 @@ const SidebarContainer = ({
 						? 'Tietoa'
 						: /*prettier-ignore*/
 						(typeof state.infoboxLocation.split(' ')[1] !== 'undefined' && !state.infoboxLocation.split(' ')[1].startsWith('('))
-						? state.infoboxLocation.toUpperCase()
-						: state.infoboxLocation.split(' ')[0].toUpperCase()
+						? state.infoboxLocation
+						: state.infoboxLocation.split(' ')[0]
 				}
 				icon={<BsQuestionCircleFill />}
 			>
@@ -300,6 +301,32 @@ const SidebarContainer = ({
 				icon={<BsFillInfoCircleFill />}
 			>
 				<ColourLegends />
+				<div className="infoLinks">
+					<strong>
+						Taudin leviämisen, kauppareittien ja Kultaisen ordan
+						rajan perusta:
+					</strong>
+					<a
+						rel="noopener noreferrer"
+						target="blank"
+						href={CBC.link}
+						title="Avaa linkin ja lähdeosion"
+						onClick={() => handleSource()}
+					>
+						{CBC.reference}
+					</a>
+					<br />
+					<strong>Kauppareittien perusta:</strong>
+					<a
+						rel="noopener noreferrer"
+						target="blank"
+						href={NR.link}
+						title="Avaa linkin ja lähdeosion"
+						onClick={() => handleSource()}
+					>
+						{`${NR.author} ${NR.contentName}}`}
+					</a>
+				</div>
 			</Tab>
 			<Tab
 				id="more"
