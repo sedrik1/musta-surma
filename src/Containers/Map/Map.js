@@ -113,7 +113,6 @@ class MapContainer extends Component {
 	}
 
 	handleInfoboxClick({ location, info, reference }) {
-		console.log(reference);
 		this.setState({ selected: 'locationInfo' });
 		if (this.state.infoboxLocation !== location) {
 			this.setState({
@@ -453,6 +452,7 @@ class MapContainer extends Component {
 					.displayDiseaseSpread_1353,
 			},
 		];
+
 		let cities = [
 			{
 				City: (

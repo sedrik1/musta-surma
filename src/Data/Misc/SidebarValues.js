@@ -1,5 +1,5 @@
 const terrainLabelValues = [
-	{ label: 'Brittein saaret', value: 'Britain' },
+	{ label: 'Britteinsaaret', value: 'Britain' },
 	{ label: 'Itä-Eurooppa', value: 'MainlandEast' },
 	{ label: 'Länsi-Eurooppa', value: 'MainlandWest' },
 	{ label: 'Pohjois-Eurooppa', value: 'NorthEurope' },
@@ -8,7 +8,7 @@ const terrainLabelValues = [
 ];
 
 const routeLabelValues = [
-	{ label: 'Brittein saaret', value: 'BritainRoutes' },
+	{ label: 'Britteinsaaret', value: 'BritainRoutes' },
 	{ label: 'Espanja', value: 'SpainRoutes' },
 	{ label: 'Itä-Eurooppa', value: 'EastEuropeRoutes' },
 	{ label: 'Länsi-Eurooppa', value: 'WestEuropeRoutes' },

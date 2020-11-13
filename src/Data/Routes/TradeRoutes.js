@@ -573,7 +573,7 @@ const NorthEuropeRoutes = [
 		],
 		by: 'sea',
 	},
-	WestEuropeRoutes[5],
+	WestEuropeRoutes[6],
 	{
 		route: 'Bergen-Trondhjem',
 		coordinates: [
