@@ -269,7 +269,9 @@ ul li {
 }
 
 .source > a,
-.infoLinks > a {
+.infoLinks > a,
+.source > i,
+.infoLinks > i {
   color: inherit;
   margin-top: 8px;
   margin-bottom: 8px;

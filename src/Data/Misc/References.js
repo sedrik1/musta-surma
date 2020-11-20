@@ -68,6 +68,21 @@ const references = {
     link:
       "https://www.weareweymouth.co.uk/attractions-sights/historic-buildings-country-houses/weymouth-and-the-black-death/",
   },
+  JK: {
+    reference:
+      "John Kelly. 2005. The Great Mortality: An Intimate History of the Black Death, the Most Devastating Plague of All Time. HarperCollins Publishers. Viitattu 20.11.2020.",
+    link: "",
+  },
+  HR: {
+    reference:
+      "Herman Rosenthal. 1906. CASIMIR III., THE GREAT (Polish, Kazimierz). Jewish Encyclopedia. Viitattu 20.11.2020.",
+    link: "http://jewishencyclopedia.com/articles/4098-casimir-iii-the-great",
+  },
+  NFC: {
+    reference:
+      "Norman F. Cantor. 2001. In the wake of the plague : the Black Death and the world it made. The Free Press. Viitattu 21.11.2020.",
+    link: "",
+  },
   TK: {
     reference:
       "Tilastokeskus. 2019. Syntyvyyden aleneminen hidastui vuonna 2019. Viitattu 15.11.2020.",

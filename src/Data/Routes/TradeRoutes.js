@@ -78,7 +78,7 @@ const MediterraneanRoutes = [
     by: "land",
   },
   {
-    route: "Venetsia-Split",
+    route: "Venetsia-Spalato(nyk. Split)",
     coordinates: [
       "M",
       [45.434444, 12.338889],
@@ -119,7 +119,7 @@ const MediterraneanRoutes = [
     by: "sea",
   },
   {
-    route: "Ateena-Ragusa (nyk. Dubrovnik)-Split-Venetsia",
+    route: "Ateena-Ragusa (nyk. Dubrovnik)-Spalato (nyk. Split)-Venetsia",
     coordinates: [
       "M",
       [35.3222, 22.5],
@@ -328,7 +328,7 @@ const WestEuropeRoutes = [
     by: "sea",
   },
   {
-    route: "Venetsia-Split",
+    route: "Venetsia-Spalato (nyk. Split)",
     coordinates: [
       "M",
       [45.434444, 12.338889],
@@ -1170,7 +1170,7 @@ const EastEuropeLandExclusiveRoutes = [
     ],
   },
   {
-    route: "Ragusa (nyk. Dubrovnik)-Split",
+    route: "Ragusa (nyk. Dubrovnik)-Spalato (nyk. Split)",
     coordinates: [
       [42.633333, 18.1],
       [43.2375, 17.4839],

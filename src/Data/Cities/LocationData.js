@@ -1,5 +1,23 @@
 import references from "../../Data/Misc/References";
-const { RN, PTH, B, CBC, NR, MS, KC, JRE, JF, A, TK, JS, MI, CW } = references;
+const {
+  RN,
+  PTH,
+  B,
+  CBC,
+  NR,
+  JK,
+  MS,
+  KC,
+  JRE,
+  NFC,
+  JF,
+  A,
+  TK,
+  JS,
+  HR,
+  MI,
+  CW,
+} = references;
 
 /** Sarai
  * Konstantinopoli
@@ -48,6 +66,14 @@ const Mediterranean = [
 ];
 
 const WestEurope = [
+  {
+    reference: [JK],
+    location: "Wien",
+    coordinates: [48.208333, 16.373056],
+    info: `Vuoden 1349 kevääseen mennessä rutto oli ehtinyt levitä Wieniin saakka. Tauti ei säästellyt retosteluaan wieniläisiltä, vaan joka kolmas heistä kuoli. Mahdollisesti silkka hysteria oli omiaan saamaan ihmisten mielikuvituksen varsinaisen myllerryksen valtaan, koska kaupungissa syntyi urbaani legenda.
+    Väitetiin nimittäin, että kuolleiden suusta olisi noussut jotain karmivaa ja luonnotonta: tummansininen, räiskyvä liekki. Legendan mukaan tämä oli ruton ruumiillistuma Pest Jungfraun, pahansuopa jumalatar, joka pelkällä kosketuksella saattoi tappaa elinkuntoisen ihmisen.
+    Huhuista riippumatta tauti koetteli kaupunkia. Erään rutosta selvinnyt kirjoitti muistiin nähneensä muuan hurjan tytön sammaltaneen kuolleen äitinsä perään tätä lastattaessa vankkureille.`,
+  },
   {
     reference: [RN],
     location: "Firenze",
@@ -193,7 +219,23 @@ const EastEurope = [
     reference: [JRE],
     location: "Ragusa (nyk. Dubrovnik)",
     coordinates: [42.633333, 18.1],
-    info: `Vuonna 1377 venetsialaisten hallinnassa oleva satamakaupunki Ragusa määräsi karanteenitoimet jokaiselle saapuvalle laivalle.`,
+    info: `Spalaton lisäksi venetsialaiset hallitsivat nykyisen Kroatian alueella olevaa Ragusaa. Keväällä 1348 kaupungin viranomaiset antoivat moraalia musertavan kehotuksen kaupungin asukkaille. Kaupungin tilanne oli niin valitettava, että koko asutuksen olemassaoli oli vaakalaudalla. Viranomaisten käsky oli yksinkertainen: asukkaiden oli tehtävä testamentti, sillä lähitulevaisuuden näkymät olivat olemattomat.
+    Elokuussa musta surma siirtyi pohjoisemmaksi kohti Keski-Eurooppaa.`,
+  },
+  {
+    reference: [JK],
+    location: "Krakova",
+    coordinates: [50.064722, 19.945],
+    info: `Puola kuului harvoihin, melkein kokonaan rutolta välttyneisiin alueisiin. Välttyminen taudilta ei ollut sattumaa tai hyvää tuuria muuten kuin siten, että vallan kahvassa oli osaava mies.
+    Kasimir III Suuri sääti monia edistyksellisiä rajoituksia ruton suitsemiseksi. Maahan pyrkivät asetettiin pakolliseen ja pitkään eristykseen ja kansalaisten liikkumista rajoitettiin.
+    Eräs poikkeus Kasimirin rutonkitkentätoimissa oli juutalaisten rauhaan jättäminen. Saksassa ja Ranskassa tauti olitiin sysätty juutalaisten niskoille, mistä seurasi monia verisiä kahakoita. Ainakin eräs syy Kasimirin toimintaan oli hänen rakastajattarensa Esther, joka epäilemättä vaikutusvallallaan vaikutti kuninkaansa päätöksiin. Sen lisäksi, että Puolan kuningas ei ryhtynyt muiden Euroopan maiden tavoin juutalaisvainoon oli turvapaikan tarjoaminen vainotulle kansalle. Tarjoukseen tarttuneiden kommuuneja oli vielä toisen maailmansodan aikaan pystyssä.`,
+  },
+  {
+    reference: [JK],
+    location: "Spalato (nyk. Split)",
+    coordinates: [43.51, 16.45],
+    info: `Keski-Eurooppaan rutto kulki Balkanin niemimaan kautta, joka oli näihin aikoihin venetsialaisten vallassa Ragusan tavoin.
+    Spalato joutui niemimaan ensimmäiseksi tartuntamaaksi. Kerrotaan, että kalman löyhkä oli villieläimille vastustamaton. Seuraten ruumiista nousevaa hajua, lähtivät vuorten sudet kohti rantakaupunkia herkutellakseen ruton hopeatarjottimella tarjoilemia ihmisvainajia.`,
   },
   {
     reference: [],
@@ -216,27 +258,35 @@ const EastEurope = [
 
 const NorthEurope = [
   {
-    reference: [PTH],
+    reference: [PTH, JK],
     location: "Bjørgvin (nyk. Bergen)",
     coordinates: [60.3925, 5.323333],
-    info: `Tavallisesti ruton esitetään tulleen Norjan Bergeniin villalaivan mukana 
-		Lontoosta toukokuussa 1349. Tosiasiassa rutto saapui Oslon seudulle ilmeisesti jo vuoden 1348 lopulla `,
+    info: `Norjan ja Englannin välillä toimiva merikauppareitti oli avaintekijä Norjan saastumiselle. Asiasta on kaksi väitettä. Ensimmäisen mukaan kauppias Englannista lähti kotimaastaan ja nähtiin seuraavan kerran Bjørgvinin rannikolla. Nähtiin, muttei kuultu; mies oli kuollut muiden laivalla kulkeneiden kanssa.
+    Villakauppiaana esitelty englantilaismies ei kuitenkaan välttämättä maannut menehtyneenä Bjørgvinin lähirannalla, vaan seilasi satamaan miehistönsä kanssa purkamaan lastinsa. Kahden version välillä on kuitenkin samankaltaisuuksia: huomattavin on, että miehistö kuoli. Pian saapumisensa jälkeen tai matkan aikana ei varsinaisesti merkitse mitään, koska Norja oli joutunut mustan surman kohteeksi.`,
   },
   {
-    reference: [PTH],
+    reference: [PTH, JK],
     location: "Oslo",
     coordinates: [59.913889, 10.752222],
-    info: `Tavallisesti ruton esitetään tulleen Norjan Bergeniin villalaivan mukana 
-		Lontoosta toukokuussa 1349. Tosiasiassa rutto saapui Oslon seudulle ilmeisesti jo vuoden 1348 lopulla `,
+    info: `Bjørgvinin väitetään joutuneen kalman kouriin englantilaisen villakauppiaan takia, mutta toinen kertomus väittää Oslon olleen ensimmäinen norjalaiskaupunki, joka sai ruttotartunnan.
+    Rutto oli kaupungista huolimatta rantautunut Norjaan ja alkoi edetä kohti Ruotsia.`,
+  },
+  {
+    reference: [JK],
+    location: "Ruotsi",
+    coordinates: [60.697384, 15.264306],
+    info: `Norjasta levittäytyvä rutto ahdisti Keski-Ruotsia. Magnus II, vaikkakin hurskas mies, ei ottanut silmää kateensä ja tarkastellut tilannetta maallisen hallintomiehen järjellä. Hänen ratkaisunsa oli nöyryyden osoitus Jumalaa kohtaan. Selvästikin kansan oli tuotava ilmi jumalanpelkonsa, ja kuningas määräsi muutamia hengellisen elämän ohjenuoria.
+    Perjantai oli oleva veden ja leivän päivä; muun ruoan syöminen oli ankarasti kielletty. Kirkkoon kansan oli mentävä paljain jaloin, mutta vain sunnuntaisin. Valitettavasti toimet eivät olleet yhtä tehokkaita, kuin esimerkiksi Kasimir Suuren määräykset Puolassa.
+    Ruotsalaiset eivät välttäneet ruttoa. Kuninkaan lähiperheessäkin koettiin murhenäytelmä Magnuksen kahden veljen siirtyessä ajasta ikuisuuteen.`,
   },
 ];
 
 const Britain = [
   {
-    reference: [MI],
+    reference: [NFC, MI],
     location: "Bristol",
     coordinates: [51.45, -2.583333],
-    info: `Elokuussa tai sen paikkeilla v. 1348 tauti levisi satamakaupunki Bristoliin`,
+    info: `Bristol toimi ruton rantautumissijaintina Britteinsaarille, kun se elokuussa tai sen paikkeilla vuonna 1348 saapui saarivaltion rannoille.`,
   },
   {
     reference: [JS],

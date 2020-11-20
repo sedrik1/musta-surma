@@ -15,6 +15,12 @@ const SourcesAndAdditionalReading = () => {
       contentName: "Black Death: Cause and outbreak",
     },
     {
+      link: "",
+      author: "Cantor, N. F.",
+      contentName:
+        "In the wake of the plague : the Black Death and the world it made - The Free Press",
+    },
+    {
       link: "https://www.youtube.com/watch?v=_5ImYgBeBS0",
       author: "Professor Sir Evans, R. J. FBA - Gresham College",
       contentName: "The Black Death",
@@ -37,6 +43,12 @@ const SourcesAndAdditionalReading = () => {
       contentName: "Black Death - BBC",
     },
     {
+      link: "",
+      author: "Kelly, J.",
+      contentName:
+        "The Great Mortality: An Intimate History of the Black Death, the Most Devastating Plague of All Time - HarperCollins Publishers",
+    },
+    {
       link:
         "https://tieku.fi/laaketiede/sairaudet/tutkijat-paljastavat-taalta-musta-surma-alkoi",
       author: "Kjaer, C.",
@@ -56,6 +68,12 @@ const SourcesAndAdditionalReading = () => {
         "A Fascinating Map of Medieval Trade Routes - Visual Capitalist",
     },
     {
+      link: "http://jewishencyclopedia.com/articles/4098-casimir-iii-the-great",
+      author: "Rosenthal, H.",
+      contentName:
+        "CASIMIR III., THE GREAT (Polish, Kazimierz) - Jewish Encyclopedia",
+    },
+    {
       link: "https://www.history.com/news/black-death-timeline",
       author: "Seven, J.",
       contentName:
@@ -72,7 +90,7 @@ const SourcesAndAdditionalReading = () => {
       link:
         "https://www.weareweymouth.co.uk/attractions-sights/historic-buildings-country-houses/weymouth-and-the-black-death/",
       author: "Williams, C.",
-      contentName: "Weymouth and the Black Death - We are Weymouth.",
+      contentName: "Weymouth and the Black Death - We are Weymouth",
     },
   ];
 
@@ -87,15 +105,21 @@ const SourcesAndAdditionalReading = () => {
         {SourcesAndAdditionalReadingContent.map(
           ({ link, author, contentName }) => {
             return (
-              <>
-                <li key={author}>
+              <li key={author}>
+                {link === "" ? (
+                  <span>
+                    <b>{author}</b>
+                    <br />
+                    {contentName}
+                  </span>
+                ) : (
                   <a rel="noopener noreferrer" target="blank" href={link}>
                     <b>{author}</b>
                     <br />
                     {contentName}
                   </a>
-                </li>
-              </>
+                )}
+              </li>
             );
           }
         )}

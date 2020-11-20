@@ -207,14 +207,22 @@ const SidebarContainer = ({
               </section>
             </strong>
             {state.reference.map(({ reference, link }) => {
-              return (
+              return link === "" ? (
+                <i
+                  key={reference}
+                  title="Avaa lähdeosion"
+                  onClick={handleSource}
+                >
+                  {reference}
+                </i>
+              ) : (
                 <a
                   rel="noopener noreferrer"
                   target="blank"
                   href={link}
                   key={reference}
                   title="Avaa linkin ja lähdeosion"
-                  onClick={() => handleSource()}
+                  onClick={handleSource}
                 >
                   {reference}
                 </a>
@@ -236,7 +244,7 @@ const SidebarContainer = ({
             target="blank"
             href={CBC.link}
             title="Avaa linkin ja lähdeosion"
-            onClick={() => handleSource()}
+            onClick={handleSource}
           >
             {CBC.reference}
           </a>
@@ -247,7 +255,7 @@ const SidebarContainer = ({
             target="blank"
             href={NR.link}
             title="Avaa linkin ja lähdeosion"
-            onClick={() => handleSource()}
+            onClick={handleSource}
           >
             {`${NR.author} ${NR.contentName}`}
           </a>

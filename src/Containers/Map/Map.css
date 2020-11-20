@@ -15,7 +15,7 @@ path[fill="none"] {
 }
 
 path[fill-rule="evenodd"] {
-  stroke-width: 0;
+  stroke-width: 0.3;
 }
 
 path[fill="#000"] {
