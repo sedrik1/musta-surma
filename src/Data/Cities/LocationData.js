@@ -4,54 +4,51 @@ const {
   PTH,
   B,
   CBC,
-  NR,
   JK,
   MS,
   KC,
-  JRE,
+  RJE,
   NFC,
   JF,
   A,
   TK,
   JS,
+  JPG,
   HR,
   MI,
   CW,
 } = references;
 
-/** Sarai
- * Konstantinopoli
- * Sardinia
- * Lyon
- * Givry
- * Pariisi
- * Bristol
- * Bjørgvin
- * Oslo
- * Moskova
- */
-
 const Mediterranean = [
   {
-    reference: [CBC, PTH],
+    reference: [JK],
     location: "Konstantinopoli (nyk. Istanbul)",
     coordinates: [41.013611, 28.955],
-    info: `Kaffasta lähteneet genovalaiset kauppiaat toivat taudin mukanaan Konstantinopoliin`,
+    info: `Sijaintinsa takia Konstantinopoli oli pakollinen ohitettava kaupunki Mustan meren ja Välimeren välillä purjehtiville laivoille. Genovalaisten laivat, jotka lähtivät Tanasta saapuivat Itä-Rooman pääkaupunkiin väitetysti pahaenteistä hokemaan huudellen.
+    "Olen kuolema", kuului genovalaisten suista. Varteenotettava ja pahaenteinen sanapari ei kuitenkaan vaikuttanut kaupungin taistelussa ruttoa vastaan. Kaupunki ei todennäköisesti menettänyt väitettyä 90 % asukasluvustaan, mutta kaupungissa vellova hysteria oli siitä huolimatta karmaisevaa.
+    Sivistynyt mies ja hovin oppineena toimiva Demetrios Kydones kirjasi mustan surman aiheuttamia seuraamuksia ylös. Hän dramatisoi, vaikkakin tilanteeseen nähden aivan suotta, miten kaupungin väki hupenee ja hautojen määrä kasvaa päivä päivältä.`,
   },
   {
-    reference: [PTH, MS],
+    reference: [PTH, KC, MS],
     location: "Messina",
     coordinates: [38.189, 15.55],
     info: `Euroopan kaupungeista Messina, joka sijaitsee Italian saappaankärjessä eli Sisiliassa, joutui ensimmäisenä kokemaan mustan surman julmuuden. 
-			Lokakuussa vuonna 1347 Konstantinopolista tai Kaffasta saapuneet kauppalaivat saastuttivat kaupungin, ja todellisuus valitettavan tilanteen aiheuttamasta säälimättömästä ankaruudesta saattoi asukkaat kauhun valtaan.
+			Lokakuussa vuonna 1347 Konstantinopolista tai Kaffasta saapunut 12 kauppalaivan saastuttivat kaupungin, ja todellisuus valitettavan tilanteen aiheuttamasta säälimättömästä ankaruudesta saattoi asukkaat kauhun valtaan.
 			Kauppalaivat karkotettiin satamasta hetimmiten asian tultua tietoon, mutta liian myöhään. Kulkutauti oli jo saanut otteen kaupungista ja paniikissaan asukkaat pakenivat maalle, epätoivoisesti pyrkien kauas muusta yhteiskunnasta.`,
+  },
+  {
+    reference: [JK],
+    location: "Mallorca",
+    coordinates: [39.616667, 2.983333],
+    info: `Marseillesta lähtenyt laiva toi mukanaan kulkutaudin joulukuussa 1347. Rutto ei jäänyt pitkäksi aikaa vain mallorcalaisten riesaksi kaupungissa, jonka satama oli solkenaan täynnä kauppalaivoja.
+    Ei kestänyt kuin nelisen kuukautta, kun Marseillesta saapunut tuhon siemen oli pienen Baleaarit-etapin jälkeen levinnyt maaliskuussa manner-Espanjaan. Barcelona ja Valencia olivat ensimmäiset Mallorcasta saapuneiden laivojen uhrit, mutta aikalaiskertomuksien mukaan kaupunkilaiset havaitsivat taudin joukossaan vasta kahden kuukauden jälkeen toukokuussa.
+    Toukokuussa lähti lisää laivoja, joista yksi suuntasi Gibraltarille. Kaupunki oli Granadan alueella, joka oli Espanjassa eräs viimeinen muslimien hallitsema alue. Musta surma tulkittiin Allahin tahtona, eikä virallisia määräyksiä voitu siis antaa ehkäisemistä tai jatkotoimenpiteitä varten. Mikään ei kuitenkaan estänyt kaupunkilaisia toimimaan varovaisesti ja erinäiset toimenpiteet hillitsivät kulkutaudin leviämistä, mutta vain jonkin aikaa.`,
   },
   {
     reference: [MS],
     location: "Sardinia",
     coordinates: [39.227778, 9.111111],
-    info:
-      "Messinnasta ripeästi poisajetut kauppalaivat saapuivat Sisilian naapurisaarelle Sardiniaan vain kuukautta myöhemmin, siten tuomiten senkin asukkaat sanomattomaan kurjuuteen.",
+    info: `Messinnasta ripeästi poisajetut kauppalaivat saapuivat Sisilian naapurisaarelle Sardiniaan vain kuukautta myöhemmin, siten tuomiten senkin asukkaat sanomattomaan kurjuuteen.`,
   },
   {
     reference: [JF, MS],
@@ -67,12 +64,30 @@ const Mediterranean = [
 
 const WestEurope = [
   {
+    reference: [JPG],
+    location: "Barcelona",
+    coordinates: [41.383333, 2.183333],
+    info: `Barcelonan kaupunki oli keskiaikaiseksi ihmisasumukseksi siisti. Wanhoja roomalaisaikaisia rakennuksia käytettiin tehokkaasti viemäreinä.
+    Tautitietämys ei kuitenkaan ollut muita eurooppalaisia kaupunkeja parempi, koska kansa sai taudin estämiseksi yhtä tehokkaita käskyjä, kuin mitä Ruotsin kuningas Magnus II oli julistanut. Totisesti, ainoa ero ruotsalaisilla ja espanjalaisilla oli rutolta suojautumiseen saatujen neuvojen määrä.
+    Sairaat eristettiin tai heidän luotaan kaikottiin, mutta muitakin ehkäisemismenetelmiä pantiin koetukselle. Sitruunaa, laakeria tai katajan lehtiä poltettiin toivottua suojaa saamatta. Lääketieteelliset suosituksetkaan eivät osoittaneet parempaa ymmärrystä koettelemuksesta, koska suurin osa niistä tuntuu ennemminkin leikinlaskulta kuin vakavasti otettavilta suojakeinoilta.
+    Lattioiden jynssääminen etikalla, appelsiinimehun juonti ja pellavaan pukeutuminen olivat muutamia kansalaisille annettuja neuvoja. Erään mukaan pohjoistuulessa oli jokin parantava vivahde ja sen puhaltaessa ikkunoita oli pidettävä auki.
+    Kuolleita oli runsaasti ja vainajien lukumäärä vastasi muiden Euroopan suurempien kaupunkien kokemuksia, sillä noin 40 %:n verran kaupunkilaisista menehtyi. Juutalaiset saivat Barcelonassakin osansa ruttosyytöksistä. El Call -niminen juutalaiskommuuni pyyhkäistiin maan tasalle ja syytettyjä poltettiin elävältä.`,
+  },
+  {
+    reference: [JK, MS],
+    location: "Gibraltar",
+    coordinates: [36.131667, -5.351667],
+    info: `Alfonso XI oli ainoa ruttoon menehtynyt monarkki. Käydessään sotaa Granadassa, joka oli joutunut muslimien vallan alle hän saapui Gibraltarin luokse ja alkoi piirittää kaupunkia. Piirityksen aikana musta surma, joka riehui muslimisotilaiden keskuudessa, oli omiaan horjuttamaan heidän uskoaan Allahia kohtaan ja osa aprikoi kääntymistä kristinuskoon.
+    Usko vahvistui kumminkin nopeasti ja kerettiläiset ajatukset kääntymisestä kaikkosivat joukkojen huomatessa kristittyjen kärsivän aina yhtä paljon kuin hekin. Allah ei siis vain rankaissut heitä, vaan oli jokaisen niskassa riippumatta hengellisen elämän saloista.
+    Alfonso kuoli oikeamielisesti joukkojensa keskuudessa. Vaikka neuvonantajat kehottivatkin häntä hylkäämään etulinjaelämän, kuningas kieltäytyi ja maksoi jääräpäisyydestään hengellään.`,
+  },
+  {
     reference: [JK],
     location: "Wien",
     coordinates: [48.208333, 16.373056],
     info: `Vuoden 1349 kevääseen mennessä rutto oli ehtinyt levitä Wieniin saakka. Tauti ei säästellyt retosteluaan wieniläisiltä, vaan joka kolmas heistä kuoli. Mahdollisesti silkka hysteria oli omiaan saamaan ihmisten mielikuvituksen varsinaisen myllerryksen valtaan, koska kaupungissa syntyi urbaani legenda.
-    Väitetiin nimittäin, että kuolleiden suusta olisi noussut jotain karmivaa ja luonnotonta: tummansininen, räiskyvä liekki. Legendan mukaan tämä oli ruton ruumiillistuma Pest Jungfraun, pahansuopa jumalatar, joka pelkällä kosketuksella saattoi tappaa elinkuntoisen ihmisen.
-    Huhuista riippumatta tauti koetteli kaupunkia. Erään rutosta selvinnyt kirjoitti muistiin nähneensä muuan hurjan tytön sammaltaneen kuolleen äitinsä perään tätä lastattaessa vankkureille.`,
+    Väitetiin nimittäin, että kuolleiden suusta olisi noussut jotain karmivaa ja luonnotonta: tummansininen, räiskyvä liekki. Legendan mukaan tämä oli ruton ruumiillistuma Pest Jungfrau, pahansuopa jumalatar, joka pelkällä kosketuksellaan saattoi tappaa elinkuntoisen ihmisen.
+    Huhuista riippumatta tauti koetteli kaupunkia. Eräs rutosta selvinnyt kirjoitti muistiin nähneensä muuan väkevän tytön sammaltaneen kuolleen äitinsä perään tätä lastattaessa muiden vainajien päälle vankkureille.`,
   },
   {
     reference: [RN],
@@ -99,8 +114,7 @@ const WestEurope = [
     location: "Pistoia",
     coordinates: [43.933333, 10.916667],
     info: `Markkinat kokivat mullistuksen, kun työvoima kaikkosi. Elintarvike-, palvelu- ja hyödykehinnat ampaisivat suuriin, jopa kieroutuneen kokoisiin summiin. Tuotannon laskiessa ja hintojen noustessa kysynnän ja tarjonnan suhde muuttui perverssiksi, varsinkin, kun vielä taudin loppuvaiheilla hinnat pysyivät sanomattoman kalliina.
-	Vaikka ruoka olikin kortilla, ihmiset saivat jollain tavalla pidettyä itsensä hengissä. Hallintoviranomaiset ilmeisesti jakoivat ruokaa, mutta määristä ei ole tarkempaa tietoa.
-	`,
+	Vaikka ruoka olikin kortilla, ihmiset saivat jollain tavalla pidettyä itsensä hengissä. Hallintoviranomaiset ilmeisesti jakoivat ruokaa, mutta määristä ei ole tarkempaa tietoa.`,
   },
   {
     reference: [A, CBC, TK],
@@ -122,8 +136,7 @@ const WestEurope = [
     reference: [MS],
     location: "Frankfurt am Main",
     coordinates: [50.116667, 8.683333],
-    info: `Kulkutauti ehti levitä juuri ja juuri Frankfurtin paikkeille vuoden 1348 kesäkuuhun mennessä.
-	`,
+    info: `Kulkutauti ehti levitä juuri ja juuri Frankfurtin paikkeille vuoden 1348 kesäkuuhun mennessä.`,
   },
   {
     reference: [CBC],
@@ -147,7 +160,7 @@ const WestEurope = [
     location: "Pariisi",
     coordinates: [48.85, 2.35],
     info: `Vuonna 1349 manner-Euroopassa, jossa tauti oli ehtinyt pauhata jo kelpo ajan, taudin kuristava ote alkoi heiketä. Tämä oli aikalaisille vain hetkellinen helpotus; vasta ensimmäinen ruttoaalto oli hiipumassa.
-	Sen aikaisella mittapuulla Pariisin kaltaiset suurkaupungit eivät saaneet hetken rauhaa edes aaltojen välisinä ajanjaksoina, vaan kokivat samoja, mutta aavistuksen verran vähemmän karuja oloja.`,
+    Sen aikaisella mittapuulla Pariisin kaltaiset suurkaupungit eivät saaneet hetken rauhaa edes aaltojen välisinä ajanjaksoina, vaan kokivat samoja, mutta aavistuksen verran vähemmän karuja oloja.`,
   },
   {
     reference: [MS],
@@ -216,14 +229,14 @@ const EastEurope = [
 		Vanhan mantereen kohtalo oli peruuttamattomasti päätetty kenenkään, edes laivamatkustajien, tietämättä.`,
   },
   {
-    reference: [JRE],
+    reference: [RJE],
     location: "Ragusa (nyk. Dubrovnik)",
-    coordinates: [42.633333, 18.1],
+    coordinates: [42.649696, 18.092394],
     info: `Spalaton lisäksi venetsialaiset hallitsivat nykyisen Kroatian alueella olevaa Ragusaa. Keväällä 1348 kaupungin viranomaiset antoivat moraalia musertavan kehotuksen kaupungin asukkaille. Kaupungin tilanne oli niin valitettava, että koko asutuksen olemassaoli oli vaakalaudalla. Viranomaisten käsky oli yksinkertainen: asukkaiden oli tehtävä testamentti, sillä lähitulevaisuuden näkymät olivat olemattomat.
     Elokuussa musta surma siirtyi pohjoisemmaksi kohti Keski-Eurooppaa.`,
   },
   {
-    reference: [JK],
+    reference: [JK, HR],
     location: "Krakova",
     coordinates: [50.064722, 19.945],
     info: `Puola kuului harvoihin, melkein kokonaan rutolta välttyneisiin alueisiin. Välttyminen taudilta ei ollut sattumaa tai hyvää tuuria muuten kuin siten, että vallan kahvassa oli osaava mies.
@@ -234,7 +247,7 @@ const EastEurope = [
     reference: [JK],
     location: "Spalato (nyk. Split)",
     coordinates: [43.51, 16.45],
-    info: `Keski-Eurooppaan rutto kulki Balkanin niemimaan kautta, joka oli näihin aikoihin venetsialaisten vallassa Ragusan tavoin.
+    info: `Keski-Eurooppaan rutto kulki Balkanin niemimaan kautta, joka oli niihin aikoihin venetsialaisten vallassa Ragusan tavoin.
     Spalato joutui niemimaan ensimmäiseksi tartuntamaaksi. Kerrotaan, että kalman löyhkä oli villieläimille vastustamaton. Seuraten ruumiista nousevaa hajua, lähtivät vuorten sudet kohti rantakaupunkia herkutellakseen ruton hopeatarjottimella tarjoilemia ihmisvainajia.`,
   },
   {
@@ -303,10 +316,11 @@ const Britain = [
     Tähän aikaan Lontoo oli varsinainen mätäpaise: kaupungin jätehuolto oli kuvottavan huono ja jätealtaat olivat erinomaisia saastumistyyssioja rutolle sekä Thames-joki oli solkenaan täynnä saasteita ja roskaa. Kaupungin ljettävän yleiskuntonsa lisäksi asukasluku oli niin suuri, että tartunnan saaminen ja sen levittäminen oli mitä vaivattomin tapahtumaketju.`,
   },
   {
-    reference: [MS, CW],
+    reference: [MI, MS, CW],
     location: "Melcombe (nyk. Weymouth)",
     coordinates: [50.613, -2.457],
-    info: `V. 1348 Melcombeen palasi Gasconysta, Ranskasta ainakin kaksi asiaa: merimies ja häneen iskostunut rutto. Merimies päätti jäädä nukkumaan kaupunkiin ja jatkaa matkaansa sen jälkeen Dorchesteriin, josta tauti alkoi levittäytyä pitkin Britannian saarta.`,
+    info: `V. 1348 Melcombeen saapui kaksi laivaa, joista toisen kyydissä oli vähintään kaksi asiaa, kummatkin Gasconysta, Ranskasta: merimies ja häneen iskostunut rutto. Merimies päätti jäädä nukkumaan kaupunkiin ja jatkaa matkaansa sen jälkeen Dorchesteriin, josta tauti alkoi levittäytyä pitkin Britannian saarta.
+    Tauti ehti levitä Melcombessa ennen Dorchesterista lähtenyttä tartunta-aaltoa.`,
   },
 ];
 

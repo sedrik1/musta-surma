@@ -32,6 +32,11 @@ const references = {
     link:
       "https://tieku.fi/laaketiede/sairaudet/tutkijat-paljastavat-taalta-musta-surma-alkoi",
   },
+  JPG: {
+    reference:
+      "Glutting, J. P. 2013. Barcelona in the Plague Years. Barcelona Metropolitan. Viitattu 21.11.2020.",
+    link: "https://www.barcelona-metropolitan.com/features/the-plague-years/",
+  },
   MS: {
     reference:
       "Snell, M. 2019. The Arrival and Spread of the Black Plague in Europe. ThoughtCo. Viitattu 14.10.2020.",
@@ -53,7 +58,7 @@ const references = {
       "John Seven. 2020. The Black Death: A Timeline of the Gruesome Pandemic. History. Viitattu 18.11.2020.",
     link: "https://www.history.com/news/black-death-timeline",
   },
-  JRE: {
+  RJE: {
     reference:
       "Professor Sir Evans, R. J. FBA. 2012. The Black Death. Gresham College. Viitattu 19.11.2020.",
     link: "https://www.youtube.com/watch?v=_5ImYgBeBS0",
