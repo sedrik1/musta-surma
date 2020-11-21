@@ -38,7 +38,7 @@ const Mediterranean = [
   },
   {
     reference: [JK],
-    location: "Mallorca",
+    location: "Mallorca (Majorca)",
     coordinates: [39.616667, 2.983333],
     info: `Marseillesta lähtenyt laiva toi mukanaan kulkutaudin joulukuussa 1347. Rutto ei jäänyt pitkäksi aikaa vain mallorcalaisten riesaksi kaupungissa, jonka satama oli solkenaan täynnä kauppalaivoja.
     Ei kestänyt kuin nelisen kuukautta, kun Marseillesta saapunut tuhon siemen oli pienen Baleaarit-etapin jälkeen levinnyt maaliskuussa manner-Espanjaan. Barcelona ja Valencia olivat ensimmäiset Mallorcasta saapuneiden laivojen uhrit, mutta aikalaiskertomuksien mukaan kaupunkilaiset havaitsivat taudin joukossaan vasta kahden kuukauden jälkeen toukokuussa.
@@ -151,8 +151,8 @@ const WestEurope = [
     location: "Genova",
     coordinates: [44.406944, 8.933889],
     info: `Kaffasta lähteneet, Konstantinopolissa etapin tehneet kauppalaivat saapuivat vuoden 1348 tammikuussa Genovan rantakaupunkiin. Laivojen saapuminen oli asukkaille varmasti mitä oudoin ilmestys, koska ne rantautuivat erittäin oudoksuttavassa tilassa.
-    Oudoksuttava on vähintäänkin vähättelevä tapa kuvata tilannetta, sillä matkustajille matka oli varmasti suuri koettelemus. Matkustajista oli jäljellä kourallinen; suurin osa oli siirynyt ajasta ikuisuuteen matkan aikana.
-    Genovan osuutta ruton leviämisessä on mahdoton sivuuttaa. Sijaintinsta ja yhteyksiensä takia se oli eräs vilkkaimmista kaupungeista Euroopassa. Kauppareittejä kulki lukuisiin suuntiin, kuten Toscanaan.
+    Oudoksuttava on vähintäänkin vähättelevä tapa kuvata tilannetta, sillä matkustajille matka oli varmasti suuri koettelemus. Matkustajista oli jäljellä kourallinen; suurin osa oli menehtynyt matkan aikana.
+    Genovan osuutta ruton leviämisessä on mahdoton sivuuttaa. Sijaintinsa ja yhteyksiensä takia se oli eräs vilkkaimmista kaupungeista Euroopassa. Kauppareittejä kulki lukuisiin suuntiin, kuten Toscanaan.
     Kuolleisuus oli mittavaa. Todennäköisesti noin 60 % - arvioiden mukaan 36 000 - asukkaista kuoli ruton seurauksena.`,
   },
   {
@@ -177,35 +177,15 @@ const WestEurope = [
     location: "Mainz",
     coordinates: [50, 8.266667],
     info: `Strasbourgissa tapahtunut juutalaisten joukkomurha ei ollut ainoa laatuaan. Mainzissa kristityt päättivät ryhtyvänsä samanlaisiin toimiin, kuin strasbourgilaiset. Juutalaiset ryhtyivät vastarintaan, mutta turhaan. Kahakoinnin ja sitä seuraavan pyövelintyön jälkeen kaupungin juutalaisväestö väheni 3000 hengellä.
-    Antisemitistiset toimet todennäköisesti juontavat juurensa hevosmiesten uutistoimistoon. Rein-joen varrella levinnyt väittämä kuului, että juutalaiset olisivat myrkyttäneet kaivoja.`,
+    Antisemitistiset toimet todennäköisesti juontavat juurensa hevosmiesten uutistoimistoon. Rein-joen varrella levinnyt väittämä kuului, että juutalaiset olisivat myrkyttäneet kaivoja ja rutto olisi tällä tavalla saanut alkunsa.`,
   },
   {
     reference: [JF, JS],
     location: "Strasbourg",
     coordinates: [48.58, 7.75],
-    info: `Aikalaiset eivät tienneet taudin alkuperää saatika sen tapaa saastuttaa ihminen. Tietämättömyys kasvatti ennakkoluuloja, ja nämä väkivaltana purkautuvat paineet saivat aikaan raakalaismaista jälkeä.
+    info: `Aikalaiset eivät tienneet taudin alkuperää saatikka sen tapaa saastuttaa ihminen. Tietämättömyys kasvatti ennakkoluuloja, ja nämä väkivaltana purkautuvat paineet saivat aikaan raakalaismaista jälkeä.
     Ystävänpäivänä 2000 juutalaista teloitettiin erittäin raa'alla menetelmällä, eli polttamalla heidät elävänä. Strasbourgissa tapahtunut antisemitistinen joukkomurha oli yksi monista juutalaisia kohdanneista surunäytelmistä. 
-    Saksassa ja Ranskassa hävitettiin, käytännössä pyyhittiin olemattomiin lukuisia juutalaisasuinalueita. Poikkeuksiakin oli. Puolan kuningas Kasimir III Suuri ojensi auttavan kätensä ja tarjosi vainotuille juutalaisille suojapaikan maastaan. Marseillekin luetaan juutalaisten suojasatamaksi.`,
-  },
-  {
-    reference: [],
-    location: "Givry",
-    coordinates: [46.7831, 4.7436],
-    info: `Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
-  },
-  {
-    reference: [],
-    location: "Lyon",
-    coordinates: [45.767222, 4.834444],
-    info: `Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
+    Saksassa, Espanjassa ja Ranskassa hävitettiin, käytännössä pyyhittiin olemattomiin lukuisia juutalaisasuinalueita. Poikkeuksiakin oli. Puolan kuningas Kasimir III Suuri ojensi auttavan kätensä ja tarjosi vainotuille juutalaisille suojapaikan maastaan. Marseillekin luetaan juutalaisten suojasatamaksi.`,
   },
 ];
 
@@ -232,7 +212,7 @@ const EastEurope = [
     reference: [RJE],
     location: "Ragusa (nyk. Dubrovnik)",
     coordinates: [42.649696, 18.092394],
-    info: `Spalaton lisäksi venetsialaiset hallitsivat nykyisen Kroatian alueella olevaa Ragusaa. Keväällä 1348 kaupungin viranomaiset antoivat moraalia musertavan kehotuksen kaupungin asukkaille. Kaupungin tilanne oli niin valitettava, että koko asutuksen olemassaoli oli vaakalaudalla. Viranomaisten käsky oli yksinkertainen: asukkaiden oli tehtävä testamentti, sillä lähitulevaisuuden näkymät olivat olemattomat.
+    info: `Spalaton lisäksi venetsialaiset hallitsivat nykyisen Kroatian alueella olevaa Ragusaa. Keväällä 1348 kaupungin viranomaiset antoivat moraalia musertavan kehotuksen kaupungin asukkaille. Kaupungin tilanne oli niin valitettava, että koko asutuksen olemassaolo oli vaakalaudalla. Viranomaisten käsky oli yksinkertainen: asukkaiden oli tehtävä testamentti, sillä lähitulevaisuuden näkymät olivat olemattomat.
     Elokuussa musta surma siirtyi pohjoisemmaksi kohti Keski-Eurooppaa.`,
   },
   {
@@ -241,7 +221,7 @@ const EastEurope = [
     coordinates: [50.064722, 19.945],
     info: `Puola kuului harvoihin, melkein kokonaan rutolta välttyneisiin alueisiin. Välttyminen taudilta ei ollut sattumaa tai hyvää tuuria muuten kuin siten, että vallan kahvassa oli osaava mies.
     Kasimir III Suuri sääti monia edistyksellisiä rajoituksia ruton suitsemiseksi. Maahan pyrkivät asetettiin pakolliseen ja pitkään eristykseen ja kansalaisten liikkumista rajoitettiin.
-    Eräs poikkeus Kasimirin rutonkitkentätoimissa oli juutalaisten rauhaan jättäminen. Saksassa ja Ranskassa tauti olitiin sysätty juutalaisten niskoille, mistä seurasi monia verisiä kahakoita. Ainakin eräs syy Kasimirin toimintaan oli hänen rakastajattarensa Esther, joka epäilemättä vaikutusvallallaan vaikutti kuninkaansa päätöksiin. Sen lisäksi, että Puolan kuningas ei ryhtynyt muiden Euroopan maiden tavoin juutalaisvainoon oli turvapaikan tarjoaminen vainotulle kansalle. Tarjoukseen tarttuneiden kommuuneja oli vielä toisen maailmansodan aikaan pystyssä.`,
+    Eräs poikkeus Kasimirin rutonkitkentätoimissa oli juutalaisten rauhaan jättäminen. Ranskassa, Saksassa ja Espanjassa tauti oli sysätty juutalaisten niskoille, mistä seurasi monia verisiä kahakoita. Ainakin eräs syy Kasimirin toimintaan oli hänen rakastajattarensa Esther, joka epäilemättä vaikutusvallallaan vaikutti kuninkaansa päätöksiin. Sen lisäksi, että Puolan kuningas ei ryhtynyt muiden Euroopan maiden tavoin juutalaisvainoon oli turvapaikan tarjoaminen vainotulle kansalle. Tarjoukseen tarttuneiden kommuuneja oli vielä toisen maailmansodan aikaan pystyssä.`,
   },
   {
     reference: [JK],
@@ -249,16 +229,6 @@ const EastEurope = [
     coordinates: [43.51, 16.45],
     info: `Keski-Eurooppaan rutto kulki Balkanin niemimaan kautta, joka oli niihin aikoihin venetsialaisten vallassa Ragusan tavoin.
     Spalato joutui niemimaan ensimmäiseksi tartuntamaaksi. Kerrotaan, että kalman löyhkä oli villieläimille vastustamaton. Seuraten ruumiista nousevaa hajua, lähtivät vuorten sudet kohti rantakaupunkia herkutellakseen ruton hopeatarjottimella tarjoilemia ihmisvainajia.`,
-  },
-  {
-    reference: [],
-    location: "Moskova",
-    coordinates: [55.755833, 37.617222],
-    info: `Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna
-			aliqua Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`,
   },
   {
     reference: [CBC, PTH],
@@ -288,7 +258,7 @@ const NorthEurope = [
     reference: [JK],
     location: "Ruotsi",
     coordinates: [60.697384, 15.264306],
-    info: `Norjasta levittäytyvä rutto ahdisti Keski-Ruotsia. Magnus II, vaikkakin hurskas mies, ei ottanut silmää kateensä ja tarkastellut tilannetta maallisen hallintomiehen järjellä. Hänen ratkaisunsa oli nöyryyden osoitus Jumalaa kohtaan. Selvästikin kansan oli tuotava ilmi jumalanpelkonsa, ja kuningas määräsi muutamia hengellisen elämän ohjenuoria.
+    info: `Norjasta levittäytyvä rutto ahdisti Keski-Ruotsia. Magnus II, vaikkakin hurskas mies, ei ottanut silmää käteensä ja tarkastellut tilannetta maallisen hallintomiehen järjellä. Hänen ratkaisunsa oli nöyryyden osoitus Jumalaa kohtaan. Selvästikin kansan oli tuotava ilmi jumalanpelkonsa, ja kuningas määräsi muutamia hengellisen elämän ohjenuoria.
     Perjantai oli oleva veden ja leivän päivä; muun ruoan syöminen oli ankarasti kielletty. Kirkkoon kansan oli mentävä paljain jaloin, mutta vain sunnuntaisin. Valitettavasti toimet eivät olleet yhtä tehokkaita, kuin esimerkiksi Kasimir Suuren määräykset Puolassa.
     Ruotsalaiset eivät välttäneet ruttoa. Kuninkaan lähiperheessäkin koettiin murhenäytelmä Magnuksen kahden veljen siirtyessä ajasta ikuisuuteen.`,
   },
@@ -313,7 +283,7 @@ const Britain = [
     coordinates: [51.507222, -0.1275],
     info: `Lontoon kaupunki altistui taudille marraskuussa v. 1348. Kuten muuallakin, haudattujen määrä ja menehtymisnopeus ovat huimaavia.
     Lontoossa haudattiin eräässä vaiheessa vähintään 200 ruumista päivässä, jokainen vasta valmistuneelle hautausmaalle. On merkittävää, että kyseessä on vain yhden hautuumaan luku; muillekin kaupungin vainajien makuusijoille laskettiin ruumiita.
-    Tähän aikaan Lontoo oli varsinainen mätäpaise: kaupungin jätehuolto oli kuvottavan huono ja jätealtaat olivat erinomaisia saastumistyyssioja rutolle sekä Thames-joki oli solkenaan täynnä saasteita ja roskaa. Kaupungin ljettävän yleiskuntonsa lisäksi asukasluku oli niin suuri, että tartunnan saaminen ja sen levittäminen oli mitä vaivattomin tapahtumaketju.`,
+    Tähän aikaan Lontoo oli varsinainen mätäpaise: kaupungin jätehuolto oli kuvottavan huono ja jätealtaat olivat erinomaisia saastumistyyssioja rutolle sekä Thames-joki oli solkenaan täynnä saasteita ja roskaa. Kaupungin iljettävän yleiskunnon lisäksi asukasluku oli niin suuri, että tartunnan saaminen ja sen levittäminen oli mitä vaivattomin tapahtumaketju.`,
   },
   {
     reference: [MI, MS, CW],
