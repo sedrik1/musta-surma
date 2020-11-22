@@ -11,13 +11,13 @@
 
 /* SVG-säännöt */
 path[fill="none"] {
-  stroke-width: 2;
+  stroke-width: 1.21;
 }
 
 path[fill-rule="evenodd"] {
-  stroke-width: 0.3;
+  stroke-width: 0.34;
 }
 
 path[fill="#000"] {
-  stroke-width: 2;
+  stroke-width: 1.699;
 }

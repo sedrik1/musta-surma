@@ -266,6 +266,14 @@ const NorthEurope = [
 
 const Britain = [
   {
+    reference: [MI],
+    location: "Lontoo",
+    coordinates: [51.507222, -0.1275],
+    info: `Lontoon kaupunki altistui taudille marraskuussa v. 1348. Kuten muuallakin, haudattujen määrä ja menehtymisnopeus ovat huimaavia.
+    Lontoossa haudattiin eräässä vaiheessa vähintään 200 ruumista päivässä, jokainen vasta valmistuneelle hautausmaalle. On merkittävää, että kyseessä on vain yhden hautuumaan luku; muillekin kaupungin vainajien makuusijoille laskettiin ruumiita.
+    Tähän aikaan Lontoo oli varsinainen mätäpaise: kaupungin jätehuolto oli kuvottavan huono ja jätealtaat olivat erinomaisia saastumistyyssioja rutolle sekä Thames-joki oli solkenaan täynnä saasteita ja roskaa. Kaupungin iljettävän yleiskunnon lisäksi asukasluku oli niin suuri, että tartunnan saaminen ja sen levittäminen oli mitä vaivattomin tapahtumaketju.`,
+  },
+  {
     reference: [NFC, MI],
     location: "Bristol",
     coordinates: [51.45, -2.583333],
@@ -276,14 +284,6 @@ const Britain = [
     location: "Wales",
     coordinates: [52.3, -3.6],
     info: `Wales joutui etelästä pakoon lähteneiden englantilaisten takia maksamaan kovan hinnan. Englantilaiset toivat mukanaan taudin ja sen seurauksena 100 000 menehtyi Walesissa.`,
-  },
-  {
-    reference: [MI],
-    location: "Lontoo",
-    coordinates: [51.507222, -0.1275],
-    info: `Lontoon kaupunki altistui taudille marraskuussa v. 1348. Kuten muuallakin, haudattujen määrä ja menehtymisnopeus ovat huimaavia.
-    Lontoossa haudattiin eräässä vaiheessa vähintään 200 ruumista päivässä, jokainen vasta valmistuneelle hautausmaalle. On merkittävää, että kyseessä on vain yhden hautuumaan luku; muillekin kaupungin vainajien makuusijoille laskettiin ruumiita.
-    Tähän aikaan Lontoo oli varsinainen mätäpaise: kaupungin jätehuolto oli kuvottavan huono ja jätealtaat olivat erinomaisia saastumistyyssioja rutolle sekä Thames-joki oli solkenaan täynnä saasteita ja roskaa. Kaupungin iljettävän yleiskunnon lisäksi asukasluku oli niin suuri, että tartunnan saaminen ja sen levittäminen oli mitä vaivattomin tapahtumaketju.`,
   },
   {
     reference: [MI, MS, CW],
