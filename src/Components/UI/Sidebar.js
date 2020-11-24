@@ -1,24 +1,13 @@
 import React from "react";
 import { Sidebar, Tab } from "react-leaflet-sidetabs";
 import { FaLayerGroup } from "react-icons/fa";
-import {
-  HiOutlineChevronRight,
-  HiLightBulb,
-  /* HiOutlineChevronDown, */
-} from "react-icons/hi";
+import { HiOutlineChevronRight, HiLightBulb } from "react-icons/hi";
 import { BsFillInfoCircleFill, BsQuestionCircleFill } from "react-icons/bs";
-
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-/* import Accordion from "@material-ui/core/Accordion";
-import AccordionDetails from "@material-ui/core/AccordionDetails";
-import AccordionSummary from "@material-ui/core/AccordionSummary"; */
-import withWidth from "@material-ui/core/withWidth";
-
 import DiseaseYears from "../../Data/DiseaseSpread/DiseaseSpreadInfo";
 import ColourLegends from "./SidebarTabContent/ColourLegends";
 import SourcesAndAdditionalReading from "./SidebarTabContent/SourcesAndAdditionalReading";
-
 import "./Sidebar.css";
 import labelValues from "../../Data/Misc/SidebarValues";
 import references from "../../Data/Misc/References";
@@ -272,4 +261,4 @@ const SidebarContainer = ({
   );
 };
 
-export default withWidth()(SidebarContainer);
+export default SidebarContainer;

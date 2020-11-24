@@ -9,7 +9,6 @@ import {
   Polyline,
 } from "react-leaflet";
 import { Curve } from "react-leaflet-curve";
-
 import Mediterranean from "../../Components/Cities/Mediterranean/Mediterranean";
 import MainlandWest from "../../Components/Cities/MainlandWest/MainlandWest";
 import MainlandEast from "../../Components/Cities/MainlandEast/MainlandEast";
@@ -17,7 +16,6 @@ import NorthEurope from "../../Components/Cities/NorthEurope/NorthEurope";
 import Britain from "../../Components/Cities/Britain/Britain";
 import GoldenHordeBorder from "../../Data/Misc/GoldenHorde";
 import SidebarContainer from "../../Components/UI/Sidebar";
-
 import V1346 from "../../Components/DiseaseSpread/V1346";
 import V1347 from "../../Components/DiseaseSpread/V1347";
 import V1348 from "../../Components/DiseaseSpread/V1348";
@@ -26,7 +24,6 @@ import V1350 from "../../Components/DiseaseSpread/V1350";
 import V1351 from "../../Components/DiseaseSpread/V1351";
 import V1352 from "../../Components/DiseaseSpread/V1352";
 import V1353 from "../../Components/DiseaseSpread/V1353";
-
 import {
   MediterraneanRoutes,
   MediterraneanLandExclusiveRoutes,
@@ -55,7 +52,7 @@ class MapContainer extends Component {
     selected: "layers",
     displayElements: {
       displayRoutes: false,
-      displayAllTerrain: true,
+      displayAllTerrain: false,
       displayDiseaseSpread: false,
       displayGoldenHorde: false,
       cities: {
