@@ -1,4 +1,4 @@
-Parannus- ja jatkokehitysluettelo:
+Parannus- ja jatkokehitysluettelo (ei-kattava versio):
 <ul>
   <li>Lisää kaupunki- ja maakohteita sekä kauppareittejä.</li>
   <li>Kauppareittien ja taudin leviämisen elementeille samanlainen tietolaatikko, kuin kaupunkikohteilla.</li>
