@@ -1,3 +1,10 @@
+Parannus- ja jatkokehitysluettelo (ei-kattava versio):
+<ul>
+  <li>Lisää kaupunki- ja maakohteita sekä kauppareittejä.</li>
+  <li>Kauppareittien ja taudin leviämisen elementeille samanlainen tietolaatikko, kuin kaupunkikohteilla.</li>
+  <li>Elementtien määrätty tasojärjestys. SVG:inä ne renderöityvät luomisjärjestyksessä; viimeisin on aina päällimmäisenä.</li>
+  <li>Taudin laajempi leviäminen, esim. Pohjois-Afrikka, Silkkitie, Kaukoitä jne.</li>
+</ul>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
