@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/musta-surma/static/css/main.4222d66a.chunk.css",
-    "main.js": "/musta-surma/static/js/main.b4beb1fe.chunk.js",
-    "main.js.map": "/musta-surma/static/js/main.b4beb1fe.chunk.js.map",
+    "main.js": "/musta-surma/static/js/main.056a7807.chunk.js",
+    "main.js.map": "/musta-surma/static/js/main.056a7807.chunk.js.map",
     "runtime-main.js": "/musta-surma/static/js/runtime-main.49999820.js",
     "runtime-main.js.map": "/musta-surma/static/js/runtime-main.49999820.js.map",
     "static/js/2.cec20811.chunk.js": "/musta-surma/static/js/2.cec20811.chunk.js",
     "static/js/2.cec20811.chunk.js.map": "/musta-surma/static/js/2.cec20811.chunk.js.map",
     "index.html": "/musta-surma/index.html",
-    "precache-manifest.eaa6a5aa60ca52201eaa90e9eda0054f.js": "/musta-surma/precache-manifest.eaa6a5aa60ca52201eaa90e9eda0054f.js",
+    "precache-manifest.71545e8a142735897abe80bf31fc70a3.js": "/musta-surma/precache-manifest.71545e8a142735897abe80bf31fc70a3.js",
     "service-worker.js": "/musta-surma/service-worker.js",
     "static/css/main.4222d66a.chunk.css.map": "/musta-surma/static/css/main.4222d66a.chunk.css.map",
     "static/js/2.cec20811.chunk.js.LICENSE.txt": "/musta-surma/static/js/2.cec20811.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.49999820.js",
     "static/js/2.cec20811.chunk.js",
     "static/css/main.4222d66a.chunk.css",
-    "static/js/main.b4beb1fe.chunk.js"
+    "static/js/main.056a7807.chunk.js"
   ]
 }

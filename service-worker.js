@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/musta-surma/precache-manifest.eaa6a5aa60ca52201eaa90e9eda0054f.js"
+  "/musta-surma/precache-manifest.71545e8a142735897abe80bf31fc70a3.js"
 );
 
 self.addEventListener('message', (event) => {

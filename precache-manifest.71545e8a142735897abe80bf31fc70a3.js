@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "20a59fbde73b658a80cda59ffffeb1df",
+    "revision": "1f31ca933de455e50417bd6e8b103447",
     "url": "/musta-surma/index.html"
   },
   {
-    "revision": "79218318f22dc777f5ee",
+    "revision": "947c7473cd18b5064bb2",
     "url": "/musta-surma/static/css/main.4222d66a.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/musta-surma/static/js/2.cec20811.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "79218318f22dc777f5ee",
-    "url": "/musta-surma/static/js/main.b4beb1fe.chunk.js"
+    "revision": "947c7473cd18b5064bb2",
+    "url": "/musta-surma/static/js/main.056a7807.chunk.js"
   },
   {
     "revision": "b74c98c416f127c10c19",
